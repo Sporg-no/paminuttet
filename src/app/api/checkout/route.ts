@@ -10,6 +10,15 @@ export const runtime = 'nodejs';
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(req: NextRequest) {
+  try {
+    return await handle(req);
+  } catch (e) {
+    console.error('[checkout] uventet feil', e);
+    return NextResponse.json({ error: `Teknisk feil: ${(e as Error).message}` }, { status: 500 });
+  }
+}
+
+async function handle(req: NextRequest) {
   let body: { plan?: string; track?: string; email?: string; consent?: boolean };
   try { body = await req.json(); } catch { return NextResponse.json({ error: 'Ugyldig forespørsel.' }, { status: 400 }); }
   const plan: Plan = body.plan === 'aar' ? 'aar' : 'maaned';
