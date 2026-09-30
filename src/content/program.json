@@ -1,0 +1,2917 @@
+{
+ "weeks": [
+  {
+   "n": 1,
+   "title": "Grunnlag",
+   "intro": "Lær formatene og finn nivået ditt.",
+   "gym": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "Åpningsminuttet",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m rolig ro, 10 luftknebøy, 10 utfall bakover, 10 PVC pass-throughs, 10 scap pull-ups",
+      "2×5 knebøy med tom stang, 3 s ned"
+     ],
+     "B": {
+      "t": "Knebøy",
+      "l": [
+       "Hver 2:30 × 5 sett: 5 reps @ 65 % (RPE 6)",
+       "Grunnmur: goblet squat 5×8, 3 s ned"
+      ]
+     },
+     "C": {
+      "fmt": "24:00 EMOM · 6 runder",
+      "timer": {
+       "t": "emom",
+       "m": 24
+      },
+      "rows": [
+       [
+        "1: Ro",
+        "15/12 kal",
+        "13/10 kal",
+        "11/9 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "2: Wallballs",
+        "15 (9/6 kg)",
+        "12 (9/6 kg)",
+        "10 (6/4 kg)",
+        "8 (6/4 kg)",
+        "8 (4/3 kg)"
+       ],
+       [
+        "3: Mage",
+        "10 toes-to-bar",
+        "7 toes-to-bar",
+        "10 hengende knehev",
+        "8 hengende knehev",
+        "10 liggende knehev"
+       ],
+       [
+        "4: Burpees",
+        "10",
+        "8",
+        "7",
+        "6",
+        "6 step-back"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 24). 10–15 sekunder hvile hvert minutt."
+     },
+     "D": [
+      "3 sett: 12 DB rumensk markløft + 30 s sideplanke per side"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Løpebeina",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m rolig løp, 10 push-ups, 10 band pull-aparts, 10 ring rows",
+      "2×10 benkpress med tom stang"
+     ],
+     "B": {
+      "t": "Benkpress + strict pull-ups",
+      "l": [
+       "4 supersett, 90 s hvile: 8 benkpress @ 60 % + 5–8 strict pull-ups",
+       "Grunnmur: DB-benkpress 4×10 + ring rows 4×8"
+      ]
+     },
+     "C": {
+      "fmt": "4 runder · 1:00 hvile mellom rundene",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "KB-sving",
+        "15 amerikansk (24/16 kg)",
+        "15 amerikansk (20/12 kg)",
+        "12 russisk (16/12 kg)",
+        "12 russisk (12/8 kg)",
+        "10 KB-markløft (12/8 kg)"
+       ],
+       [
+        "Box",
+        "12 box jumps (60/50 cm)",
+        "12 box jumps (60/50 cm)",
+        "10 box jumps (50/40 cm)",
+        "10 step-ups (50/40 cm)",
+        "10 step-ups (40 cm)"
+       ]
+      ],
+      "score": "Total tid inkludert hvile. Mål nivå 4: under 3:00 per runde. Gjentas i uke 4."
+     },
+     "D": [
+      "3 supersett: 12 benkedips + 12 DB hammercurls"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Stang og stang",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ski, 10 PVC pass-throughs, 10 luftknebøy, 5 inchworms",
+      "Tom stang, 5 av hver: markløft til kne, hang pull, høy pull, muscle clean, frontknebøy"
+     ],
+     "B": {
+      "t": "Hang power clean",
+      "l": [
+       "EMOM 10: 3 reps @ 60 % av power clean",
+       "Grunnmur: EMOM 10: 5 DB hang cleans"
+      ]
+     },
+     "C": {
+      "fmt": "AMRAP 12",
+      "timer": {
+       "t": "amrap",
+       "m": 12
+      },
+      "rows": [
+       [
+        "Trekk",
+        "10 pull-ups",
+        "8 pull-ups",
+        "8 pull-ups med strikk",
+        "10 ring rows",
+        "10 ring rows"
+       ],
+       [
+        "Hang power clean",
+        "8 (50/35 kg)",
+        "8 (43/30 kg)",
+        "8 (35/25 kg)",
+        "8 (25/20 kg)",
+        "8 DB hang cleans (12,5/7,5 kg)"
+       ],
+       [
+        "Burpees",
+        "6 over stanga",
+        "6 over stanga",
+        "6",
+        "5",
+        "5 step-back"
+       ]
+      ],
+      "score": "Runder + reps. Mål nivå 4: 7+ runder. Stanga skal gå ubrutt."
+     },
+     "D": [
+      "3 sett: 20 abmat sit-ups + 30 s hollow hold"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Motoren 1",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m BikeErg, 10 glute bridges, 10 good mornings med tom stang, 5 world’s greatest stretch per side",
+      "2×5 markløft med lett vekt"
+     ],
+     "B": {
+      "t": "Markløft",
+      "l": [
+       "Hver 2:30 × 4 sett: 6 reps @ 65 % (RPE 6)",
+       "Grunnmur: KB-markløft 4×10"
+      ]
+     },
+     "C": {
+      "fmt": "5 runder · start hver 4:00",
+      "timer": {
+       "t": "every",
+       "each": 240,
+       "rounds": 5
+      },
+      "rows": [
+       [
+        "Ro",
+        "500 m",
+        "450 m",
+        "400 m",
+        "350 m",
+        "300 m"
+       ],
+       [
+        "BikeErg til 3:00",
+        "Maks kal",
+        "Maks kal",
+        "Maks kal",
+        "Maks kal",
+        "Maks kal"
+       ]
+      ],
+      "score": "Totale BikeErg-kalorier. Rotiden skal være lik alle fem rundene."
+     },
+     "D": [
+      "3 sett: 12 hip thrust med stang + 10 sideliggende hofteabduksjon per side"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "Fredagsbunken",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m løp, 10 PVC pass-throughs, 10 scap push-ups, 5 thorakalrotasjoner per side",
+      "2×10 strict press med tom stang"
+     ],
+     "B": {
+      "t": "Strict press + DB-roing",
+      "l": [
+       "4 supersett, 90 s hvile: 8 strict press @ 60 % + 10 DB-roing per side",
+       "Grunnmur: sittende DB-skulderpress 4×10 + DB-roing 4×10 per side"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 16:00",
+      "timer": {
+       "t": "up",
+       "cap": 16
+      },
+      "rows": [
+       [
+        "Tau",
+        "60 double unders",
+        "45 double unders",
+        "90 single unders",
+        "60 single unders",
+        "50 single unders"
+       ],
+       [
+        "Wallballs",
+        "40 (9/6 kg)",
+        "35 (9/6 kg)",
+        "30 (6/4 kg)",
+        "25 (6/4 kg)",
+        "20 (4/3 kg)"
+       ],
+       [
+        "DB snatch, vekslende",
+        "30 (22,5/15 kg)",
+        "24 (22,5/15 kg)",
+        "20 (15/10 kg)",
+        "20 (12,5/7,5 kg)",
+        "16 DB push press (7,5/5 kg)"
+       ],
+       [
+        "Box",
+        "20 box jump overs",
+        "16 box jump overs",
+        "16 step-overs",
+        "12 step-overs",
+        "10 step-ups"
+       ],
+       [
+        "Burpees",
+        "10 over stanga",
+        "10",
+        "8",
+        "8",
+        "6 step-back"
+       ]
+      ],
+      "score": "Tid. Gjentas i uke 4, så noter tiden."
+     },
+     "D": [
+      "3 supersett: 15 triceps pushdown med strikk + 15 DB sidehev"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Lørdagsminuttet",
+     "dur": "Valgfri",
+     "optional": true,
+     "A": [
+      "5 minutter rolig på valgfri maskin",
+      "2 runder: 10 luftknebøy, 10 push-ups, 10 gående utfall, 10 lette KB-sving"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "40:00 EMOM · 10 runder · partnervariant mulig",
+      "timer": {
+       "t": "emom",
+       "m": 40
+      },
+      "rows": [
+       [
+        "1: BikeErg",
+        "18/14 kal",
+        "16/12 kal",
+        "14/10 kal",
+        "12/9 kal",
+        "10/7 kal"
+       ],
+       [
+        "2: KB-sving",
+        "15 (24/16 kg)",
+        "15 (20/12 kg)",
+        "12 (16/12 kg)",
+        "12 (12/8 kg)",
+        "10 russisk (12/8 kg)"
+       ],
+       [
+        "3: Ro",
+        "15/12 kal",
+        "13/10 kal",
+        "11/9 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "4: Gående utfall",
+        "16 m/2 DB (22,5/15 kg)",
+        "16 m/2 DB (15/10 kg)",
+        "16 m/2 DB (10/7,5 kg)",
+        "16 kroppsvekt",
+        "12 kroppsvekt"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 40). Du skal kunne snakke i korte setninger."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, brystrygg og ankler"
+     ]
+    }
+   ],
+   "home": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "Stuegulvet-minuttet",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 knebøy med 5 s ned"
+     ],
+     "B": {
+      "t": "Knebøy",
+      "l": [
+       "4×12 knebøy med 3 s ned, 60 s hvile",
+       "Grunnmur: knebøy ned til stol, 4×10",
+       "Med vekt: goblet squat, samme reps"
+      ]
+     },
+     "C": {
+      "fmt": "20:00 EMOM · 5 runder · stille",
+      "timer": {
+       "t": "emom",
+       "m": 20
+      },
+      "rows": [
+       [
+        "1: Luftknebøy",
+        "25",
+        "22",
+        "18",
+        "15",
+        "12"
+       ],
+       [
+        "2: Push-ups",
+        "15",
+        "12",
+        "10",
+        "8 på knær",
+        "8 mot benk"
+       ],
+       [
+        "3: Utfall bakover",
+        "24",
+        "20",
+        "16",
+        "14",
+        "12"
+       ],
+       [
+        "4: Planke",
+        "45 s",
+        "40 s",
+        "30 s",
+        "25 s",
+        "20 s"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 20). 15–20 sekunder hvile hvert minutt."
+     },
+     "D": [
+      "3 sett: 15 seteløft + 30 s sideplanke per side"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Døra ut",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "200 m rolig løp"
+     ],
+     "B": {
+      "t": "Push-ups",
+      "l": [
+       "4 sett med 3 s ned, maks minus 3 reps, 90 s hvile",
+       "Grunnmur: push-ups mot benk, 4×8",
+       "Med vekt: gulvpress med manualer, 4×10"
+      ]
+     },
+     "C": {
+      "fmt": "4 runder · 1:00 hvile mellom rundene",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "Knebøyhopp",
+        "15",
+        "12",
+        "10",
+        "8",
+        "12 luftknebøy"
+       ],
+       [
+        "Burpees",
+        "10",
+        "8",
+        "8",
+        "6",
+        "6 step-back"
+       ]
+      ],
+      "score": "Total tid inkludert hvile. Gjentas i uke 4."
+     },
+     "D": [
+      "3 sett dips på stol, stopp med 1 rep igjen i tanken"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Tre på rad",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×20 s hollow hold"
+     ],
+     "B": {
+      "t": "Bordroing",
+      "l": [
+       "4×10 bordroing, 60 s hvile",
+       "Grunnmur: bordroing med bøyde knær, 4×8",
+       "Med vekt: foroverbøyd roing med manualer, 4×12"
+      ]
+     },
+     "C": {
+      "fmt": "AMRAP 12",
+      "timer": {
+       "t": "amrap",
+       "m": 12
+      },
+      "rows": [
+       [
+        "Mage",
+        "12 V-ups",
+        "10 V-ups",
+        "8 V-ups",
+        "10 tuck-ups",
+        "10 liggende knehev"
+       ],
+       [
+        "Knebøyhopp",
+        "15",
+        "12",
+        "10",
+        "8",
+        "12 luftknebøy"
+       ],
+       [
+        "Mountain climbers",
+        "30",
+        "30",
+        "24",
+        "20",
+        "16"
+       ]
+      ],
+      "score": "Runder + reps. Mål nivå 4: 6+ runder."
+     },
+     "D": [
+      "3 sett: 10 supermann + 20 s hollow hold"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Motoren Hjemme 1",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "30 jumping jacks"
+     ],
+     "B": {
+      "t": "Seteløft på ett bein",
+      "l": [
+       "4×12 per side, 45 s hvile",
+       "Grunnmur: seteløft på to bein, 4×15",
+       "Med vekt: markløft med kettlebell eller manualer, 4×12"
+      ]
+     },
+     "C": {
+      "fmt": "5 runder · start hver 3:00",
+      "timer": {
+       "t": "every",
+       "each": 180,
+       "rounds": 5
+      },
+      "rows": [
+       [
+        "Burpees",
+        "10",
+        "9",
+        "8",
+        "6",
+        "5 step-back"
+       ],
+       [
+        "Jumping jacks",
+        "40",
+        "35",
+        "30",
+        "25",
+        "20"
+       ],
+       [
+        "Luftknebøy til 2:00",
+        "Maks",
+        "Maks",
+        "Maks",
+        "Maks",
+        "Maks"
+       ]
+      ],
+      "score": "Totalt antall knebøy. Like mange i runde 5 som i runde 1."
+     },
+     "D": [
+      "3 sett: 30 s wall sit + 20 tåhev"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "Fredagsbunken Hjemme",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 pike push-ups"
+     ],
+     "B": {
+      "t": "Skulder og mage",
+      "l": [
+       "4 supersett, 60 s hvile: 6–8 pike push-ups + 20 s hollow hold",
+       "Grunnmur: 16 skuldertapp i planke + 15 s hollow hold med bøyde knær",
+       "Med vekt: stående skulderpress, 4×10"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 15:00",
+      "timer": {
+       "t": "up",
+       "cap": 15
+      },
+      "rows": [
+       [
+        "Luftknebøy",
+        "50",
+        "40",
+        "35",
+        "30",
+        "20"
+       ],
+       [
+        "Utfall bakover",
+        "40",
+        "32",
+        "28",
+        "24",
+        "20"
+       ],
+       [
+        "Push-ups",
+        "30",
+        "25",
+        "20",
+        "15 på knær",
+        "12 mot benk"
+       ],
+       [
+        "Burpees",
+        "20",
+        "16",
+        "14",
+        "12",
+        "10 step-back"
+       ],
+       [
+        "Mountain climbers",
+        "60",
+        "50",
+        "40",
+        "30",
+        "30"
+       ]
+      ],
+      "score": "Tid. Gjentas i uke 4, så noter tiden."
+     },
+     "D": [
+      "3 supersett: 12 dips på stol + 10 supermann"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Lørdagsminuttet Hjemme",
+     "dur": "Valgfri",
+     "optional": true,
+     "A": [
+      "Standard oppvarming, 4 minutter"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "30:00 EMOM · 6 runder · partnervariant mulig",
+      "timer": {
+       "t": "emom",
+       "m": 30
+      },
+      "rows": [
+       [
+        "1: Burpees",
+        "10",
+        "8",
+        "7",
+        "6",
+        "5 step-back"
+       ],
+       [
+        "2: Luftknebøy",
+        "25",
+        "22",
+        "18",
+        "15",
+        "12"
+       ],
+       [
+        "3: Mountain climbers",
+        "40",
+        "36",
+        "30",
+        "24",
+        "20"
+       ],
+       [
+        "4: Push-ups",
+        "15",
+        "12",
+        "10",
+        "8 på knær",
+        "8 mot benk"
+       ],
+       [
+        "5: Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile"
+       ]
+      ],
+      "score": "Fullførte arbeidsminutter (maks 24)."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, brystrygg og ankler"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Bygg",
+   "intro": "Mer volum. Hold nivået fra uke 1 hvis det satt, gå opp der det føltes lett.",
+   "gym": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "Tre-minutteren",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ski, 10 luftknebøy, 10 ring rows, 10 PVC pass-throughs",
+      "2×5 knebøy med tom stang, 3 s ned"
+     ],
+     "B": {
+      "t": "Knebøy",
+      "l": [
+       "Hver 2:30 × 5 sett: 4 reps @ 70 % (RPE 7)",
+       "Grunnmur: goblet squat 5×8, litt tyngre enn uke 1"
+      ]
+     },
+     "C": {
+      "fmt": "21:00 EMOM · 7 runder",
+      "timer": {
+       "t": "emom",
+       "m": 21
+      },
+      "rows": [
+       [
+        "1: Ski",
+        "14/11 kal",
+        "12/10 kal",
+        "10/8 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "2: DB thrusters, 2 DB",
+        "10 (22,5/15 kg)",
+        "10 (17,5/12,5 kg)",
+        "10 (12,5/10 kg)",
+        "8 (10/7,5 kg)",
+        "8 goblet squats (8/6 kg)"
+       ],
+       [
+        "3: Trekk",
+        "10 pull-ups",
+        "8 pull-ups",
+        "8 pull-ups med strikk",
+        "10 ring rows",
+        "8 ring rows"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 21). Thrusterne skal gå ubrutt."
+     },
+     "D": [
+      "3 sett: 8 bulgarske utfall per side med DB"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Løpebeina 2",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m rolig løp, 10 push-ups, 10 band pull-aparts, 10 lette goblet squats",
+      "2×10 benkpress med tom stang"
+     ],
+     "B": {
+      "t": "Benkpress + strict pull-ups",
+      "l": [
+       "4 supersett, 90 s hvile: 6 benkpress @ 67,5 % + strict pull-ups, maks minus 2",
+       "Grunnmur: DB-benkpress 4×10, litt tyngre enn uke 1 + ring rows 4×8"
+      ]
+     },
+     "C": {
+      "fmt": "5 runder · 1:00 hvile mellom · Grunnmur gjør 4",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "Goblet squats",
+        "12 (24/16 kg)",
+        "12 (20/12 kg)",
+        "12 (16/12 kg)",
+        "10 (12/8 kg)",
+        "10 (8/6 kg)"
+       ],
+       [
+        "Box",
+        "10 step-overs med 2 DB (22,5/15 kg, 60/50 cm)",
+        "10 step-overs med 2 DB (15/10 kg, 60/50 cm)",
+        "10 step-overs med 2 DB (10/7,5 kg, 50/40 cm)",
+        "10 step-ups (50/40 cm)",
+        "8 step-ups (40 cm)"
+       ]
+      ],
+      "score": "Total tid inkludert hvile. Hold samme løpetid alle rundene."
+     },
+     "D": [
+      "3 supersett: 12 DB hammercurls + 12 DB skull crushers"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Stigen",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ski, 10 PVC pass-throughs, 10 luftknebøy, 5 inchworms",
+      "Tom stang, 5 av hver: markløft til kne, hang pull, høy pull, muscle clean, frontknebøy"
+     ],
+     "B": {
+      "t": "Hang power clean",
+      "l": [
+       "EMOM 10: 2 reps @ 67,5 % av power clean",
+       "Grunnmur: EMOM 10: 5 DB hang cleans, litt tyngre enn uke 1"
+      ]
+     },
+     "C": {
+      "fmt": "AMRAP 12 · trinn 3, 6, 9, 12 …",
+      "timer": {
+       "t": "amrap",
+       "m": 12
+      },
+      "rows": [
+       [
+        "Hang power clean",
+        "50/35 kg",
+        "43/30 kg",
+        "35/25 kg",
+        "25/20 kg",
+        "DB hang clean (12,5/7,5 kg)"
+       ],
+       [
+        "Mage",
+        "Toes-to-bar",
+        "Toes-to-bar eller knees-to-elbows",
+        "Hengende knehev",
+        "Hengende knehev",
+        "Liggende knehev"
+       ]
+      ],
+      "score": "Siste fullførte trinn + reps. Gjør trinnets antall av begge bevegelsene. Mål nivå 4: trinn 15."
+     },
+     "D": [
+      "3 sett: 30 s sideplanke per side + 10 Pallof press per side"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Motoren 2",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ro, 10 glute bridges, 10 good mornings med tom stang, 5 world’s greatest stretch per side",
+      "2×5 markløft med lett vekt"
+     ],
+     "B": {
+      "t": "Markløft",
+      "l": [
+       "Hver 2:30 × 4 sett: 5 reps @ 72,5 % (RPE 7)",
+       "Grunnmur: KB-markløft 4×10, litt tyngre enn uke 1"
+      ]
+     },
+     "C": {
+      "fmt": "5 runder · start hver 4:00",
+      "timer": {
+       "t": "every",
+       "each": 240,
+       "rounds": 5
+      },
+      "rows": [
+       [
+        "Ski",
+        "12/10 kal",
+        "10/8 kal",
+        "9/7 kal",
+        "8/6 kal",
+        "6/5 kal"
+       ],
+       [
+        "BikeErg",
+        "12/10 kal",
+        "10/8 kal",
+        "9/7 kal",
+        "8/6 kal",
+        "6/5 kal"
+       ],
+       [
+        "Ro til 3:00",
+        "Maks kal",
+        "Maks kal",
+        "Maks kal",
+        "Maks kal",
+        "Maks kal"
+       ]
+      ],
+      "score": "Totale ro-kalorier. Raske bytter mellom maskinene."
+     },
+     "D": [
+      "3 sett: 10 ettbeins rumensk markløft per side med KB + 12 rygghev"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "21-15-9",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m løp, 10 PVC pass-throughs, 10 scap push-ups, 5 thorakalrotasjoner per side",
+      "2×10 strict press med tom stang"
+     ],
+     "B": {
+      "t": "Strict press + DB-roing",
+      "l": [
+       "4 supersett, 90 s hvile: 6 strict press @ 67,5 % + 10 DB-roing per side",
+       "Grunnmur: sittende DB-skulderpress 4×10 + DB-roing 4×10 per side, litt tyngre enn uke 1"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 14:00 · løp etter hver runde",
+      "timer": {
+       "t": "up",
+       "cap": 14
+      },
+      "rows": [
+       [
+        "Repskjema",
+        "21-15-9",
+        "21-15-9",
+        "21-15-9",
+        "15-12-9",
+        "15-12-9"
+       ],
+       [
+        "KB-sving",
+        "Amerikansk (24/16 kg)",
+        "Amerikansk (20/12 kg)",
+        "Russisk (16/12 kg)",
+        "Russisk (12/8 kg)",
+        "KB-markløft (12/8 kg)"
+       ],
+       [
+        "Push-ups",
+        "Hand-release",
+        "Vanlige",
+        "Vanlige, skaler til boks",
+        "På boks",
+        "Mot benk"
+       ],
+       [
+        "Løp etter hver runde",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m",
+        "200 m"
+       ]
+      ],
+      "score": "Tid."
+     },
+     "D": [
+      "3 supersett: 12 DB sidehev + 15 face pulls med strikk"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Lørdagsminuttet 2",
+     "dur": "Valgfri",
+     "optional": true,
+     "A": [
+      "5 minutter rolig på valgfri maskin",
+      "2 runder: 10 luftknebøy, 10 push-ups, 10 gående utfall, 5 lette wallballs"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "40:00 EMOM · 8 runder · partnervariant mulig",
+      "timer": {
+       "t": "emom",
+       "m": 40
+      },
+      "rows": [
+       [
+        "1: BikeErg",
+        "16/12 kal",
+        "14/10 kal",
+        "12/9 kal",
+        "10/8 kal",
+        "8/6 kal"
+       ],
+       [
+        "2: Wallballs",
+        "15 (9/6 kg)",
+        "12 (9/6 kg)",
+        "12 (6/4 kg)",
+        "10 (6/4 kg)",
+        "10 (4/3 kg)"
+       ],
+       [
+        "3: Ro",
+        "15/12 kal",
+        "13/10 kal",
+        "11/9 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "4: Farmers carry",
+        "40 m (2×32/24 kg KB)",
+        "40 m (2×24/16 kg)",
+        "40 m (2×20/12 kg)",
+        "40 m (2×16/12 kg)",
+        "30 m (2×12/8 kg)"
+       ],
+       [
+        "5: Hvile",
+        "30 s planke",
+        "30 s planke",
+        "30 s planke",
+        "30 s planke",
+        "20 s planke"
+       ]
+      ],
+      "score": "Fullførte arbeidsminutter (maks 32). Jevnt og kontrollert, ikke et sprintløp."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, brystrygg og ankler"
+     ]
+    }
+   ],
+   "home": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "Trappa opp",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 splittknebøy per side"
+     ],
+     "B": {
+      "t": "Bulgarsk utfall",
+      "l": [
+       "4×8 per side med bakre fot på stol og 3 s ned, 60 s hvile",
+       "Grunnmur: splittknebøy med bakre fot i gulvet, 4×8 per side",
+       "Med vekt: hold kettlebell eller manualer"
+      ]
+     },
+     "C": {
+      "fmt": "21:00 EMOM · 7 runder",
+      "timer": {
+       "t": "emom",
+       "m": 21
+      },
+      "rows": [
+       [
+        "1: Step-ups, vekslende bein",
+        "20 på stol",
+        "20 på stol",
+        "16 på stol",
+        "16 på trappetrinn",
+        "12 på trappetrinn"
+       ],
+       [
+        "2: Push-ups",
+        "15",
+        "12",
+        "10",
+        "8 på knær",
+        "8 mot benk"
+       ],
+       [
+        "3: Knebøyhopp",
+        "15",
+        "12",
+        "10",
+        "8",
+        "12 luftknebøy"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 21)."
+     },
+     "D": [
+      "3 sett: 40 s wall sit"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Døra ut 2",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "200 m rolig løp"
+     ],
+     "B": {
+      "t": "Push-ups med pause",
+      "l": [
+       "5 sett med 3 s ned og 1 s pause nede, maks minus 3 reps, 90 s hvile",
+       "Grunnmur: push-ups på knær, 5×6",
+       "Med vekt: gulvpress med manualer, 5×8, tyngre enn uke 1"
+      ]
+     },
+     "C": {
+      "fmt": "5 runder · 1:00 hvile mellom · Grunnmur gjør 4",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "300 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "Utfall bakover, vekslende",
+        "20",
+        "16",
+        "14",
+        "12",
+        "10"
+       ],
+       [
+        "Burpees",
+        "12",
+        "10",
+        "8",
+        "6",
+        "5 step-back"
+       ]
+      ],
+      "score": "Total tid inkludert hvile. Samme løpetid hver runde."
+     },
+     "D": [
+      "3 sett dips på stol, stopp med 1 rep igjen i tanken"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Stigen Hjemme",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×20 s hollow hold"
+     ],
+     "B": {
+      "t": "Bordroing med hold",
+      "l": [
+       "4×12 bordroing med 2 s hold på toppen, 60 s hvile",
+       "Grunnmur: bordroing med bøyde knær, 4×10",
+       "Med vekt: foroverbøyd roing med manualer, 4×12 med 2 s hold"
+      ]
+     },
+     "C": {
+      "fmt": "AMRAP 12 · trinn 3, 6, 9, 12 …",
+      "timer": {
+       "t": "amrap",
+       "m": 12
+      },
+      "rows": [
+       [
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Step-back burpees"
+       ],
+       [
+        "Mage",
+        "V-ups",
+        "V-ups",
+        "Tuck-ups",
+        "Sit-ups",
+        "Liggende knehev"
+       ]
+      ],
+      "score": "Siste fullførte trinn + reps. Mål nivå 4: fullføre trinnet med 18."
+     },
+     "D": [
+      "3 sett: 30 s sideplanke per side"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Motoren Hjemme 2",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "30 jumping jacks"
+     ],
+     "B": {
+      "t": "Rumensk markløft på ett bein",
+      "l": [
+       "4×10 per side med 3 s ned, 45 s hvile",
+       "Grunnmur: samme bevegelse med hånden mot en vegg for balanse",
+       "Med vekt: kettlebell eller manual i motsatt hånd av ståbeinet"
+      ]
+     },
+     "C": {
+      "fmt": "18:00 EMOM · 6 runder",
+      "timer": {
+       "t": "emom",
+       "m": 18
+      },
+      "rows": [
+       [
+        "1: Burpee lengdehopp",
+        "8",
+        "7",
+        "6",
+        "5",
+        "5 step-back burpees"
+       ],
+       [
+        "2: Mountain climbers",
+        "40",
+        "36",
+        "30",
+        "24",
+        "20"
+       ],
+       [
+        "3: Skøyteløperhopp",
+        "30",
+        "24",
+        "20",
+        "16",
+        "16 sidesteg-utfall"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 18)."
+     },
+     "D": [
+      "3 sett: 20 tåhev + 30 s wall sit"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "21-15-9 Hjemme",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 pike push-ups"
+     ],
+     "B": {
+      "t": "Skulder og mage",
+      "l": [
+       "4 supersett, 60 s hvile: 8–10 pike push-ups + 30 s hollow hold",
+       "Grunnmur: 20 skuldertapp i planke + 20 s hollow hold med bøyde knær",
+       "Med vekt: stående skulderpress, 4×10, tyngre enn uke 1"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 14:00 · løp etter hver runde",
+      "timer": {
+       "t": "up",
+       "cap": 14
+      },
+      "rows": [
+       [
+        "Repskjema",
+        "21-15-9",
+        "21-15-9",
+        "21-15-9",
+        "15-12-9",
+        "15-12-9"
+       ],
+       [
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Step-back burpees"
+       ],
+       [
+        "Knebøy",
+        "Knebøyhopp",
+        "Knebøyhopp",
+        "Luftknebøy",
+        "Luftknebøy",
+        "Luftknebøy"
+       ],
+       [
+        "Mage",
+        "V-ups",
+        "Sit-ups",
+        "Sit-ups",
+        "Sit-ups",
+        "Liggende knehev"
+       ],
+       [
+        "Løp etter hver runde",
+        "200 m",
+        "200 m",
+        "200 m",
+        "200 m",
+        "200 m gå"
+       ]
+      ],
+      "score": "Tid."
+     },
+     "D": [
+      "3 sett: 12 dips på stol"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Lørdagsminuttet Hjemme 2",
+     "dur": "Valgfri",
+     "optional": true,
+     "A": [
+      "Standard oppvarming, 4 minutter"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "36:00 EMOM · 9 runder · partnervariant mulig",
+      "timer": {
+       "t": "emom",
+       "m": 36
+      },
+      "rows": [
+       [
+        "1: Knebøyhopp",
+        "15",
+        "12",
+        "10",
+        "8",
+        "12 luftknebøy"
+       ],
+       [
+        "2: Push-ups",
+        "15",
+        "12",
+        "10",
+        "8 på knær",
+        "8 mot benk"
+       ],
+       [
+        "3: Høye kneløft, tell hvert bein",
+        "60",
+        "50",
+        "40",
+        "30",
+        "30"
+       ],
+       [
+        "4: Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile"
+       ]
+      ],
+      "score": "Fullførte arbeidsminutter (maks 27)."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, brystrygg og ankler"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Topp",
+   "intro": "Tyngste uka. Sov og spis godt.",
+   "gym": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "Dobbelminuttet",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ro, 10 luftknebøy, 10 utfall bakover, 10 PVC pass-throughs, 10 scap pull-ups",
+      "Knebøy: tom stang × 5, deretter 3 oppvarmingssett opp mot arbeidsvekt"
+     ],
+     "B": {
+      "t": "Knebøy",
+      "l": [
+       "Hver 3:00 × 4 sett: 3 reps @ 77,5 % (RPE 8)",
+       "Grunnmur: goblet squat 4×6 tungt, 3 s pause i bunn"
+      ]
+     },
+     "C": {
+      "fmt": "Start hvert 2. minutt · 8 runder (16 min)",
+      "timer": {
+       "t": "every",
+       "each": 120,
+       "rounds": 8
+      },
+      "rows": [
+       [
+        "Ro",
+        "14/11 kal",
+        "12/10 kal",
+        "10/8 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "Mage",
+        "8 toes-to-bar",
+        "6 toes-to-bar",
+        "8 hengende knehev",
+        "6 hengende knehev",
+        "8 liggende knehev"
+       ],
+       [
+        "Burpees",
+        "8 over stanga",
+        "6 over stanga",
+        "6",
+        "5",
+        "5 step-back"
+       ]
+      ],
+      "score": "Tiden på den tregeste runden. Mål: under 1:40 hver runde."
+     },
+     "D": [
+      "3 sett: 12 DB rumensk markløft + 30 s dead hang"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Løpebeina 3",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m rolig løp, 10 push-ups, 10 band pull-aparts, 10 gående utfall",
+      "Benkpress: tom stang × 10, deretter 3 oppvarmingssett"
+     ],
+     "B": {
+      "t": "Benkpress + strict pull-ups",
+      "l": [
+       "5 supersett, 2:00 hvile: 4 benkpress @ 75 % + 3–5 strict pull-ups (nivå 4: med vekt)",
+       "Grunnmur: DB-benkpress 5×6 tungt + ring rows 5×8"
+      ]
+     },
+     "C": {
+      "fmt": "3 runder · 2:00 hvile mellom rundene",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m gå/jogg"
+       ],
+       [
+        "Gående utfall",
+        "20 med 2 DB i front rack (22,5/15 kg)",
+        "20 med 2 DB (15/10 kg)",
+        "20 med 2 DB (10/7,5 kg)",
+        "20 kroppsvekt",
+        "16 kroppsvekt"
+       ],
+       [
+        "KB-sving",
+        "15 amerikansk (24/16 kg)",
+        "15 amerikansk (20/12 kg)",
+        "15 russisk (16/12 kg)",
+        "12 russisk (12/8 kg)",
+        "10 KB-markløft (12/8 kg)"
+       ],
+       [
+        "Box",
+        "10 box jumps (60/50 cm)",
+        "10 box jumps (60/50 cm)",
+        "10 box jumps (50/40 cm)",
+        "10 step-ups (50/40 cm)",
+        "8 step-ups (40 cm)"
+       ]
+      ],
+      "score": "Total tid inkludert hvile."
+     },
+     "D": [
+      "3 supersett: 10 push-ups med smalt grep + 12 DB curls"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Sju og sju",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ski, 10 PVC pass-throughs, 10 luftknebøy, 5 inchworms",
+      "Tom stang, 5 av hver: markløft til kne, hang pull, høy pull, muscle clean, frontknebøy"
+     ],
+     "B": {
+      "t": "Hang power clean",
+      "l": [
+       "EMOM 10: 2 reps @ 72,5 % av power clean",
+       "Grunnmur: EMOM 10: 5 DB hang cleans, tyngste så langt"
+      ]
+     },
+     "C": {
+      "fmt": "To AMRAP 7 · 2:00 hvile mellom",
+      "timer": {
+       "t": "up",
+       "cap": 16
+      },
+      "rows": [
+       [
+        "Del 1: Hang power clean",
+        "6 (60/40 kg)",
+        "6 (50/35 kg)",
+        "6 (40/30 kg)",
+        "6 (30/20 kg)",
+        "6 DB hang cleans (12,5/7,5 kg)"
+       ],
+       [
+        "Del 1: Trekk",
+        "9 pull-ups",
+        "9 pull-ups",
+        "9 pull-ups med strikk",
+        "9 ring rows",
+        "9 ring rows"
+       ],
+       [
+        "Del 2: Ski",
+        "10/8 kal",
+        "9/7 kal",
+        "8/6 kal",
+        "7/5 kal",
+        "6/4 kal"
+       ],
+       [
+        "Del 2: Wallballs",
+        "15 (9/6 kg)",
+        "12 (9/6 kg)",
+        "12 (6/4 kg)",
+        "10 (6/4 kg)",
+        "10 (4/3 kg)"
+       ]
+      ],
+      "score": "Runder + reps per del. Del 1: 0:00–7:00. Hvile til 9:00. Del 2: 9:00–16:00."
+     },
+     "D": [
+      "3 sett: 10 V-ups + 20 s hollow hold"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Motoren 3",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m BikeErg, 10 glute bridges, 10 good mornings med tom stang, 5 world’s greatest stretch per side",
+      "Markløft: 3 oppvarmingssett opp mot arbeidsvekt"
+     ],
+     "B": {
+      "t": "Markløft",
+      "l": [
+       "Hver 3:00 × 4 sett: 3 reps @ 80 % (RPE 8)",
+       "Grunnmur: KB-markløft 4×8, tyngste så langt"
+      ]
+     },
+     "C": {
+      "fmt": "6 runder · 3:00 arbeid, 1:00 hvile",
+      "timer": {
+       "t": "every",
+       "each": 240,
+       "rounds": 6
+      },
+      "rows": [
+       [
+        "Ro, runde 1, 3 og 5",
+        "800/700 m",
+        "750/650 m",
+        "700/600 m",
+        "650/550 m",
+        "550/450 m"
+       ],
+       [
+        "BikeErg, runde 2, 4 og 6",
+        "1600/1350 m",
+        "1500/1250 m",
+        "1400/1150 m",
+        "1250/1050 m",
+        "1050/900 m"
+       ]
+      ],
+      "score": "Total meter. Siste runde skal være like god som første."
+     },
+     "D": [
+      "3 sett: 12 hip thrust med stang + 12 rygghev"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "Fredagsbunken 2",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m løp, 10 PVC pass-throughs, 10 scap push-ups, 5 thorakalrotasjoner per side",
+      "Strict press: tom stang × 10, deretter 3 oppvarmingssett"
+     ],
+     "B": {
+      "t": "Strict press + DB-roing",
+      "l": [
+       "5 supersett, 2:00 hvile: 4 strict press @ 75 % + 8 tunge DB-roing per side",
+       "Grunnmur: sittende DB-skulderpress 5×6 + DB-roing 5×8 per side"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 20:00",
+      "timer": {
+       "t": "up",
+       "cap": 20
+      },
+      "rows": [
+       [
+        "Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m"
+       ],
+       [
+        "Wallballs",
+        "50 (9/6 kg)",
+        "40 (9/6 kg)",
+        "35 (6/4 kg)",
+        "30 (6/4 kg)",
+        "20 (4/3 kg)"
+       ],
+       [
+        "KB-sving",
+        "40 amerikansk (24/16 kg)",
+        "30 amerikansk (20/12 kg)",
+        "25 russisk (16/12 kg)",
+        "20 russisk (12/8 kg)",
+        "16 KB-markløft (12/8 kg)"
+       ],
+       [
+        "Box",
+        "30 box jump overs (60/50 cm)",
+        "24 box jump overs (60/50 cm)",
+        "20 step-overs (50/40 cm)",
+        "16 step-overs (50/40 cm)",
+        "12 step-ups (40 cm)"
+       ],
+       [
+        "DB snatch, vekslende",
+        "20 (22,5/15 kg)",
+        "16 (22,5/15 kg)",
+        "16 (15/10 kg)",
+        "14 (10/7,5 kg)",
+        "10 DB push press (7,5/5 kg)"
+       ],
+       [
+        "Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m"
+       ]
+      ],
+      "score": "Tid. Mål nivå 4: under 18:00."
+     },
+     "D": [
+      "3 supersett: 12 DB sidehev + 15 triceps pushdown med strikk"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Lørdagsminuttet 3",
+     "dur": "Valgfri",
+     "optional": true,
+     "A": [
+      "5 minutter rolig på valgfri maskin",
+      "2 runder: 10 luftknebøy, 5 burpees, 10 gående utfall, 5 lengdehopp"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "42:00 EMOM · 7 runder · partnervariant mulig",
+      "timer": {
+       "t": "emom",
+       "m": 42
+      },
+      "rows": [
+       [
+        "1: Ro",
+        "15/12 kal",
+        "13/10 kal",
+        "11/9 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "2: Burpee lengdehopp",
+        "8",
+        "7",
+        "6",
+        "5",
+        "6 step-back burpees"
+       ],
+       [
+        "3: BikeErg",
+        "18/14 kal",
+        "16/12 kal",
+        "14/10 kal",
+        "12/9 kal",
+        "10/7 kal"
+       ],
+       [
+        "4: Gående utfall",
+        "16 m/2 DB (22,5/15 kg)",
+        "16 m/2 DB (15/10 kg)",
+        "16 m/2 DB (10/7,5 kg)",
+        "16 kroppsvekt",
+        "12 kroppsvekt"
+       ],
+       [
+        "5: Ski",
+        "14/11 kal",
+        "12/10 kal",
+        "10/8 kal",
+        "9/7 kal",
+        "7/5 kal"
+       ],
+       [
+        "6: Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile"
+       ]
+      ],
+      "score": "Fullførte arbeidsminutter (maks 35). Jevnt racetempo gjennom hele økta."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, brystrygg og ankler"
+     ]
+    }
+   ],
+   "home": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "Dobbelminuttet Hjemme",
+     "dur": "30–35 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 splittknebøy per side"
+     ],
+     "B": {
+      "t": "Bulgarsk utfall med pause",
+      "l": [
+       "5×10 per side med 2 s pause nede, 75 s hvile",
+       "Grunnmur: splittknebøy med bakre fot i gulvet, 5×10 per side",
+       "Med vekt: hold kettlebell eller manualer, tyngre enn uke 2"
+      ]
+     },
+     "C": {
+      "fmt": "Start hvert 2. minutt · 8 runder (16 min)",
+      "timer": {
+       "t": "every",
+       "each": 120,
+       "rounds": 8
+      },
+      "rows": [
+       [
+        "Burpees",
+        "12",
+        "10",
+        "8",
+        "7",
+        "6 step-back"
+       ],
+       [
+        "Knebøyhopp",
+        "20",
+        "16",
+        "14",
+        "12",
+        "15 luftknebøy"
+       ]
+      ],
+      "score": "Tiden på den tregeste runden. Mål: under 1:40 hver runde."
+     },
+     "D": [
+      "3 sett: 30 s hollow hold"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Døra ut 3",
+     "dur": "30–35 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "200 m rolig løp"
+     ],
+     "B": {
+      "t": "Push-ups med føttene på stol",
+      "l": [
+       "5×6–10 med føttene på stol, 2:00 hvile. Klarer du ikke 6, tar du vanlige push-ups med pause nede.",
+       "Grunnmur: push-ups på knær, 5×8",
+       "Med vekt: gulvpress med manualer, 5×6 tungt"
+      ]
+     },
+     "C": {
+      "fmt": "3 runder · 2:00 hvile mellom rundene",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m gå/jogg"
+       ],
+       [
+        "Utfall bakover, vekslende",
+        "30",
+        "24",
+        "20",
+        "16",
+        "12"
+       ],
+       [
+        "Push-ups",
+        "20",
+        "16",
+        "14",
+        "12 på knær",
+        "10 mot benk"
+       ],
+       [
+        "Burpees",
+        "15",
+        "12",
+        "10",
+        "8",
+        "8 step-back"
+       ]
+      ],
+      "score": "Total tid inkludert hvile."
+     },
+     "D": [
+      "3 sett dips på stol, stopp med 1 rep igjen i tanken"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Sju og sju Hjemme",
+     "dur": "30–35 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×20 s hollow hold"
+     ],
+     "B": {
+      "t": "Bordroing, strake bein",
+      "l": [
+       "5×8 bordroing med strake bein og 3 s ned, 75 s hvile",
+       "Grunnmur: bordroing med bøyde knær, 5×8",
+       "Med vekt: foroverbøyd roing med manualer, 5×10 tungt, 3 s ned"
+      ]
+     },
+     "C": {
+      "fmt": "To AMRAP 7 · 2:00 hvile mellom",
+      "timer": {
+       "t": "up",
+       "cap": 16
+      },
+      "rows": [
+       [
+        "Del 1: Burpees",
+        "10",
+        "8",
+        "8",
+        "6",
+        "6 step-back"
+       ],
+       [
+        "Del 1: Mage",
+        "15 V-ups",
+        "12 V-ups",
+        "12 tuck-ups",
+        "15 sit-ups",
+        "10 liggende knehev"
+       ],
+       [
+        "Del 2: Skøyteløperhopp",
+        "30",
+        "24",
+        "20",
+        "16",
+        "16 sidesteg-utfall"
+       ],
+       [
+        "Del 2: Push-ups",
+        "15",
+        "12",
+        "10",
+        "8 på knær",
+        "8 mot benk"
+       ]
+      ],
+      "score": "Runder + reps per del. Del 1: 0:00–7:00. Hvile til 9:00. Del 2: 9:00–16:00."
+     },
+     "D": [
+      "3 sett: 12 supermann"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Motoren Hjemme 3",
+     "dur": "30–35 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "30 jumping jacks"
+     ],
+     "B": {
+      "t": "Seteløft på ett bein med hold",
+      "l": [
+       "5×12 per side med 2 s hold på toppen, 45 s hvile",
+       "Grunnmur: seteløft på to bein med 2 s hold, 5×15",
+       "Med vekt: kettlebell eller manual på hoften"
+      ]
+     },
+     "C": {
+      "fmt": "5 runder · 2:00 AMRAP og 1:00 hvile",
+      "timer": {
+       "t": "every",
+       "each": 180,
+       "rounds": 5
+      },
+      "rows": [
+       [
+        "Burpees",
+        "5",
+        "5",
+        "4",
+        "4",
+        "3 step-back"
+       ],
+       [
+        "Knebøyhopp",
+        "10",
+        "8",
+        "8",
+        "6",
+        "8 luftknebøy"
+       ],
+       [
+        "Mountain climbers",
+        "20",
+        "20",
+        "16",
+        "12",
+        "12"
+       ]
+      ],
+      "score": "Totalt antall runder. Like mange i runde 5 som i runde 1."
+     },
+     "D": [
+      "3 sett: 20 tåhev"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "Fredagsbunken Hjemme 2",
+     "dur": "30–35 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 pike push-ups"
+     ],
+     "B": {
+      "t": "Skulder og mage",
+      "l": [
+       "5 supersett, 75 s hvile: 6 pike push-ups med føttene på stol + 10 hollow rocks",
+       "Grunnmur: 5 pike push-ups på gulvet + 20 s hollow hold med bøyde knær",
+       "Med vekt: stående skulderpress, 5×8 tungt"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 20:00",
+      "timer": {
+       "t": "up",
+       "cap": 20
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "Luftknebøy",
+        "60",
+        "50",
+        "40",
+        "30",
+        "25"
+       ],
+       [
+        "Utfall bakover, vekslende",
+        "40",
+        "32",
+        "28",
+        "24",
+        "20"
+       ],
+       [
+        "Push-ups",
+        "30",
+        "25",
+        "20",
+        "15 på knær",
+        "12 mot benk"
+       ],
+       [
+        "Burpees",
+        "20",
+        "16",
+        "14",
+        "12",
+        "10 step-back"
+       ],
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ]
+      ],
+      "score": "Tid."
+     },
+     "D": [
+      "3 supersett: 12 dips på stol + 10 supermann"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Lørdagsminuttet Hjemme 3",
+     "dur": "Valgfri",
+     "optional": true,
+     "A": [
+      "Standard oppvarming, 4 minutter"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "40:00 EMOM · 8 runder · partnervariant mulig",
+      "timer": {
+       "t": "emom",
+       "m": 40
+      },
+      "rows": [
+       [
+        "1: Burpee lengdehopp",
+        "8",
+        "7",
+        "6",
+        "5",
+        "5 step-back burpees"
+       ],
+       [
+        "2: Luftknebøy",
+        "25",
+        "22",
+        "18",
+        "15",
+        "12"
+       ],
+       [
+        "3: Planke",
+        "45 s",
+        "40 s",
+        "30 s",
+        "25 s",
+        "20 s"
+       ],
+       [
+        "4: Skøyteløperhopp",
+        "30",
+        "24",
+        "20",
+        "16",
+        "16 sidesteg-utfall"
+       ],
+       [
+        "5: Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile",
+        "Hvile"
+       ]
+      ],
+      "score": "Fullførte arbeidsminutter (maks 32)."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, brystrygg og ankler"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Test",
+   "intro": "Test og logg alt. Resultatene er startpunktet for neste syklus.",
+   "gym": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "FEMTEN",
+     "dur": "40–45 min",
+     "benchmark": true,
+     "A": [
+      "2 runder: 250 m ro, 10 luftknebøy, 10 utfall bakover, 10 PVC pass-throughs, 10 scap pull-ups",
+      "Knebøy: tom stang × 5, deretter 3 oppvarmingssett"
+     ],
+     "B": {
+      "t": "Knebøy 3RM",
+      "l": [
+       "Bygg til en tung 3RM på 15 minutter. Hvil 2–3 minutter mellom de tunge settene.",
+       "Grunnmur: bygg over 4 sett til en tung goblet squat × 8"
+      ]
+     },
+     "C": {
+      "fmt": "AMRAP 15 · benchmark",
+      "timer": {
+       "t": "amrap",
+       "m": 15
+      },
+      "rows": [
+       [
+        "Ro",
+        "12/10 kal",
+        "10/8 kal",
+        "9/7 kal",
+        "8/6 kal",
+        "6/5 kal"
+       ],
+       [
+        "Trekk",
+        "10 pull-ups",
+        "8 pull-ups",
+        "8 pull-ups med strikk",
+        "10 ring rows",
+        "8 ring rows"
+       ],
+       [
+        "Push-ups",
+        "10",
+        "10",
+        "10, skaler til boks",
+        "8 på boks",
+        "8 mot benk"
+       ]
+      ],
+      "score": "Runder + reps. Benchmark som gjentas i hver syklus."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter og brystrygg"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Løpebeina (gjentak)",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m rolig løp, 10 push-ups, 10 band pull-aparts, 10 ring rows",
+      "Benkpress: tom stang × 10, deretter 3 oppvarmingssett"
+     ],
+     "B": {
+      "t": "Benkpress 5RM + pull-up-test",
+      "l": [
+       "Bygg til en tung 5RM på 12 minutter",
+       "Deretter 1 sett med maks strict pull-ups",
+       "Grunnmur: bygg til en tung DB-benkpress × 8 + 1 sett maks ring rows"
+      ]
+     },
+     "C": {
+      "fmt": "4 runder · 1:00 hvile · samme nivå som uke 1",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "KB-sving",
+        "15 amerikansk (24/16 kg)",
+        "15 amerikansk (20/12 kg)",
+        "12 russisk (16/12 kg)",
+        "12 russisk (12/8 kg)",
+        "10 KB-markløft (12/8 kg)"
+       ],
+       [
+        "Box",
+        "12 box jumps (60/50 cm)",
+        "12 box jumps (60/50 cm)",
+        "10 box jumps (50/40 cm)",
+        "10 step-ups (50/40 cm)",
+        "10 step-ups (40 cm)"
+       ]
+      ],
+      "score": "Total tid inkludert hvile. Sammenlign med uke 1."
+     },
+     "D": [
+      "3 sett: 15 face pulls med strikk"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Flyt",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 250 m ski, 10 PVC pass-throughs, 10 luftknebøy, 5 inchworms",
+      "Tom stang, 5 av hver: markløft til kne, hang pull, høy pull, muscle clean, frontknebøy"
+     ],
+     "B": {
+      "t": "Hang power clean, tung singel",
+      "l": [
+       "EMOM 12: 1 rep. Bygg til en tung singel med god teknikk",
+       "Grunnmur: bygg til et tungt DB hang clean-sett × 5"
+      ]
+     },
+     "C": {
+      "fmt": "16:00 EMOM · 4 runder · lett, RPE 6",
+      "timer": {
+       "t": "emom",
+       "m": 16
+      },
+      "rows": [
+       [
+        "1: DB snatch, vekslende",
+        "12 (22,5/15 kg)",
+        "10 (22,5/15 kg)",
+        "10 (15/10 kg)",
+        "10 (10/7,5 kg)",
+        "8 DB push press (7,5/5 kg)"
+       ],
+       [
+        "2: Ski",
+        "12/10 kal",
+        "11/9 kal",
+        "10/8 kal",
+        "8/6 kal",
+        "6/5 kal"
+       ],
+       [
+        "3: Box step-ups",
+        "14 (60/50 cm)",
+        "12 (60/50 cm)",
+        "12 (50/40 cm)",
+        "10 (50/40 cm)",
+        "10 (40 cm)"
+       ],
+       [
+        "4: Planke",
+        "40 s",
+        "40 s",
+        "30 s",
+        "30 s",
+        "20 s"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 16)."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, ankler og skuldre"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Rotesten",
+     "dur": "40–45 min",
+     "benchmark": true,
+     "A": [
+      "2 runder: 250 m BikeErg, 10 glute bridges, 10 good mornings med tom stang, 5 world’s greatest stretch per side",
+      "Markløft: 3 oppvarmingssett"
+     ],
+     "B": {
+      "t": "Markløft 3RM",
+      "l": [
+       "Bygg til en tung 3RM på 15 minutter. Hvil 2–3 minutter mellom de tunge settene.",
+       "Grunnmur: bygg over 4 sett til en tung KB-markløft × 10"
+      ]
+     },
+     "C": {
+      "fmt": "Ro for tid · benchmark",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Ro for tid",
+        "2000 m",
+        "2000 m",
+        "1500 m",
+        "1000 m",
+        "1000 m"
+       ]
+      ],
+      "score": "Tid. Første 500 m 2 sekunder saktere per 500 m enn målfarten. Siste 500 m gir du alt du har."
+     },
+     "D": [
+      "10 minutter rolig sykkel + tøying av hofter og hamstrings"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "Fredagsbunken (gjentak)",
+     "dur": "40–45 min",
+     "A": [
+      "2 runder: 200 m løp, 10 PVC pass-throughs, 10 scap push-ups, 5 thorakalrotasjoner per side",
+      "2×10 strict press med tom stang"
+     ],
+     "B": {
+      "t": "Strict press + DB-roing, avlast",
+      "l": [
+       "3 supersett: 5 strict press @ 60 % + 10 DB-roing per side",
+       "Grunnmur: sittende DB-skulderpress 3×8 + DB-roing 3×10 per side, lett"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 16:00 · samme nivå som uke 1",
+      "timer": {
+       "t": "up",
+       "cap": 16
+      },
+      "rows": [
+       [
+        "Tau",
+        "60 double unders",
+        "45 double unders",
+        "90 single unders",
+        "60 single unders",
+        "50 single unders"
+       ],
+       [
+        "Wallballs",
+        "40 (9/6 kg)",
+        "35 (9/6 kg)",
+        "30 (6/4 kg)",
+        "25 (6/4 kg)",
+        "20 (4/3 kg)"
+       ],
+       [
+        "DB snatch, vekslende",
+        "30 (22,5/15 kg)",
+        "24 (22,5/15 kg)",
+        "20 (15/10 kg)",
+        "20 (12,5/7,5 kg)",
+        "16 DB push press (7,5/5 kg)"
+       ],
+       [
+        "Box",
+        "20 box jump overs",
+        "16 box jump overs",
+        "16 step-overs",
+        "12 step-overs",
+        "10 step-ups"
+       ],
+       [
+        "Burpees",
+        "10 over stanga",
+        "10",
+        "8",
+        "8",
+        "6 step-back"
+       ]
+      ],
+      "score": "Tid. Sammenlign med uke 1."
+     },
+     "D": [
+      "3 supersett: 15 triceps pushdown med strikk + 15 DB sidehev"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Mini-racet",
+     "dur": "Valgfri",
+     "optional": true,
+     "benchmark": true,
+     "A": [
+      "8 minutter: 3 minutter rolig løp, deretter 2 runder med 200 m ski, 5 burpee lengdehopp, 10 wallballs og 200 m ro"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "For tid · tidsgrense 45:00 · benchmark",
+      "timer": {
+       "t": "up",
+       "cap": 45
+      },
+      "rows": [
+       [
+        "1: Løp",
+        "1000 m",
+        "1000 m",
+        "800 m",
+        "600 m",
+        "400 m"
+       ],
+       [
+        "2: Ski",
+        "1000 m",
+        "1000 m",
+        "800 m",
+        "600 m",
+        "400 m"
+       ],
+       [
+        "3: Løp",
+        "1000 m",
+        "1000 m",
+        "800 m",
+        "600 m",
+        "400 m"
+       ],
+       [
+        "4: Burpee lengdehopp",
+        "40",
+        "30",
+        "25",
+        "20",
+        "15 step-back burpees"
+       ],
+       [
+        "5: Løp",
+        "1000 m",
+        "1000 m",
+        "800 m",
+        "600 m",
+        "400 m"
+       ],
+       [
+        "6: Ro",
+        "1000 m",
+        "1000 m",
+        "800 m",
+        "600 m",
+        "400 m"
+       ],
+       [
+        "7: Løp",
+        "1000 m",
+        "1000 m",
+        "800 m",
+        "600 m",
+        "400 m"
+       ],
+       [
+        "8: Wallballs",
+        "75 (9/6 kg)",
+        "60 (9/6 kg)",
+        "50 (6/4 kg)",
+        "40 (6/4 kg)",
+        "30 (4/3 kg)"
+       ]
+      ],
+      "score": "Total tid. Noter tiden på hver løpedel, og hold samme fart på alle fire."
+     },
+     "D": [
+      "10 minutter rolig nedtrapping og mobilitet"
+     ]
+    }
+   ],
+   "home": [
+    {
+     "short": "Man",
+     "day": "Mandag",
+     "name": "FEMTEN Hjemme",
+     "dur": "25–30 min",
+     "benchmark": true,
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×10 luftknebøy i rolig tempo"
+     ],
+     "B": {
+      "t": "Test: maks knebøy på 2:00",
+      "l": [
+       "Maks luftknebøy på 2:00. Hofta under kneet og strake bein på toppen.",
+       "Grunnmur: maks knebøy ned til stol på 2:00",
+       "Hvil 3 minutter før C."
+      ]
+     },
+     "C": {
+      "fmt": "AMRAP 15 · benchmark",
+      "timer": {
+       "t": "amrap",
+       "m": 15
+      },
+      "rows": [
+       [
+        "Burpees",
+        "8",
+        "7",
+        "6",
+        "5",
+        "5 step-back"
+       ],
+       [
+        "Utfall bakover, vekslende",
+        "20",
+        "16",
+        "14",
+        "12",
+        "10"
+       ],
+       [
+        "Sit-ups",
+        "15",
+        "12",
+        "10",
+        "10",
+        "8"
+       ]
+      ],
+      "score": "Runder + reps. Benchmark som gjentas i hver syklus."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter og brystrygg"
+     ]
+    },
+    {
+     "short": "Tir",
+     "day": "Tirsdag",
+     "name": "Døra ut (gjentak)",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "200 m rolig løp"
+     ],
+     "B": {
+      "t": "Test: maks push-ups",
+      "l": [
+       "Ett sett med maks push-ups: brystet i gulvet og strake armer på toppen. Settet er over når formen brekker.",
+       "Grunnmur: maks push-ups mot benk",
+       "Hvil 3 minutter før C."
+      ]
+     },
+     "C": {
+      "fmt": "4 runder · 1:00 hvile · samme nivå som uke 1",
+      "timer": {
+       "t": "up",
+       "cap": 0
+      },
+      "rows": [
+       [
+        "Løp",
+        "400 m",
+        "400 m",
+        "400 m",
+        "300 m",
+        "200 m"
+       ],
+       [
+        "Knebøyhopp",
+        "15",
+        "12",
+        "10",
+        "8",
+        "12 luftknebøy"
+       ],
+       [
+        "Burpees",
+        "10",
+        "8",
+        "8",
+        "6",
+        "6 step-back"
+       ]
+      ],
+      "score": "Total tid inkludert hvile. Sammenlign med uke 1."
+     },
+     "D": [
+      "3 sett: 10 supermann"
+     ]
+    },
+    {
+     "short": "Ons",
+     "day": "Onsdag",
+     "name": "Flyt Hjemme",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter"
+     ],
+     "B": {
+      "t": "Bordroing, lett",
+      "l": [
+       "3×10 bordroing i rolig tempo",
+       "Grunnmur: bordroing med bøyde knær, 3×8",
+       "Med vekt: foroverbøyd roing, 3×10 lett"
+      ]
+     },
+     "C": {
+      "fmt": "16:00 EMOM · 4 runder · lett, RPE 6",
+      "timer": {
+       "t": "emom",
+       "m": 16
+      },
+      "rows": [
+       [
+        "1: Utfall bakover, vekslende",
+        "20",
+        "16",
+        "14",
+        "12",
+        "10"
+       ],
+       [
+        "2: Push-ups",
+        "10",
+        "8",
+        "8",
+        "6 på knær",
+        "6 mot benk"
+       ],
+       [
+        "3: Planke",
+        "40 s",
+        "40 s",
+        "30 s",
+        "30 s",
+        "20 s"
+       ],
+       [
+        "4: Jumping jacks",
+        "40",
+        "35",
+        "30",
+        "25",
+        "30 s marsj på stedet"
+       ]
+      ],
+      "score": "Fullførte minutter (maks 16)."
+     },
+     "D": [
+      "10 minutter mobilitet: hofter, ankler og skuldre"
+     ]
+    },
+    {
+     "short": "Tor",
+     "day": "Torsdag",
+     "name": "Burpeetesten",
+     "dur": "25–30 min",
+     "benchmark": true,
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 rolige burpees"
+     ],
+     "B": {
+      "t": "Seteløft, lett",
+      "l": [
+       "3×12 seteløft på ett bein per side",
+       "Grunnmur: seteløft på to bein, 3×15",
+       "Med vekt: markløft med kettlebell eller manualer, 3×12 lett"
+      ]
+     },
+     "C": {
+      "fmt": "Maks burpees på 7:00 · benchmark",
+      "timer": {
+       "t": "amrap",
+       "m": 7
+      },
+      "rows": [
+       [
+        "Burpeetype",
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Burpees",
+        "Step-back burpees"
+       ]
+      ],
+      "score": "Antall burpees. Start med én burpee hvert 5. sekund, og øk tempoet de siste 2 minuttene."
+     },
+     "D": [
+      "10 minutter rolig gåtur eller tøying"
+     ]
+    },
+    {
+     "short": "Fre",
+     "day": "Fredag",
+     "name": "Fredagsbunken Hjemme (gjentak)",
+     "dur": "25–30 min",
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "2×5 pike push-ups"
+     ],
+     "B": {
+      "t": "Skulder, avlast",
+      "l": [
+       "3×6 pike push-ups i rolig tempo",
+       "Grunnmur: 3×16 skuldertapp i planke",
+       "Med vekt: stående skulderpress, 3×8 lett"
+      ]
+     },
+     "C": {
+      "fmt": "For tid · tidsgrense 15:00 · samme nivå som uke 1",
+      "timer": {
+       "t": "up",
+       "cap": 15
+      },
+      "rows": [
+       [
+        "Luftknebøy",
+        "50",
+        "40",
+        "35",
+        "30",
+        "20"
+       ],
+       [
+        "Utfall bakover",
+        "40",
+        "32",
+        "28",
+        "24",
+        "20"
+       ],
+       [
+        "Push-ups",
+        "30",
+        "25",
+        "20",
+        "15 på knær",
+        "12 mot benk"
+       ],
+       [
+        "Burpees",
+        "20",
+        "16",
+        "14",
+        "12",
+        "10 step-back"
+       ],
+       [
+        "Mountain climbers",
+        "60",
+        "50",
+        "40",
+        "30",
+        "30"
+       ]
+      ],
+      "score": "Tid. Sammenlign med uke 1."
+     },
+     "D": [
+      "3 sett: 12 dips på stol"
+     ]
+    },
+    {
+     "short": "Lør",
+     "day": "Lørdag",
+     "name": "Mini-racet Hjemme",
+     "dur": "Valgfri",
+     "optional": true,
+     "benchmark": true,
+     "A": [
+      "Standard oppvarming, 4 minutter",
+      "400 m rolig løp"
+     ],
+     "B": null,
+     "C": {
+      "fmt": "For tid · tidsgrense 40:00 · benchmark",
+      "timer": {
+       "t": "up",
+       "cap": 40
+      },
+      "rows": [
+       [
+        "1: Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m"
+       ],
+       [
+        "2: Utfall bakover, vekslende",
+        "60",
+        "50",
+        "40",
+        "30",
+        "24"
+       ],
+       [
+        "3: Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m"
+       ],
+       [
+        "4: Burpee lengdehopp",
+        "30",
+        "25",
+        "20",
+        "15",
+        "15 step-back burpees"
+       ],
+       [
+        "5: Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m"
+       ],
+       [
+        "6: Luftknebøy",
+        "80",
+        "70",
+        "60",
+        "50",
+        "40"
+       ],
+       [
+        "7: Løp",
+        "800 m",
+        "800 m",
+        "600 m",
+        "400 m",
+        "400 m"
+       ],
+       [
+        "8: Push-ups",
+        "50",
+        "40",
+        "30",
+        "24 på knær",
+        "20 mot benk"
+       ]
+      ],
+      "score": "Total tid. Noter tiden på hver løpedel."
+     },
+     "D": [
+      "10 minutter rolig nedtrapping og mobilitet"
+     ]
+    }
+   ]
+  }
+ ]
+}
