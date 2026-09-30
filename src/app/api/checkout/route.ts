@@ -88,6 +88,6 @@ async function handle(req: NextRequest) {
     return NextResponse.json({ url: session.url, trial: !hadSub });
   } catch (e) {
     console.error('[checkout]', e);
-    return NextResponse.json({ error: 'Kunne ikke starte betalingen. Prøv igjen om litt.' }, { status: 500 });
+    return NextResponse.json({ error: `Kunne ikke starte betalingen. Stripe svarte: ${(e as Error).message}` }, { status: 500 });
   }
 }
