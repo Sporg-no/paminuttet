@@ -77,6 +77,9 @@ async function handle(req: NextRequest) {
     success_url: `${site}/start/ferdig?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${site}/start?avbrutt=1&plan=${plan}&spor=${track}`,
   };
+  // Stripe slår på «Managed Payments» som standard på nye kontoer. Den tillater ikke egen
+  // samtykketekst (custom_text), og vi trenger den ikke så lenge du selv er selger.
+  (params as Record<string, unknown>).managed_payments = { enabled: false };
   if (customer) {
     params.customer = customer;
     if (tax) params.customer_update = { address: 'auto', name: 'auto' };
