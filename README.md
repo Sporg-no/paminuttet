@@ -37,7 +37,7 @@ Beregnet tid: 45–60 minutter. Gjør alt i **testmodus** i Stripe først.
 
 1. **New project.** Region: *North EU (Stockholm)*. Lagre databasepassordet.
 2. **SQL Editor → New query.** Lim inn hele `supabase/migrations/0001_init.sql` og trykk *Run*.
-3. **Project Settings → API.** Kopier *Project URL*, *anon/publishable key* og *service_role/secret key*.
+3. **Project Settings → API.** Kopier *Project URL*, *Publishable key* (`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`) og *Secret key* (`SUPABASE_SECRET_KEY`). Eldre navn (`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`) fungerer også.
 4. **Authentication → Sign In / Providers.** Email skal være på. Slå **av** *Allow new users to sign up* (brukere opprettes bare via betaling).
 5. **Authentication → URL Configuration.**
    - Site URL: `https://paminuttet.no` (eller Vercel-adressen til å begynne med)
