@@ -125,7 +125,7 @@ Bruk testkort `4242 4242 4242 4242`, en fremtidig dato og valgfri CVC.
 
 ## Drift
 
-**Nye uker.** Legg til uke 5, 6 … i `src/content/program.json` (samme struktur som ukene som finnes) og push til GitHub. Vercel publiserer automatisk. Gjør det før søndagen uka slippes. Uten nye uker starter programmet på uke 1 igjen.
+**Nye uker.** Uke 1–8 ligger inne (to sykluser). Uke 5–8 er skrevet i `content/weeks5to8.mjs` og bygges inn med `node content/build-weeks5to8.mjs`. Legg til uke 9, 10 … i `src/content/program.json` (samme struktur som ukene som finnes) og push til GitHub. Vercel publiserer automatisk. Gjør det før søndagen uka slippes. Uten nye uker starter programmet på uke 1 igjen.
 
 Struktur per dag:
 ```json
