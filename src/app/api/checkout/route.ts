@@ -57,7 +57,7 @@ async function handle(req: NextRequest) {
   const site = siteUrl();
   const params: Stripe.Checkout.SessionCreateParams = {
     mode: 'subscription',
-    line_items: [{ price: priceFor(plan), quantity: 1 }],
+    line_items: [{ price: await priceFor(plan), quantity: 1 }],
     locale: 'nb',
     allow_promotion_codes: true,
     billing_address_collection: 'auto',

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { stripe } from '@/lib/stripe';
+import { stripe, resolvePrice } from '@/lib/stripe';
 import { supabaseAdmin } from '@/lib/supabase/admin';
 
 export const runtime = 'nodejs';
@@ -28,8 +28,9 @@ export async function GET() {
   } catch (e) { checks.supabase = `feil: ${(e as Error).message}`; }
   for (const [k, n] of [['pris_maaned', 'STRIPE_PRICE_MONTHLY'], ['pris_aar', 'STRIPE_PRICE_ANNUAL']] as const) {
     try {
-      const p = await stripe().prices.retrieve(process.env[n] || 'mangler');
-      checks[k] = `ok: ${(p.unit_amount ?? 0) / 100} ${p.currency.toUpperCase()} / ${p.recurring?.interval ?? 'engang'}${p.active ? '' : ' (INAKTIV)'}`;
+      const id = await resolvePrice(process.env[n] || 'mangler');
+      const p = await stripe().prices.retrieve(id);
+      checks[k] = `ok: ${(process.env[n] || '').startsWith('prod_') ? '(fra produkt) ' : ''}${(p.unit_amount ?? 0) / 100} ${p.currency.toUpperCase()} / ${p.recurring?.interval ?? 'engang'}${p.active ? '' : ' (INAKTIV)'}`;
     } catch (e) { checks[k] = `feil: ${(e as Error).message}`; }
   }
   return NextResponse.json({ envs, checks }, { headers: { 'cache-control': 'no-store' } });
