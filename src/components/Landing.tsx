@@ -6,7 +6,7 @@ import { Dial } from './Dial';
 import { Brand } from './Brand';
 import { Footer } from './Footer';
 
-const INK = '#121212', BONE = '#F3F0E8';
+const INK = 'var(--ink)', BONE = 'var(--bone)';
 const WORDS = ['før ungene våkner', 'før jobb', 'i lunsjpausen', 'på hotellrommet', 'mens kaffen trekker'];
 const TIMES = [{ l: '15 min', m: 15 }, { l: '25 min', m: 25 }, { l: '30 min', m: 30 }, { l: '45 min', m: 45 }];
 const STARTS = [{ l: '05:30', m: 330 }, { l: '06:00', m: 360 }, { l: '06:30', m: 390 }, { l: '07:00', m: 420 }];
@@ -43,7 +43,7 @@ const hhmm = (m: number) => pad2(Math.floor(m / 60) % 24) + ':' + pad2(m % 60);
 function Dots({ n }: { n: number }) {
   return <span className="dots" aria-hidden>{[0, 1, 2, 3, 4].map(k => <i key={k} className={k < n ? 'on' : ''} />)}</span>;
 }
-function Check({ c = '#FF5A1F', s = 20 }: { c?: string; s?: number }) {
+function Check({ c = 'var(--sig)', s = 20 }: { c?: string; s?: number }) {
   return <svg width={s} height={s} viewBox="0 0 20 20" fill="none" stroke={c} strokeWidth="2.4" aria-hidden><path d="M4 10.5l4 4 8-9" /></svg>;
 }
 
@@ -146,8 +146,8 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
               <span className="cond" style={{ fontSize: 52, color: BONE }}>{now ? pad2(sec) : '00'}</span>
             </Dial>
             <div>
-              <div className="mono" style={{ fontSize: 13, letterSpacing: '.14em', color: '#9A958B', fontWeight: 700 }}>KLOKKA ER {now ? `${pad2(now.getHours())}:${pad2(now.getMinutes())}:${pad2(sec)}` : '--:--:--'}</div>
-              <div style={{ marginTop: 10, fontSize: 21, fontWeight: 600, lineHeight: 1.4 }}>Neste minutt starter om <span style={{ color: '#FF5A1F' }}>{remain} sekunder</span>.<br />Hvert minutt har en jobb.</div>
+              <div className="mono" style={{ fontSize: 13, letterSpacing: '.14em', color: 'var(--dim)', fontWeight: 700 }}>KLOKKA ER {now ? `${pad2(now.getHours())}:${pad2(now.getMinutes())}:${pad2(sec)}` : '--:--:--'}</div>
+              <div style={{ marginTop: 10, fontSize: 21, fontWeight: 600, lineHeight: 1.4 }}>Neste minutt starter om <span style={{ color: 'var(--sig)' }}>{remain} sekunder</span>.<br />Hvert minutt har en jobb.</div>
             </div>
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
         <div className="calc">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
             <div className="cond" style={{ fontSize: 36, lineHeight: 1 }}>Finn dagens økt</div>
-            <div className="mono" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: '.14em', color: '#C2410C' }}><span className="pulse" style={{ width: 8, height: 8, borderRadius: '50%', background: '#FF5A1F', display: 'inline-block' }} />OPPDATERES MENS DU VELGER</div>
+            <div className="mono" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: '.14em', color: 'var(--sig-text)' }}><span className="pulse" style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--sig)', display: 'inline-block' }} />OPPDATERES MENS DU VELGER</div>
           </div>
           <div className="calc-2">
             <div>
@@ -183,10 +183,10 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
           </div>
           <div className="first">
             <div>
-              <div className="mono" style={{ fontSize: 12, letterSpacing: '.14em', fontWeight: 700, color: '#FF5A1F' }}>DITT FØRSTE MINUTT</div>
-              <div className="cond" style={{ fontSize: 42, lineHeight: 1, marginTop: 6 }}>{first.v[lvIdx]} <span style={{ color: '#9A958B' }}>{first.mv}</span></div>
+              <div className="mono" style={{ fontSize: 12, letterSpacing: '.14em', fontWeight: 700, color: 'var(--sig)' }}>DITT FØRSTE MINUTT</div>
+              <div className="cond" style={{ fontSize: 42, lineHeight: 1, marginTop: 6 }}>{first.v[lvIdx]} <span style={{ color: 'var(--dim)' }}>{first.mv}</span></div>
             </div>
-            <div className="mono" style={{ fontSize: 13, color: '#9A958B', textAlign: 'right', lineHeight: 1.5, whiteSpace: 'nowrap' }}>{gym ? 'GYM' : 'HJEMME'}<br />{LVLS[lvl].toUpperCase()}</div>
+            <div className="mono" style={{ fontSize: 13, color: 'var(--dim)', textAlign: 'right', lineHeight: 1.5, whiteSpace: 'nowrap' }}>{gym ? 'GYM' : 'HJEMME'}<br />{LVLS[lvl].toUpperCase()}</div>
           </div>
           <Link href={startHref} className="btn btn-sig btn-block" style={{ height: 58, fontSize: 18 }}>Start denne økta gratis</Link>
         </div>
@@ -204,7 +204,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
         <div className="rv"><div className="cond">5</div><p>nivåer i hver økt</p></div>
         <div className="rv"><div className="cond">25–45</div><p>minutter per økt</p></div>
         <div className="rv"><div className="cond">2 spor</div><p>Gym og Hjemme, samme pris</p></div>
-        <div className="rv"><div className="cond" style={{ color: '#C2410C' }}>7 dager</div><p>gratis før første trekk</p></div>
+        <div className="rv"><div className="cond" style={{ color: 'var(--sig-text)' }}>7 dager</div><p>gratis før første trekk</p></div>
       </section>
 
       {/* SLIK */}
@@ -212,24 +212,24 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
         <div className="rv"><div className="eyebrow">Slik funker det</div><h2 className="h2">Tre steg. Hver morgen.</h2></div>
         <div className="grid3">
           <div className="card lift rv step">
-            <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: '#C2410C' }}>01</div>
+            <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: 'var(--sig-text)' }}>01</div>
             <div className="cond">Velg spor og nivå</div>
             <p>Gym eller Hjemme. Fem nivåer i hver økt, fra Grunnmur til Nivå 4. Du bytter når du vil.</p>
-            <div className="foot" style={{ display: 'flex', gap: 8 }}>{[1, 1, 1, 0, 0].map((o, i) => <span key={i} style={{ width: 44, height: 14, background: o ? '#FF5A1F' : '#D8D2C4', display: 'block' }} />)}</div>
+            <div className="foot" style={{ display: 'flex', gap: 8 }}>{[1, 1, 1, 0, 0].map((o, i) => <span key={i} style={{ width: 44, height: 14, background: o ? 'var(--sig)' : 'var(--line)', display: 'block' }} />)}</div>
           </div>
           <div className="card lift rv step">
-            <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: '#C2410C' }}>02</div>
+            <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: 'var(--sig-text)' }}>02</div>
             <div className="cond">Start klokka</div>
             <p>Timeren ligger i økta. Den viser hvilket minutt du er på, og hva du skal gjøre på ditt nivå.</p>
-            <div className="foot mono" style={{ display: 'inline-flex', alignSelf: 'flex-start', alignItems: 'center', gap: 14, background: INK, color: BONE, borderRadius: 12, padding: '12px 16px', fontSize: 15, fontWeight: 700 }}><span style={{ color: '#FF5A1F' }}>MIN 3</span><span>20 UTFALL</span><span style={{ color: '#9A958B' }}>0:42</span></div>
+            <div className="foot mono" style={{ display: 'inline-flex', alignSelf: 'flex-start', alignItems: 'center', gap: 14, background: INK, color: BONE, borderRadius: 12, padding: '12px 16px', fontSize: 15, fontWeight: 700 }}><span style={{ color: 'var(--sig)' }}>MIN 3</span><span>20 UTFALL</span><span style={{ color: 'var(--dim)' }}>0:42</span></div>
           </div>
           <div className="card lift rv step">
-            <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: '#C2410C' }}>03</div>
+            <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: 'var(--sig-text)' }}>03</div>
             <div className="cond">Test deg hver 4. uke</div>
             <p>Uke 4 gjentar testene fra uke 1. Da ser du fremgangen svart på hvitt.</p>
             <div className="foot" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 52 }}>UKE 1</span><span style={{ height: 12, width: '80%', maxWidth: 260, background: '#CFC8B8', display: 'block' }} /></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 52 }}>UKE 4</span><span style={{ height: 12, width: '63%', maxWidth: 205, background: '#FF5A1F', display: 'block' }} /></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 52 }}>UKE 1</span><span style={{ height: 12, width: '80%', maxWidth: 260, background: 'var(--line2)', display: 'block' }} /></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 52 }}>UKE 4</span><span style={{ height: 12, width: '63%', maxWidth: 205, background: 'var(--sig)', display: 'block' }} /></div>
             </div>
           </div>
         </div>
@@ -239,14 +239,14 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
       <section className="dark wrap section">
         <div className="rv vids-head">
           <div><div className="eyebrow">Se øktene</div><h2 className="h2">Fire økter. Tre nivåer i hver.</h2></div>
-          <p style={{ margin: 0, maxWidth: 360, fontSize: 18, lineHeight: 1.5, color: '#C9C4B9' }}>Hver video viser minutt for minutt hva du gjør på ditt nivå. Alle fire ligger i gratis-PDF-en.</p>
+          <p style={{ margin: 0, maxWidth: 360, fontSize: 18, lineHeight: 1.5, color: 'var(--dim2)' }}>Hver video viser minutt for minutt hva du gjør på ditt nivå. Alle fire ligger i gratis-PDF-en.</p>
         </div>
         <div className="vids" ref={vids}>
           {VIDEOS.map(v => (
             <div key={v.f} className="lift rv" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <video src={`/media/${v.f}.mp4`} poster={`/media/${v.f}-cover.jpg`} muted loop playsInline preload="none" aria-label={`Video: ${v.name}`} />
               <div>
-                <div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.1em', color: '#FF5A1F' }}>{v.meta}</div>
+                <div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.1em', color: 'var(--sig)' }}>{v.meta}</div>
                 <div className="cond" style={{ fontSize: 30, marginTop: 4 }}>{v.name}</div>
               </div>
             </div>
@@ -261,16 +261,16 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
           <h2 className="h2">Én økt.<br />Fem nivåer.</h2>
           <p className="lead" style={{ margin: '24px 0 0', maxWidth: 520 }}>Alle får samme økt. Tallene tilpasses deg. Velg nivået som gir deg 15–20 sekunder hvile hvert minutt.</p>
           <div className="lvl-pills">{LVLS.map((l, i) => <button key={l} type="button" className="pill" aria-pressed={i === ex} onClick={() => setEx(i)}><span>{l}</span><Dots n={i + 1} /></button>)}</div>
-          <p style={{ margin: '24px 0 0', fontSize: 16, color: '#5E594F' }}>Rekker du ikke minuttet to ganger på rad: gå ned ett nivå.</p>
+          <p style={{ margin: '24px 0 0', fontSize: 16, color: 'var(--muted2)' }}>Rekker du ikke minuttet to ganger på rad: gå ned ett nivå.</p>
         </div>
         <div className="rv dark excard">
           <div className="eyebrow">Hjemme · mandag · uke 1</div>
           <div className="cond" style={{ fontSize: 'clamp(34px, 3.5vw, 50px)', marginTop: 8, lineHeight: 1 }}>Stuegulvet-minuttet</div>
-          <div className="mono" style={{ fontSize: 14, color: '#9A958B', marginTop: 8 }}>20:00 EMOM · 5 RUNDER · {LVLS[ex].toUpperCase()}</div>
+          <div className="mono" style={{ fontSize: 14, color: 'var(--dim)', marginTop: 8 }}>20:00 EMOM · 5 RUNDER · {LVLS[ex].toUpperCase()}</div>
           <div style={{ marginTop: 20 }}>
             {EX.map(r => (
               <div key={r.m} className="exrow">
-                <span className="mono" style={{ fontSize: 14, fontWeight: 700, color: '#FF5A1F' }}>{r.m}</span>
+                <span className="mono" style={{ fontSize: 14, fontWeight: 700, color: 'var(--sig)' }}>{r.m}</span>
                 <span style={{ fontSize: 20, fontWeight: 600 }}>{r.mv}</span>
                 <span className="cond">{r.v[4 - ex]}</span>
               </div>
@@ -284,10 +284,10 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
         <div className="rv"><div className="eyebrow">To spor</div><h2 className="h2">Gym eller hjemme. Samme pris.</h2></div>
         <div className="tracks">
           <div className="lift rv dark trackcard">
-            <div className="top"><div className="cond">Gym</div><div className="cond" style={{ color: '#FF5A1F' }}>40–45 min</div></div>
+            <div className="top"><div className="cond">Gym</div><div className="cond" style={{ color: 'var(--sig)' }}>40–45 min</div></div>
             <ul>{['Stang, stativ, manualer og ergometre', 'Styrke med prosent av maks', 'Kondisjon i EMOM, AMRAP og intervaller', 'Testuke hver 4. uke'].map(x => <li key={x}><span className="sq" />{x}</li>)}</ul>
           </div>
-          <div className="lift rv trackcard" style={{ background: '#FF5A1F' }}>
+          <div className="lift rv trackcard" style={{ background: 'var(--sig)' }}>
             <div className="top"><div className="cond">Hjemme</div><div className="cond">25–30 min</div></div>
             <ul style={{ fontWeight: 500 }}>{['Gulv, en stol og et solid bord', 'Kettlebell eller manualer er valgfritt', 'Stille-bytter for alle hopp', 'Testuke hver 4. uke'].map(x => <li key={x}><span className="sq" style={{ background: INK }} />{x}</li>)}</ul>
           </div>
@@ -307,7 +307,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
         <div className="prices" style={{ width: '100%' }}>
           <div className="rv pcard" style={{ border: '1.5px solid #3A3A3A' }}>
             <div className="cond" style={{ fontSize: 40 }}>Gratis</div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 12 }}><span className="cond big">0</span><span style={{ fontSize: 20, color: '#9A958B' }}>kr</span></div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 12 }}><span className="cond big">0</span><span style={{ fontSize: 20, color: 'var(--dim)' }}>kr</span></div>
             <div style={{ margin: '28px 0 32px', display: 'flex', flexDirection: 'column', gap: 14, fontSize: 17 }}>
               {['20 EMOM-er som PDF', 'Nyhetsbrev fra coachen', 'Ingen kort, ingen binding'].map(x => <div key={x} className="tick"><Check />{x}</div>)}
             </div>
@@ -316,16 +316,16 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
           <div className="rv pcard" style={{ background: BONE, color: INK }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
               <div className="cond" style={{ fontSize: 40 }}>Dagsøkta</div>
-              <span className="mono" style={{ fontSize: 12, fontWeight: 800, letterSpacing: '.12em', background: '#FF5A1F', borderRadius: 999, padding: '8px 14px' }}>7 DAGER GRATIS</span>
+              <span className="mono" style={{ fontSize: 12, fontWeight: 800, letterSpacing: '.12em', background: 'var(--sig)', borderRadius: 999, padding: '8px 14px' }}>7 DAGER GRATIS</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 12 }}><span className="cond big">{annual ? '1 990' : '199'}</span><span style={{ fontSize: 20, color: '#5E594F' }}>{annual ? 'kr/år' : 'kr/mnd'}</span></div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 12 }}><span className="cond big">{annual ? '1 990' : '199'}</span><span style={{ fontSize: 20, color: 'var(--muted2)' }}>{annual ? 'kr/år' : 'kr/mnd'}</span></div>
             <div className="tl" style={{ marginTop: 24 }}>
               <div className="tl-row"><span className="k">I dag</span><span className="v">0 kr</span></div>
               <div className="tl-row"><span className="k">Dag 5</span><span className="v">Påminnelse på e-post</span></div>
               <div className="tl-row"><span className="k">Dag 8</span><span className="v">Første trekk: {annual ? '1 990 kr' : '199 kr'}</span></div>
               <div className="tl-row strong"><span className="k">Per økt</span><span className="v">{annual ? 'ca. 8 kr' : 'ca. 9 kr'}</span></div>
             </div>
-            <div className="feat">{FEATURES.map(f => <div key={f} className="tick" style={{ gap: 10 }}><Check c="#C2410C" s={18} />{f}</div>)}</div>
+            <div className="feat">{FEATURES.map(f => <div key={f} className="tick" style={{ gap: 10 }}><Check c="var(--sig-text)" s={18} />{f}</div>)}</div>
             <Link href={startHref} className="btn btn-sig btn-block" style={{ marginTop: 32, height: 60, fontSize: 18 }}>Start 7 dager gratis</Link>
           </div>
         </div>
@@ -351,12 +351,12 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
             <div className="dark" style={{ marginTop: 28, borderRadius: 20, padding: '22px 26px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, maxWidth: 640, flexWrap: 'wrap' }}>
               <div>
                 <div className="cond" style={{ fontSize: 32 }}>Den er din.</div>
-                <div style={{ fontSize: 15, color: '#C9C4B9', marginTop: 4 }}>Vi har lagret {email}. Last ned PDF-en her.</div>
+                <div style={{ fontSize: 15, color: 'var(--dim2)', marginTop: 4 }}>Vi har lagret {email}. Last ned PDF-en her.</div>
               </div>
               <a href="/media/PA-MINUTTET-20-EMOM-er.pdf" download="PA-MINUTTET-20-EMOM-er.pdf" className="btn btn-sig">Last ned nå</a>
             </div>
           )}
-          <p style={{ fontSize: 13, color: '#6E695F', marginTop: 14 }}>Vi sender deg nyhetsbrev. Du kan melde deg av når som helst. Se <Link href="/personvern">personvern</Link>.</p>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 14 }}>Vi sender deg nyhetsbrev. Du kan melde deg av når som helst. Se <Link href="/personvern">personvern</Link>.</p>
         </div>
       </section>
 
@@ -370,7 +370,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
               <div key={f.q} className="faq-item">
                 <button type="button" aria-expanded={open} onClick={() => setFaq(open ? -1 : i)}>
                   <span>{f.q}</span>
-                  <span className="mono" style={{ fontSize: 26, color: '#C2410C', width: 28, textAlign: 'center' }}>{open ? '−' : '+'}</span>
+                  <span className="mono" style={{ fontSize: 26, color: 'var(--sig-text)', width: 28, textAlign: 'center' }}>{open ? '−' : '+'}</span>
                 </button>
                 {open && <p className="fade">{f.a}</p>}
               </div>
@@ -381,7 +381,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
 
       {/* CTA + FOOTER */}
       <section className="dark wrap cta">
-        <h2>Neste minutt<br />starter om <span style={{ color: '#FF5A1F' }}>{remain} s.</span></h2>
+        <h2>Neste minutt<br />starter om <span style={{ color: 'var(--sig)' }}>{remain} s.</span></h2>
         <div className="row-btns">
           <Link href={startHref} className="btn btn-sig" style={{ height: 60, fontSize: 18 }}>Start 7 dager gratis</Link>
           <Link href="/logg-inn" className="btn btn-line" style={{ height: 60, fontSize: 18 }}>Logg inn</Link>

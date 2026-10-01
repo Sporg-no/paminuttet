@@ -8,7 +8,7 @@ export function DocPage({ eyebrow, title, updated, children }: { eyebrow: string
       <article className="wrap doc">
         <div className="eyebrow">{eyebrow}</div>
         <h1 style={{ marginTop: 12 }}>{title}</h1>
-        <p style={{ fontSize: 14, color: '#6E695F' }}>Sist oppdatert {updated}</p>
+        <p style={{ fontSize: 14, color: 'var(--muted)' }}>Sist oppdatert {updated}</p>
         {children}
       </article>
       <DarkFooter />

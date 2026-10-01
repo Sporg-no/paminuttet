@@ -39,7 +39,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
     <div className="page">
       <MemberNav email={user.email ?? ''} active="program" />
       {banner && (
-        <div className="banner wrap" style={banner.tone === 'warn' ? { background: '#121212', color: '#F3F0E8' } : undefined}>
+        <div className="banner wrap" style={banner.tone === 'warn' ? { background: 'var(--ink)', color: 'var(--bone)' } : undefined}>
           <span><span className="bdot" /><b>{banner.text.split('.')[0]}.</b>{banner.text.slice(banner.text.indexOf('.') + 1)}</span>
           <a href="/min-side" style={{ fontWeight: 600, color: 'inherit' }}>Min side</a>
         </div>

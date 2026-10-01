@@ -11,7 +11,7 @@ export function MemberNav({ email, active }: { email: string; active: 'program' 
         <Link href="/min-side" className={active === 'min-side' ? 'active' : ''}>Min side</Link>
       </div>
       <div className="nav-right">
-        <Link href="/min-side" className="avatar" aria-label="Min side" style={{ color: '#F3F0E8', textDecoration: 'none' }}>{initials}</Link>
+        <Link href="/min-side" className="avatar" aria-label="Min side" style={{ color: 'var(--bone)', textDecoration: 'none' }}>{initials}</Link>
         <form action="/api/logout" method="post"><button className="linkbtn" type="submit">Logg ut</button></form>
       </div>
     </nav>

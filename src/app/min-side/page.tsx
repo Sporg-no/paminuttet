@@ -49,8 +49,8 @@ export default async function Page() {
       <div className="wrap acct">
         <div className="card">
           <div className="label">Status</div>
-          <div className="cond" style={{ fontSize: 44, lineHeight: 1, color: active ? '#121212' : '#C2410C' }}>{status}</div>
-          <p style={{ margin: 0, fontSize: 17, lineHeight: 1.5, color: '#3F3B35' }}>{detail}</p>
+          <div className="cond" style={{ fontSize: 44, lineHeight: 1, color: active ? 'var(--ink)' : 'var(--sig-text)' }}>{status}</div>
+          <p style={{ margin: 0, fontSize: 17, lineHeight: 1.5, color: 'var(--body)' }}>{detail}</p>
           <div style={{ marginTop: 'auto', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {sub?.stripe_customer_id && (
               <form action="/api/portal" method="post"><button className="btn btn-ink" type="submit">{sub.status === 'past_due' ? 'Oppdater kort' : 'Administrer abonnement'}</button></form>
@@ -58,13 +58,13 @@ export default async function Page() {
             {!active && <Link href="/start" className="btn btn-sig">Start medlemskap</Link>}
             {active && <Link href="/program" className="btn btn-line">Til ukens program</Link>}
           </div>
-          {sub?.stripe_customer_id && <p style={{ margin: 0, fontSize: 14, color: '#5E594F' }}>Under «Administrer abonnement» kan du avslutte, bytte mellom måned og år, oppdatere kort og laste ned kvitteringer.</p>}
+          {sub?.stripe_customer_id && <p style={{ margin: 0, fontSize: 14, color: 'var(--muted2)' }}>Under «Administrer abonnement» kan du avslutte, bytte mellom måned og år, oppdatere kort og laste ned kvitteringer.</p>}
         </div>
         <div className="card">
           <div className="label">Konto</div>
-          <div style={{ fontSize: 17 }}><span style={{ color: '#5E594F' }}>E-post: </span><b>{user.email}</b></div>
-          <div style={{ fontSize: 17 }}><span style={{ color: '#5E594F' }}>Spor: </span><b>{sub?.track === 'gym' ? 'Gym' : 'Hjemme'}</b> <span style={{ color: '#5E594F', fontSize: 15 }}>(bytt direkte i programmet)</span></div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: '#5E594F' }}>Du logger inn med en lenke eller kode på e-post. Vil du bytte e-post eller slette kontoen, send en e-post til <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
+          <div style={{ fontSize: 17 }}><span style={{ color: 'var(--muted2)' }}>E-post: </span><b>{user.email}</b></div>
+          <div style={{ fontSize: 17 }}><span style={{ color: 'var(--muted2)' }}>Spor: </span><b>{sub?.track === 'gym' ? 'Gym' : 'Hjemme'}</b> <span style={{ color: 'var(--muted2)', fontSize: 15 }}>(bytt direkte i programmet)</span></div>
+          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--muted2)' }}>Du logger inn med en lenke eller kode på e-post. Vil du bytte e-post eller slette kontoen, send en e-post til <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
           <form action="/api/logout" method="post" style={{ marginTop: 'auto' }}><button className="btn btn-line" type="submit">Logg ut</button></form>
         </div>
       </div>

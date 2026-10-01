@@ -7,7 +7,7 @@ import { Dial } from '@/components/Dial';
 
 const LVLS = ['Grunnmur', 'Nivå 1', 'Nivå 2', 'Nivå 3', 'Nivå 4'];
 const HEAD = ['Bevegelse', 'Nivå 4', 'Nivå 3', 'Nivå 2', 'Nivå 1', 'Grunnmur'];
-const BONE = '#F3F0E8';
+const BONE = 'var(--bone)';
 
 function load(key: string, fallback: number) {
   try { const v = localStorage.getItem(key); return v === null ? fallback : Number(v); } catch { return fallback; }
@@ -152,8 +152,8 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
             </button>
           ))}
         </div>
-        <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: '#5E594F' }}>Rekker du ikke minuttet to ganger på rad: gå ned ett nivå.</p>
-        <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: '#5E594F' }}>{note}</p>
+        <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>Rekker du ikke minuttet to ganger på rad: gå ned ett nivå.</p>
+        <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>{note}</p>
       </aside>
 
       <main>
@@ -166,24 +166,24 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
         <div className="fade" key={`${wk}-${track}-${day}`}>
           <div className="eyebrow">{d.day} · {track === 'gym' ? 'Gym' : 'Hjemme'} · uke {week.n}{d.optional ? ' · valgfri' : ''}{d.benchmark ? ' · test' : ''}</div>
           <h1>{d.name}</h1>
-          {day === 0 && <p style={{ margin: '10px 0 0', fontSize: 16, color: '#3F3B35' }}>{week.intro}</p>}
+          {day === 0 && <p style={{ margin: '10px 0 0', fontSize: 16, color: 'var(--body)' }}>{week.intro}</p>}
         </div>
 
         <section aria-label="Timer" className="dark timer">
           <Dial size={168} lit={started ? sec : -1} hand={started ? sec : 0} on={BONE} off="#333333">
             <span className="cond" style={{ fontSize: 48 }}>{pad2(sec)}</span>
-            <span className="mono" style={{ fontSize: 10, letterSpacing: '.16em', color: '#9A958B', fontWeight: 700, marginTop: 4 }}>SEKUNDER</span>
+            <span className="mono" style={{ fontSize: 10, letterSpacing: '.16em', color: 'var(--dim)', fontWeight: 700, marginTop: 4 }}>SEKUNDER</span>
           </Dial>
           <div style={{ minWidth: 0 }} aria-live="polite" aria-atomic="true">
             <div className="eyebrow">{started ? ts.label : `KLAR · ${C.fmt.toUpperCase()}`}</div>
             <div className="tbig">{started ? ts.big : idle}</div>
-            <div className="ttask">{started ? <><span style={{ color: '#FF5A1F' }}>{ts.taskVal}</span> {ts.task}</> : 'Trykk start når du er klar'}</div>
+            <div className="ttask">{started ? <><span style={{ color: 'var(--sig)' }}>{ts.taskVal}</span> {ts.task}</> : 'Trykk start når du er klar'}</div>
             <div className="progress" aria-hidden><div style={{ width: `${progress}%` }} /></div>
           </div>
           <div className="tbtns">
             <button type="button" className="btn btn-sig" style={{ height: 60, fontSize: 18 }} onClick={toggle}>{runLabel}</button>
             <button type="button" className="btn btn-line" style={{ height: 52, color: BONE }} onClick={reset}>Nullstill</button>
-            <button type="button" className="linkbtn" style={{ color: '#9A958B', fontSize: 13, textAlign: 'center', fontFamily: 'var(--f-mono)', letterSpacing: '.1em', textDecoration: 'none' }} onClick={() => { const v = !sound; setSound(v); save('pm-lyd', v ? 1 : 0); }} aria-pressed={sound}>
+            <button type="button" className="linkbtn" style={{ color: 'var(--dim)', fontSize: 13, textAlign: 'center', fontFamily: 'var(--f-mono)', letterSpacing: '.1em', textDecoration: 'none' }} onClick={() => { const v = !sound; setSound(v); save('pm-lyd', v ? 1 : 0); }} aria-pressed={sound}>
               {LVLS[lvl].toUpperCase()} · LYD {sound ? 'PÅ' : 'AV'}
             </button>
           </div>
@@ -206,7 +206,7 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
               <span className="eyebrow">C · Kondisjon</span>
               <span className="cond" style={{ fontSize: 30 }}>{C.fmt}</span>
             </div>
-            <span className="hint" style={{ fontSize: 14, color: '#5E594F' }}>Nivået ditt er uthevet. Minuttet du er på lyser når klokka går.</span>
+            <span className="hint" style={{ fontSize: 14, color: 'var(--muted2)' }}>Nivået ditt er uthevet. Minuttet du er på lyser når klokka går.</span>
           </div>
           <div className="ctable" role="table" aria-label="Kondisjonsdel per nivå">
             <div className="tr th" role="row">{HEAD.map((h, i) => <div key={h} role="columnheader" className={i === col ? 'col' : ''}>{h}</div>)}</div>

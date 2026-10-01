@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <div className="footer">
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <Dial size={28} lit={59} hand={0} on="#F3F0E8" off="#F3F0E8" />
-        <span className="cond" style={{ fontSize: 22, color: '#F3F0E8' }}>PÅ MINUTTET</span>
+        <Dial size={28} lit={59} hand={0} on="var(--bone)" off="var(--bone)" />
+        <span className="cond" style={{ fontSize: 22, color: 'var(--bone)' }}>PÅ MINUTTET</span>
       </div>
       <nav aria-label="Bunnmeny">
         <Link href="/vilkar">Vilkår</Link>

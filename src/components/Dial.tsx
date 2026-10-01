@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-const SIG = '#FF5A1F';
+const SIG = 'var(--sig)';
 
 /** 60 streker. lit = siste tente strek (-1 = ingen), hand = oransje viser (null = ingen). */
 export function Dial({ size, lit, hand, on, off, children, className, label }: {

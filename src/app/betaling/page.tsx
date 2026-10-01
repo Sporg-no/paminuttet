@@ -46,10 +46,10 @@ export default async function Page() {
             {days.map(d => (
               <div key={d.day} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, padding: '12px 16px', border: '1px solid #333', borderRadius: 14 }}>
                 <div>
-                  <div className="mono" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', color: '#9A958B' }}>{d.short.toUpperCase()} · {d.dur.toUpperCase()}</div>
+                  <div className="mono" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', color: 'var(--dim)' }}>{d.short.toUpperCase()} · {d.dur.toUpperCase()}</div>
                   <div className="cond" style={{ fontSize: 24, lineHeight: 1.1 }}>{d.name}</div>
                 </div>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" strokeWidth="2" aria-label="Låst"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sig)" strokeWidth="2" aria-label="Låst"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
               </div>
             ))}
           </div>

@@ -21,7 +21,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ n
   if (data.user) redirect(next);
   return (
     <div className="page">
-      <nav className="nav wrap"><Brand /><div className="nav-right"><span className="hide-sm" style={{ color: '#5E594F', fontSize: 15 }}>Ikke medlem ennå?</span><a href="/start" className="btn btn-sig btn-sm">Start 7 dager gratis</a></div></nav>
+      <nav className="nav wrap"><Brand /><div className="nav-right"><span className="hide-sm" style={{ color: 'var(--muted2)', fontSize: 15 }}>Ikke medlem ennå?</span><a href="/start" className="btn btn-sig btn-sm">Start 7 dager gratis</a></div></nav>
       <div className="formwrap">
         <div className="formcard">
           <div className="eyebrow">Logg inn</div>

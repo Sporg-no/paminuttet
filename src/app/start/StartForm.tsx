@@ -48,12 +48,12 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
           <button type="button" className="plan" aria-pressed={!annual} onClick={() => setPlan('maaned')}>
             <span className="label">Månedlig</span>
             <div className="cond">199 kr<small> /mnd</small></div>
-            <div style={{ fontSize: 15, color: '#5E594F', marginTop: 6 }}>Avslutt når du vil</div>
+            <div style={{ fontSize: 15, color: 'var(--muted2)', marginTop: 6 }}>Avslutt når du vil</div>
           </button>
           <button type="button" className="plan" aria-pressed={annual} onClick={() => setPlan('aar')}>
-            <span className="label" style={{ color: '#C2410C' }}>Årlig · spar 398 kr</span>
+            <span className="label" style={{ color: 'var(--sig-text)' }}>Årlig · spar 398 kr</span>
             <div className="cond">1 990 kr<small> /år</small></div>
-            <div style={{ fontSize: 15, color: '#5E594F', marginTop: 6 }}>Tilsvarer 166 kr/mnd</div>
+            <div style={{ fontSize: 15, color: 'var(--muted2)', marginTop: 6 }}>Tilsvarer 166 kr/mnd</div>
           </button>
         </div>
         <div>
@@ -67,8 +67,8 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
           <label htmlFor="ckmail" className="label">E-post · brukes til innlogging</label>
           <input id="ckmail" className="input" type="email" autoComplete="email" required placeholder="navn@epost.no" value={email} readOnly={lockedEmail} onChange={e => setEmail(e.target.value)} />
         </div>
-        <div style={{ display: 'flex', gap: 10, alignItems: 'center', fontSize: 14, color: '#5E594F' }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5E594F" strokeWidth="2" aria-hidden><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center', fontSize: 14, color: 'var(--muted2)' }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted2)" strokeWidth="2" aria-hidden><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
           Kortet legges inn hos Stripe i neste steg.{trial ? ' Det belastes ikke før prøveperioden er over.' : ''}
         </div>
         <label className="check" htmlFor="ckconsent">
@@ -89,16 +89,16 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
         </div>
         <div style={{ borderTop: '1px solid #333', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
           <span className="cond" style={{ fontSize: 30 }}>Å betale i dag</span>
-          <span className="cond" style={{ fontSize: 44, color: '#FF5A1F' }}>{trial ? '0 kr' : priceTxt}</span>
+          <span className="cond" style={{ fontSize: 44, color: 'var(--sig)' }}>{trial ? '0 kr' : priceTxt}</span>
         </div>
         {trial && (
           <div className="dtl">
-            <div><div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', color: '#FF5A1F' }}>I DAG</div><div style={{ fontSize: 15, marginTop: 2 }}>Full tilgang til ukens program</div></div>
-            <div><div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', color: '#9A958B' }}>{fmt(d5).toUpperCase()}</div><div style={{ fontSize: 15, marginTop: 2 }}>Påminnelse på e-post</div></div>
-            <div><div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', color: '#9A958B' }}>{fmt(d8).toUpperCase()}</div><div style={{ fontSize: 15, marginTop: 2 }}>Første trekk: {priceTxt}</div></div>
+            <div><div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', color: 'var(--sig)' }}>I DAG</div><div style={{ fontSize: 15, marginTop: 2 }}>Full tilgang til ukens program</div></div>
+            <div><div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', color: 'var(--dim)' }}>{fmt(d5).toUpperCase()}</div><div style={{ fontSize: 15, marginTop: 2 }}>Påminnelse på e-post</div></div>
+            <div><div className="mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', color: 'var(--dim)' }}>{fmt(d8).toUpperCase()}</div><div style={{ fontSize: 15, marginTop: 2 }}>Første trekk: {priceTxt}</div></div>
           </div>
         )}
-        <div style={{ fontSize: 14, color: '#C9C4B9', lineHeight: 1.5 }}>Avslutt når som helst under Min side.{trial ? ` Avslutter du før ${fmt(d8)}, betaler du ingenting.` : ''}</div>
+        <div style={{ fontSize: 14, color: 'var(--dim2)', lineHeight: 1.5 }}>Avslutt når som helst under Min side.{trial ? ` Avslutter du før ${fmt(d8)}, betaler du ingenting.` : ''}</div>
       </aside>
     </form>
   );

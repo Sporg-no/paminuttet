@@ -20,7 +20,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ p
   }
   return (
     <div className="page">
-      <nav className="nav wrap"><Brand /><div className="nav-right"><span className="hide-sm" style={{ color: '#5E594F', fontSize: 15 }}>Allerede medlem?</span><Link href="/logg-inn" className="btn btn-line btn-sm">Logg inn</Link></div></nav>
+      <nav className="nav wrap"><Brand /><div className="nav-right"><span className="hide-sm" style={{ color: 'var(--muted2)', fontSize: 15 }}>Allerede medlem?</span><Link href="/logg-inn" className="btn btn-line btn-sm">Logg inn</Link></div></nav>
       {sp.avbrutt && <div className="banner wrap"><span><span className="bdot" />Betalingen ble avbrutt. Ingenting er trukket. Du kan prøve igjen under.</span></div>}
       <StartForm initialPlan={sp.plan === 'aar' ? 'aar' : 'maaned'} initialTrack={sp.spor === 'gym' ? 'gym' : 'hjemme'} initialEmail={email} lockedEmail={!!email} />
       <DarkFooter />
