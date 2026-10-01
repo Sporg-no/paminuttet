@@ -24,7 +24,7 @@ export default function LoginForm({ next }: { next: string }) {
       const m = error.message.toLowerCase();
       if (m.includes('signups not allowed') || m.includes('not found')) setErr('Vi fant ingen konto med den e-posten. Start prøveperioden, eller sjekk at du bruker samme e-post som i kassen.');
       else if (error.status === 429 || m.includes('rate')) setErr('Du har bedt om mange lenker på kort tid. Vent et minutt og prøv igjen.');
-      else setErr('Kunne ikke sende e-post akkurat nå. Prøv igjen om litt.');
+      else setErr(`Kunne ikke sende e-post akkurat nå. Feil fra innloggingstjenesten: ${error.message}`);
       return;
     }
     setStep('code');
