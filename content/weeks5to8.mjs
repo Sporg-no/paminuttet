@@ -103,7 +103,7 @@ export const W5 = {
     { short: 'Tor', day: 'Torsdag', name: 'Motoren Hjemme 5', dur: H, A: [std, '2×5 rolige burpees'],
       B: { t: 'Rumensk markløft på ett bein', l: ['4×10 per side med 3 s ned, 45 s hvile', 'Grunnmur: samme med én hånd på veggen', 'Med vekt: kettlebell eller manual i motsatt hånd'] },
       C: { fmt: '4 runder · start hver 4:00', timer: { t: 'every', each: 240, rounds: 4 }, rows: [
-        r('Burpees', '12', '10', '8', '8', '6 step-back'),
+        r('Inchworm med push-up', '10', '8', '7', '6 med push-up på knær', '5 uten push-up'),
         r('Knebøyhopp', '20', '18', '15', '12', '15 luftknebøy'),
         r('Jumping jacks', 'Til 3:00', 'Til 3:00', 'Til 3:00', 'Til 3:00', 'Til 3:00'),
         hvile('Resten av runden')],
@@ -121,7 +121,7 @@ export const W5 = {
       D: ['3 sett: 10 superman + 30 s planke'] },
     { short: 'Lør', day: 'Lørdag', name: 'Lørdagsminuttet Hjemme 5', dur: V, optional: true, A: [std], B: null,
       C: { fmt: '30:00 EMOM · 6 runder · partnervariant mulig', timer: { t: 'emom', m: 30 }, rows: [
-        r('1: Burpees', '12', '10', '8', '7', '6 step-back'),
+        r('1: Krabbegang, 5 m fram og tilbake', '6 lengder', '5 lengder', '4 lengder', '4 lengder', '3 lengder'),
         r('2: Utfall bakover, vekslende', '24', '20', '18', '16', '12'),
         r('3: Høye kneløft, tell hvert bein', '60', '50', '40', '36', '30'),
         r('4: Push-ups', '15', '12', '10', '8 på knær', '8 mot benk'),
@@ -207,7 +207,7 @@ export const W6 = {
     { short: 'Ons', day: 'Onsdag', name: 'Klokkespillet Hjemme', dur: H, A: [std, '2×8 bordroing i rolig tempo'],
       B: { t: 'Bordroing', l: ['5×8 bordroing med 3 s ned, 60 s hvile', 'Grunnmur: bordroing med bøyde knær, 5×6', 'Med vekt: foroverbøyd DB-roing, 5×10'] },
       C: { fmt: 'Start hvert 3. minutt · 6 runder (18 min)', timer: { t: 'every', each: 180, rounds: 6 }, rows: [
-        r('Burpees', '10', '9', '8', '7', '6 step-back'),
+        r('Bjørnegang, 5 m fram og tilbake', '6 lengder', '5 lengder', '4 lengder', '4 lengder', '3 lengder'),
         r('Knebøyhopp', '15', '14', '12', '10', '12 luftknebøy'),
         r('Mountain climbers', 'Til 3:00', 'Til 3:00', 'Til 3:00', 'Til 3:00', 'Til 3:00')],
         score: 'Mountain climbers totalt, tell hvert bein.' },
@@ -319,7 +319,7 @@ export const W7 = {
     { short: 'Ons', day: 'Onsdag', name: 'Åtte og åtte Hjemme', dur: H7, A: [std, '2×8 bordroing i rolig tempo'],
       B: { t: 'Bordroing, strake bein', l: ['5×10 bordroing med strake bein og 3 s ned, 75 s hvile', 'Grunnmur: bordroing med bøyde knær, 5×8', 'Med vekt: foroverbøyd DB-roing, 5×10 tungt'] },
       C: { fmt: 'To AMRAP 8 · 2:00 hvile mellom', timer: { t: 'up', cap: 18 }, rows: [
-        r('Del 1: Burpees', '8', '7', '6', '5', '5 step-back'),
+        r('Del 1: Tuck jumps', '10', '8', '8', '6', '10 knebøy med tåhev'),
         r('Del 1: Mage', '12 V-ups', '10 V-ups', '12 tuck-ups', '10 tuck-ups', '12 liggende knehev'),
         r('Del 2: Skøyteløperhopp', '20', '18', '16', '14', '12 sidesteg'),
         r('Del 2: Push-ups', '12', '10', '8', '8 på knær', '8 mot benk')],

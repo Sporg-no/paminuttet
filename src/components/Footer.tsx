@@ -13,7 +13,7 @@ export function Footer() {
         <Link href="/personvern">Personvern</Link>
         <a href="https://instagram.com/paminuttet" rel="noopener">Instagram @paminuttet</a>
       </nav>
-      <div>© {new Date().getFullYear()} PÅ MINUTTET · Erlend Namsvatn ENK · Org.nr [ORG.NR]</div>
+      <div>© {new Date().getFullYear()} PÅ MINUTTET · Erlend Namsvatn ENK · Org.nr 914 829 216</div>
     </div>
   );
 }

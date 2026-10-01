@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <DocPage eyebrow="Vilkår" title="Vilkår for medlemskap" updated="30. september 2026">
       <h2>1. Hvem du handler med</h2>
-      <p>PÅ MINUTTET drives av Erlend Namsvatn ENK, org.nr. [ORG.NR], [ADRESSE]. E-post: <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
+      <p>PÅ MINUTTET drives av Erlend Namsvatn ENK, org.nr. 914 829 216, Kvernbakken 175, 4355 Kverneland. E-post: <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
       <h2>2. Tjenesten</h2>
       <p>Medlemskapet gir tilgang til et nettbasert treningsprogram med nye økter hver uke i to spor (Gym og Hjemme) og fem nivåer, med innebygd timer. Nye uker publiseres søndag kveld. Tilgangen er personlig og kan ikke deles.</p>
       <h2>3. Pris og betaling</h2>

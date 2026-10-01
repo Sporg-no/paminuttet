@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <DocPage eyebrow="Personvern" title="Personvernerklæring" updated="30. september 2026">
       <h2>Behandlingsansvarlig</h2>
-      <p>Erlend Namsvatn ENK, org.nr. [ORG.NR], er ansvarlig for behandlingen av personopplysningene dine. Kontakt: <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
+      <p>Erlend Namsvatn ENK, org.nr. 914 829 216, Kvernbakken 175, 4355 Kverneland, er ansvarlig for behandlingen av personopplysningene dine. Kontakt: <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
       <h2>Hva vi lagrer, og hvorfor</h2>
       <ul>
         <li><b>E-post og innloggingsdata</b> for å gi deg tilgang til medlemsområdet. Grunnlag: avtale (GDPR art. 6 nr. 1 b).</li>
