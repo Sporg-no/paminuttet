@@ -143,6 +143,8 @@ Timertyper: `{ "t": "emom", "m": 24 }`, `{ "t": "amrap", "m": 12 }`, `{ "t": "ev
 
 **Slette en kunde.** Avslutt abonnementet i Stripe, og slett brukeren i Supabase → Authentication → Users (profil og abonnement slettes automatisk).
 
+**Webhook gir 308.** Domenet i webhooken må være hovedadressen i Vercel. Videresending (f.eks. `paminuttet.no` → `www`) godtas ikke av Stripe. Sett hoveddomenet til *Production* og `www` til *Redirect* i Vercel → Settings → Domains.
+
 **Feilsøking.** Vercel → Logs. Stripe → Developers → Webhooks viser hver hendelse og svaret fra serveren. Feilede hendelser sendes på nytt automatisk.
 
 ## Kostnader per måned
