@@ -125,6 +125,8 @@ Bruk testkort `4242 4242 4242 4242`, en fremtidig dato og valgfri CVC.
 
 ## Drift
 
+**Slippe ny uke.** Nye uker vises ikke automatisk. `src/content/release.json` → `releasedThrough` er siste godkjente uke (talt fra programstart: 1, 2, 3 …). Øk tallet og push når uka er godkjent. Medlemmene får e-post samme kveld kl. 20.10 (cron hver kveld 18.10 UTC). Krever tabellen i `supabase/migrations/0002_app_state.sql`.
+
 **Nye uker.** Uke 1–8 ligger inne (to sykluser). Uke 5–8 er skrevet i `content/weeks5to8.mjs` og bygges inn med `node content/build-weeks5to8.mjs`. Legg til uke 9, 10 … i `src/content/program.json` (samme struktur som ukene som finnes) og push til GitHub. Vercel publiserer automatisk. Gjør det før søndagen uka slippes. Uten nye uker starter programmet på uke 1 igjen.
 
 Struktur per dag:

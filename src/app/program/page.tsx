@@ -33,7 +33,9 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
   }
   const note = sch.beforeStart
     ? `Programmet starter ${dato(nextRelease())}. Du kan se og prøve uke 1 allerede nå.`
-    : `Neste uke kommer søndag ${dato(nextRelease())} kl. 20.`;
+    : sch.waiting
+      ? 'Neste uke publiseres snart. Du får e-post når den er klar.'
+      : `Neste uke kommer søndag ${dato(nextRelease())} kl. 20.`;
 
   return (
     <div className="page">
@@ -44,7 +46,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
           <a href="/min-side" style={{ fontWeight: 600, color: 'inherit' }}>Min side</a>
         </div>
       )}
-      <ProgramView weeks={weeks} currentIdx={sch.weekIdx} cycle={sch.cycle} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} />
+      <ProgramView weeks={weeks} currentIdx={sch.weekIdx} cycle={sch.cycle} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
       <DarkFooter />
     </div>
   );

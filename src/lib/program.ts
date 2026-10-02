@@ -1,4 +1,5 @@
 import data from '@/content/program.json';
+import release from '@/content/release.json';
 
 export type Timer =
   | { t: 'emom'; m: number }
@@ -23,17 +24,22 @@ const WEEK_MS = 7 * 24 * 3600 * 1000;
 export function programStart() {
   return new Date(process.env.PROGRAM_START || '2026-10-04T18:00:00Z');
 }
+/** Siste godkjente uke, talt fra programstart (1, 2, 3 …). Nye uker vises først når denne økes. */
+export const RELEASED_THROUGH = Math.max(1, Number((release as { releasedThrough: number }).releasedThrough) || 1);
+
 /**
- * Kalender: ny uke slippes hver søndag kl. 20 (PROGRAM_START + n uker).
- * Når alle ukene i program.json er brukt, starter en ny syklus fra uke 1.
+ * Kalender: ny uke kan slippes hver søndag kl. 20 (PROGRAM_START + n uker), men bare hvis den er godkjent
+ * i src/content/release.json. Når alle ukene i program.json er brukt, starter en ny syklus fra uke 1.
+ * abs = løpenummer på uka siden start (1 = første uke).
  */
 export function schedule(now = new Date()) {
   const L = WEEKS.length;
   const diff = now.getTime() - programStart().getTime();
-  if (diff < 0) return { cycle: 1, weekIdx: 0, visible: 1, beforeStart: true };
-  const k = Math.floor(diff / WEEK_MS);
-  const weekIdx = k % L;
-  return { cycle: Math.floor(k / L) + 1, weekIdx, visible: weekIdx + 1, beforeStart: false };
+  const beforeStart = diff < 0;
+  const calendarAbs = beforeStart ? 1 : Math.floor(diff / WEEK_MS) + 1;
+  const abs = Math.min(calendarAbs, RELEASED_THROUGH);
+  const weekIdx = (abs - 1) % L;
+  return { cycle: Math.floor((abs - 1) / L) + 1, weekIdx, visible: weekIdx + 1, beforeStart, abs, waiting: calendarAbs > RELEASED_THROUGH };
 }
 export function nextRelease(now = new Date()) {
   const s = programStart().getTime();

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Week } from '@/lib/program';
 import { timerState, mmss, pad2 } from '@/lib/timer';
 import { Dial } from '@/components/Dial';
+import SetPassword from '@/components/SetPassword';
 
 const LVLS = ['Grunnmur', 'Nivå 1', 'Nivå 2', 'Nivå 3', 'Nivå 4'];
 const HEAD = ['Bevegelse', 'Nivå 4', 'Nivå 3', 'Nivå 2', 'Nivå 1', 'Grunnmur'];
@@ -19,8 +20,8 @@ function todayIdx() {
   return d === 0 ? 0 : Math.min(5, d - 1);
 }
 
-export default function ProgramView({ weeks, currentIdx, cycle, note, initialTrack, welcome }: {
-  weeks: Week[]; currentIdx: number; cycle: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean;
+export default function ProgramView({ weeks, currentIdx, cycle, note, initialTrack, welcome, needsPassword }: {
+  weeks: Week[]; currentIdx: number; cycle: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
 }) {
   const [wk, setWk] = useState(currentIdx);
   const [track, setTrack] = useState<'gym' | 'hjemme'>(initialTrack);
@@ -32,6 +33,7 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
   const [now, setNow] = useState(0);
   const [sound, setSound] = useState(true);
   const [showWelcome, setShowWelcome] = useState(welcome);
+  const [showPw, setShowPw] = useState(needsPassword);
   const audio = useRef<AudioContext | null>(null);
   const lastE = useRef(-1);
   const wake = useRef<{ release: () => Promise<void> } | null>(null);
@@ -157,10 +159,21 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
       </aside>
 
       <main>
-        {showWelcome && (
+        {showWelcome && !showPw && (
           <div className="ok fade" style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-            <span><b>Velkommen.</b> Du er logget inn. Neste gang logger du inn med e-posten din, ingen passord.</span>
+            <span><b>Velkommen.</b> Du er logget inn og forblir innlogget på denne enheten.</span>
             <button type="button" className="linkbtn" style={{ color: BONE }} onClick={() => setShowWelcome(false)}>Lukk</button>
+          </div>
+        )}
+        {showPw && (
+          <div className="card fade" style={{ padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'baseline', flexWrap: 'wrap' }}>
+              <div className="eyebrow">{welcome ? 'Velkommen · ett steg til' : 'Raskere innlogging'}</div>
+              <button type="button" className="linkbtn" style={{ fontSize: 13 }} onClick={() => setShowPw(false)}>Senere</button>
+            </div>
+            <div style={{ fontSize: 16, lineHeight: 1.5 }}>Lag et passord, så logger du inn med e-post og passord neste gang, uten kode. Du forblir innlogget på denne enheten.</div>
+            <SetPassword compact onDone={() => setTimeout(() => setShowPw(false), 2500)} />
+            <div style={{ fontSize: 13, color: 'var(--muted2)' }}>Tips: legg siden til på Hjem-skjermen (Del → Legg til på Hjem-skjerm), så åpnes den som en app.</div>
           </div>
         )}
         <div className="fade" key={`${wk}-${track}-${day}`}>

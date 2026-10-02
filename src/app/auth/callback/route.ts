@@ -2,11 +2,16 @@ import { type NextRequest } from 'next/server';
 import { redirect } from 'next/navigation';
 import { supabaseServer } from '@/lib/supabase/server';
 
-// Reserve: standard Supabase-mal med ?code=
+// Google-innlogging (og reserve for e-postmaler med ?code=)
 export async function GET(req: NextRequest) {
-  const code = req.nextUrl.searchParams.get('code');
-  const n = req.nextUrl.searchParams.get('next') || '/program';
+  const sp = req.nextUrl.searchParams;
+  const n = sp.get('next') || '/program';
   const next = n.startsWith('/') && !n.startsWith('//') ? n : '/program';
+  if (sp.get('error')) {
+    console.warn('[auth/callback]', sp.get('error'), sp.get('error_description'));
+    redirect('/logg-inn?e=google');
+  }
+  const code = sp.get('code');
   if (code) {
     const sb = await supabaseServer();
     const { error } = await sb.auth.exchangeCodeForSession(code);

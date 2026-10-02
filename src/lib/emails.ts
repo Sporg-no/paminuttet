@@ -40,9 +40,9 @@ export function welcomeEmail(o: { trialEnd: Date | null; price: string }) {
     : [];
   return {
     subject: 'Velkommen til PÅ MINUTTET',
-    text: `Velkommen!\n\nMedlemskapet ditt er i gang. Ukens program: ${site}/program\n\n${list.map(l => '- ' + l).join('\n')}\n\n${after.join('\n')}\n\nDu logger inn med e-posten din på ${site}/logg-inn. Ingen passord.\n\nHilsen PÅ MINUTTET`,
+    text: `Velkommen!\n\nMedlemskapet ditt er i gang. Ukens program: ${site}/program\n\n${list.map(l => '- ' + l).join('\n')}\n\n${after.join('\n')}\n\nLag et passord inne på siden, eller logg inn med Google: ${site}/logg-inn\n\nHilsen PÅ MINUTTET`,
     html: layout({ eyebrow: 'Velkommen', title: 'Første minutt er ditt.', paragraphs, list, cta: { label: 'Åpne ukens program', href: `${site}/program` },
-      after: [...after.map(esc), 'Du logger inn med e-posten din. Ingen passord.'] }),
+      after: [...after.map(esc), 'Lag et passord inne på siden, eller logg inn med Google. Du forblir innlogget på enheten.'] }),
   };
 }
 

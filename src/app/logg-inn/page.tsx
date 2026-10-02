@@ -11,6 +11,7 @@ const MSG: Record<string, string> = {
   lenke: 'Lenken er brukt eller utløpt. Be om en ny under.',
   brukt: 'Kjøpet er registrert. Logg inn med e-posten du brukte i kassen.',
   feil: 'Noe gikk galt med innloggingen. Prøv igjen.',
+  google: 'Fant ingen medlemskap for den Google-kontoen. Bruk samme e-post som da du startet prøveperioden, eller logg inn med e-post.',
 };
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ neste?: string; e?: string }> }) {
@@ -26,7 +27,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ n
         <div className="formcard">
           <div className="eyebrow">Logg inn</div>
           <h1>Ukens program venter.</h1>
-          <p className="lead" style={{ margin: 0 }}>Skriv inn e-posten din. Du får en innloggingslenke og en kode. Ingen passord å huske.</p>
+          <p className="lead" style={{ margin: 0 }}>Logg inn med Google eller e-post og passord. Du forblir innlogget på denne enheten.</p>
           {sp.e && MSG[sp.e] && <div className="err">{MSG[sp.e]}</div>}
           <LoginForm next={next} />
         </div>

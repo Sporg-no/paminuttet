@@ -24,7 +24,8 @@ export const metadata: Metadata = {
     locale: 'nb_NO',
     type: 'website',
   },
-  icons: { icon: '/icon.svg' },
+  icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
+  appleWebApp: { capable: true, title: 'PÅ MINUTTET', statusBarStyle: 'black-translucent' },
 };
 export const viewport: Viewport = { themeColor: '#121212', width: 'device-width', initialScale: 1 };
 

@@ -5,6 +5,7 @@ import { getSession } from '@/lib/access';
 import { MemberNav } from '@/components/MemberNav';
 import { DarkFooter } from '@/components/Footer';
 import { CONTACT } from '@/lib/env';
+import SetPassword from '@/components/SetPassword';
 
 export const metadata: Metadata = { title: 'Min side' };
 export const dynamic = 'force-dynamic';
@@ -64,7 +65,9 @@ export default async function Page() {
           <div className="label">Konto</div>
           <div style={{ fontSize: 17 }}><span style={{ color: 'var(--muted2)' }}>E-post: </span><b>{user.email}</b></div>
           <div style={{ fontSize: 17 }}><span style={{ color: 'var(--muted2)' }}>Spor: </span><b>{sub?.track === 'gym' ? 'Gym' : 'Hjemme'}</b> <span style={{ color: 'var(--muted2)', fontSize: 15 }}>(bytt direkte i programmet)</span></div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--muted2)' }}>Du logger inn med en lenke eller kode på e-post. Vil du bytte e-post eller slette kontoen, send en e-post til <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
+          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--muted2)' }}>Du logger inn med Google eller e-post og passord, og forblir innlogget på enheten. Vil du bytte e-post eller slette kontoen, send en e-post til <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
+          <div className="label" style={{ marginTop: 8 }}>{user.user_metadata?.has_password ? 'Bytt passord' : 'Lag passord'}</div>
+          <SetPassword label={user.user_metadata?.has_password ? 'Lagre nytt passord' : 'Lag passord'} />
           <form action="/api/logout" method="post" style={{ marginTop: 'auto' }}><button className="btn btn-line" type="submit">Logg ut</button></form>
         </div>
       </div>
