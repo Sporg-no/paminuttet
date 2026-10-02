@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase/admin';
 import { ACTIVE } from '@/lib/access';
-import { WEEKS, schedule } from '@/lib/program';
+import { WEEKS, schedule, calendarWeekForAbs } from '@/lib/program';
 import { sendMail } from '@/lib/mail';
 import { newWeekEmail } from '@/lib/emails';
 
@@ -40,11 +40,11 @@ export async function GET(req: NextRequest) {
     const to = emailOf.get(s.user_id);
     if (!to) continue;
     const days = (s.track === 'gym' ? week.gym : week.home).map(d => `${d.day}: ${d.name}${d.optional ? ' (valgfri)' : ''}`);
-    const m = newWeekEmail({ weekN: week.n, title: week.title, intro: week.intro, days });
+    const m = newWeekEmail({ weekN: calendarWeekForAbs(sch.abs), title: week.title, intro: week.intro, days });
     const ok = await sendMail(to, m.subject, m.text, { html: m.html, idempotencyKey: `ny-uke-${sch.abs}-${s.user_id}` });
     if (ok) sent++;
     await new Promise(r => setTimeout(r, 550)); // Resend tillater ca. 2 e-poster i sekundet
   }
   if (!stateErr) await admin.from('app_state').upsert({ key: 'announced_week', value: { abs: sch.abs, sent }, updated_at: new Date().toISOString() });
-  return NextResponse.json({ sent, week: week.n, abs: sch.abs });
+  return NextResponse.json({ sent, week: calendarWeekForAbs(sch.abs), abs: sch.abs });
 }

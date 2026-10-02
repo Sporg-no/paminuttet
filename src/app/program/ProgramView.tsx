@@ -20,8 +20,8 @@ function todayIdx() {
   return d === 0 ? 0 : Math.min(5, d - 1);
 }
 
-export default function ProgramView({ weeks, currentIdx, cycle, note, initialTrack, welcome, needsPassword }: {
-  weeks: Week[]; currentIdx: number; cycle: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
+export default function ProgramView({ weeks, labels, currentIdx, note, initialTrack, welcome, needsPassword }: {
+  weeks: Week[]; labels: number[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
 }) {
   const [wk, setWk] = useState(currentIdx);
   const [track, setTrack] = useState<'gym' | 'hjemme'>(initialTrack);
@@ -117,7 +117,8 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
   const progress = ts.total ? Math.min(100, (ts.e / ts.total) * 100) : 0;
   const runLabel = running ? 'Pause' : ts.done ? 'Start på nytt' : eRaw > 0 ? 'Fortsett' : 'Start klokka';
   const isCurrent = wk === currentIdx;
-  const weekLabel = `${cycle > 1 ? `SYKLUS ${cycle} · ` : ''}UKE ${week.n} · ${week.title.toUpperCase()}`;
+  const weekNo = labels[wk] ?? week.n;
+  const weekLabel = `UKE ${weekNo} · ${week.title.toUpperCase()}`;
 
   const rows = useMemo(() => C.rows, [C]);
 
@@ -128,7 +129,7 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
         {weeks.length > 1 && (
           <div className="weeks" role="group" aria-label="Uke">
             {weeks.map((w, i) => (
-              <button key={w.n} type="button" className="pill on-card" aria-pressed={i === wk} onClick={() => { setWk(i); setDay(i === currentIdx ? todayIdx() : 0); reset(); }}>Uke {w.n}</button>
+              <button key={w.n} type="button" className="pill on-card" aria-pressed={i === wk} onClick={() => { setWk(i); setDay(i === currentIdx ? todayIdx() : 0); reset(); }}>Uke {labels[i] ?? w.n}</button>
             ))}
           </div>
         )}
@@ -177,7 +178,7 @@ export default function ProgramView({ weeks, currentIdx, cycle, note, initialTra
           </div>
         )}
         <div className="fade" key={`${wk}-${track}-${day}`}>
-          <div className="eyebrow">{d.day} · {track === 'gym' ? 'Gym' : 'Hjemme'} · uke {week.n}{d.optional ? ' · valgfri' : ''}{d.benchmark ? ' · test' : ''}</div>
+          <div className="eyebrow">{d.day} · {track === 'gym' ? 'Gym' : 'Hjemme'} · uke {weekNo}{d.optional ? ' · valgfri' : ''}{d.benchmark ? ' · test' : ''}</div>
           <h1>{d.name}</h1>
           {day === 0 && <p style={{ margin: '10px 0 0', fontSize: 16, color: 'var(--body)' }}>{week.intro}</p>}
         </div>

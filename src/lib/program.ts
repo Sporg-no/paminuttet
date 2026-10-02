@@ -47,3 +47,16 @@ export function nextRelease(now = new Date()) {
   const k = Math.floor((now.getTime() - s) / WEEK_MS) + 1;
   return new Date(s + k * WEEK_MS);
 }
+
+/** ISO-ukenummer (norsk ukenummer) for en dato. */
+export function isoWeek(d: Date) {
+  const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const day = t.getUTCDay() || 7;
+  t.setUTCDate(t.getUTCDate() + 4 - day);
+  const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+  return Math.ceil(((t.getTime() - y0.getTime()) / 864e5 + 1) / 7);
+}
+/** Kalenderuka (uke 41, 42 …) som programuke nr. abs (1 = første) gjelder for. Uka slippes søndag kveld og gjelder mandag–lørdag. */
+export function calendarWeekForAbs(abs: number) {
+  return isoWeek(new Date(programStart().getTime() + (abs - 1) * WEEK_MS + 864e5));
+}

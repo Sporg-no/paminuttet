@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/access';
-import { WEEKS, schedule, nextRelease } from '@/lib/program';
+import { WEEKS, schedule, nextRelease, calendarWeekForAbs } from '@/lib/program';
 import { MemberNav } from '@/components/MemberNav';
 import { DarkFooter } from '@/components/Footer';
 import ProgramView from './ProgramView';
@@ -19,6 +19,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
 
   const sch = schedule();
   const weeks = WEEKS.slice(0, sch.visible); // fremtidige uker sendes aldri til nettleseren
+  const firstAbs = sch.abs - sch.weekIdx; // programuke nr. for første synlige uke i denne syklusen
+  const labels = weeks.map((_, i) => calendarWeekForAbs(firstAbs + i));
 
   let banner: { tone: 'info' | 'warn'; text: string } | null = null;
   if (sub.status === 'past_due') {
@@ -32,7 +34,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
     banner = { tone: 'info', text: `Prøveperiode: ${left} ${left === 1 ? 'dag' : 'dager'} igjen. Første trekk ${dato(end)}. Avslutt når du vil under Min side.` };
   }
   const note = sch.beforeStart
-    ? `Programmet starter ${dato(nextRelease())}. Du kan se og prøve uke 1 allerede nå.`
+    ? `Programmet starter ${dato(nextRelease())}. Du kan se og prøve uke ${calendarWeekForAbs(1)} allerede nå.`
     : sch.waiting
       ? 'Neste uke publiseres snart. Du får e-post når den er klar.'
       : `Neste uke kommer søndag ${dato(nextRelease())} kl. 20.`;
@@ -46,7 +48,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
           <a href="/min-side" style={{ fontWeight: 600, color: 'inherit' }}>Min side</a>
         </div>
       )}
-      <ProgramView weeks={weeks} currentIdx={sch.weekIdx} cycle={sch.cycle} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
+      <ProgramView weeks={weeks} labels={labels} currentIdx={sch.weekIdx} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
       <DarkFooter />
     </div>
   );

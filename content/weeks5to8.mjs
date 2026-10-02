@@ -19,7 +19,7 @@ const gA = {
 
 export const W5 = {
   title: 'Grunnlag 2',
-  intro: 'Ny syklus. Nye øvelser, samme format. Start på nivået du endte på i uke 4.',
+  intro: 'Ny syklus. Nye øvelser, samme format. Start på nivået du endte på i forrige testuke.',
   gym: [
     { short: 'Man', day: 'Mandag', name: 'Frontminuttet', dur: G, A: gA.man,
       B: { t: 'Frontknebøy', l: ['Hver 2:30 × 5 sett: 5 reps @ 65 % (RPE 6)', 'Grunnmur: goblet squat 5×8 med 2 s pause nede'] },
@@ -36,7 +36,7 @@ export const W5 = {
         r('Løp', '600 m', '600 m', '500 m', '400 m', '300 m'),
         r('Wallballs', '20 (9/6 kg)', '20 (9/6 kg)', '15 (6/4 kg)', '15 (6/4 kg)', '12 (4/3 kg)'),
         r('Burpees', '12', '10', '8', '8', '6 step-back')],
-        score: 'Total tid inkludert hvile. Gjentas i uke 8, så noter tiden.' },
+        score: 'Total tid inkludert hvile. Gjentas i testuka om tre uker, så noter tiden.' },
       D: ['3 supersett: 12 DB biceps curl + 12 triceps pushdown med strikk'] },
     { short: 'Ons', day: 'Onsdag', name: 'Kraftverket', dur: G, A: gA.ons,
       B: { t: 'Power clean', l: ['EMOM 10: 3 power cleans fra gulvet @ 60 %', 'Grunnmur: EMOM 10: 5 DB power cleans'] },
@@ -61,7 +61,7 @@ export const W5 = {
         r('Thrusters', '21 (43/30 kg)', '21 (35/25 kg)', '21 (30/20 kg)', '15 (20/15 kg)', '15 DB thrusters (7,5/5 kg)'),
         r('Trekk', '15 pull-ups', '12 pull-ups', '15 pull-ups med strikk', '15 ring rows', '12 ring rows'),
         r('Ro', '750 m', '750 m', '600 m', '500 m', '400 m')],
-        score: 'Tid. Gjentas i uke 8, så noter tiden.' },
+        score: 'Tid. Gjentas i testuka om tre uker, så noter tiden.' },
       D: ['3 sett: 12 DB sidehev + 15 face pulls med strikk'] },
     { short: 'Lør', day: 'Lørdag', name: 'Lørdagsminuttet 5', dur: V, optional: true, A: gA.lor, B: null,
       C: { fmt: '36:00 EMOM · 6 runder · partnervariant mulig', timer: { t: 'emom', m: 36 }, rows: [
@@ -90,7 +90,7 @@ export const W5 = {
         r('Løp', '600 m', '600 m', '500 m', '400 m', '300 m'),
         r('Knebøyhopp', '20', '18', '15', '12', '15 luftknebøy'),
         r('Burpees', '12', '10', '8', '8', '6 step-back')],
-        score: 'Total tid inkludert hvile. Gjentas i uke 8, så noter tiden.' },
+        score: 'Total tid inkludert hvile. Gjentas i testuka om tre uker, så noter tiden.' },
       D: ['3 sett: 12 dips på stol + 20 s hollow hold'] },
     { short: 'Ons', day: 'Onsdag', name: 'Bordet', dur: H, A: [std, '2×8 bordroing i rolig tempo'],
       B: { t: 'Bordroing', l: ['4×10 bordroing med 2 s ned, 60 s hvile', 'Grunnmur: bordroing med bøyde knær, 4×8', 'Med vekt: foroverbøyd DB-roing, 4×12'] },
@@ -117,7 +117,7 @@ export const W5 = {
         r('Push-ups', '30', '25', '20', '16 på knær', '16 mot benk'),
         r('Sit-ups', '40', '35', '30', '25', '20'),
         r('Burpees', '20', '18', '15', '12', '10 step-back')],
-        score: 'Tid. Gjentas i uke 8, så noter tiden.' },
+        score: 'Tid. Gjentas i testuka om tre uker, så noter tiden.' },
       D: ['3 sett: 10 superman + 30 s planke'] },
     { short: 'Lør', day: 'Lørdag', name: 'Lørdagsminuttet Hjemme 5', dur: V, optional: true, A: [std], B: null,
       C: { fmt: '30:00 EMOM · 6 runder · partnervariant mulig', timer: { t: 'emom', m: 30 }, rows: [
@@ -133,10 +133,10 @@ export const W5 = {
 
 export const W6 = {
   title: 'Bygg 2',
-  intro: 'Mer volum og tyngre styrke. Gå opp ett nivå der uke 5 føltes kontrollert.',
+  intro: 'Mer volum og tyngre styrke. Gå opp ett nivå der forrige uke føltes kontrollert.',
   gym: [
     { short: 'Man', day: 'Mandag', name: 'Fronten 2', dur: G, A: gA.man,
-      B: { t: 'Frontknebøy', l: ['Hver 2:30 × 5 sett: 4 reps @ 70 % (RPE 7)', 'Grunnmur: goblet squat 5×8, litt tyngre enn uke 5'] },
+      B: { t: 'Frontknebøy', l: ['Hver 2:30 × 5 sett: 4 reps @ 70 % (RPE 7)', 'Grunnmur: goblet squat 5×8, litt tyngre enn forrige uke'] },
       C: { fmt: '20:00 EMOM · 5 runder', timer: { t: 'emom', m: 20 }, rows: [
         r('1: Ro', '16/13 kal', '14/11 kal', '12/9 kal', '10/8 kal', '8/6 kal'),
         r('2: DB thrusters, 2 DB', '12 (22,5/15 kg)', '12 (17,5/12,5 kg)', '10 (12,5/10 kg)', '10 (10/7,5 kg)', '10 goblet squats (8/6 kg)'),
@@ -145,7 +145,7 @@ export const W6 = {
         score: 'Fullførte minutter (maks 20).' },
       D: ['3 sett: 12 DB rumensk markløft + 30 s sideplanke per side'] },
     { short: 'Tir', day: 'Tirsdag', name: 'Bakkeløpet 2', dur: G, A: gA.tir,
-      B: { t: 'Benkpress + pendlay-roing', l: ['4 supersett, 90 s hvile: 6 benkpress @ 70 % + 8 pendlay-roing', 'Grunnmur: DB-benkpress 4×10 + DB-roing 4×10 per side, tyngre enn uke 5'] },
+      B: { t: 'Benkpress + pendlay-roing', l: ['4 supersett, 90 s hvile: 6 benkpress @ 70 % + 8 pendlay-roing', 'Grunnmur: DB-benkpress 4×10 + DB-roing 4×10 per side, tyngre enn forrige uke'] },
       C: { fmt: '4 runder · 1:30 hvile mellom · Grunnmur gjør 3', timer: { t: 'up', cap: 0 }, rows: [
         r('Løp', '400 m', '400 m', '400 m', '300 m', '200 m'),
         r('Wallballs', '25 (9/6 kg)', '20 (9/6 kg)', '20 (6/4 kg)', '15 (6/4 kg)', '12 (4/3 kg)'),
@@ -153,7 +153,7 @@ export const W6 = {
         score: 'Total tid inkludert hvile.' },
       D: ['3 supersett: 12 DB hammercurls + 12 benkedips'] },
     { short: 'Ons', day: 'Onsdag', name: 'Klokkespillet', dur: G, A: gA.ons,
-      B: { t: 'Power clean', l: ['EMOM 10: 2 power cleans @ 70 %', 'Grunnmur: EMOM 10: 4 DB power cleans, tyngre enn uke 5'] },
+      B: { t: 'Power clean', l: ['EMOM 10: 2 power cleans @ 70 %', 'Grunnmur: EMOM 10: 4 DB power cleans, tyngre enn forrige uke'] },
       C: { fmt: 'Start hvert 3. minutt · 6 runder (18 min)', timer: { t: 'every', each: 180, rounds: 6 }, rows: [
         r('Power clean', '5 (70/47,5 kg)', '5 (60/40 kg)', '5 (50/35 kg)', '5 (40/25 kg)', '5 DB cleans (15/10 kg)'),
         r('Burpees', '8 over stanga', '7 over stanga', '6', '5', '5 step-back'),
@@ -161,7 +161,7 @@ export const W6 = {
         score: 'Kalorier totalt på roeren.' },
       D: ['3 sett: 20 abmat sit-ups + 10 strict knehev'] },
     { short: 'Tor', day: 'Torsdag', name: 'Motoren 6', dur: G, A: gA.tor,
-      B: { t: 'Markløft', l: ['Hver 2:30 × 5 sett: 4 reps @ 75 % (RPE 7)', 'Grunnmur: KB-markløft 5×10, tyngre enn uke 5'] },
+      B: { t: 'Markløft', l: ['Hver 2:30 × 5 sett: 4 reps @ 75 % (RPE 7)', 'Grunnmur: KB-markløft 5×10, tyngre enn forrige uke'] },
       C: { fmt: '5 runder · start hver 5:00', timer: { t: 'every', each: 300, rounds: 5 }, rows: [
         r('Ro', '500 m', '500 m', '400 m', '350 m', '300 m'),
         r('BikeErg', '15/12 kal', '13/10 kal', '11/8 kal', '9/7 kal', '7/5 kal'),
@@ -362,13 +362,13 @@ export function buildW8(w4, w5) {
   gm.name = 'FEMTEN 2';
   gm.B = { t: 'Frontknebøy 3RM', l: ['Bygg til en tung 3RM på 15 minutter. Hvil 2–3 minutter mellom de tunge settene.', 'Grunnmur: bygg over 4 sett til en tung goblet squat × 8'] };
   gm.A = clone(gA.man);
-  gm.C.score = 'Runder + reps. Sammenlign med uke 4.';
+  gm.C.score = 'Runder + reps. Sammenlign med forrige testuke.';
 
   const gt = clone(w5.gym[1]);
   gt.name = 'Bakkeløpet (gjentak)';
   gt.B = { t: 'Benkpress 3RM + pull-up-test', l: ['Bygg til en tung 3RM på 12 minutter', 'Deretter: ett sett maks strict pull-ups', 'Grunnmur: DB-benkpress, bygg til en tung × 8, og maks ring rows på 1:00'] };
-  gt.C.fmt = '3 runder · 1:30 hvile · samme nivå som uke 5';
-  gt.C.score = 'Total tid inkludert hvile. Sammenlign med uke 5.';
+  gt.C.fmt = '3 runder · 1:30 hvile · samme nivå som for tre uker siden';
+  gt.C.score = 'Total tid inkludert hvile. Sammenlign med økta for tre uker siden.';
 
   const go = clone(w4.gym[2]);
   go.name = 'Flyt 2';
@@ -376,49 +376,49 @@ export function buildW8(w4, w5) {
 
   const gtor = clone(w4.gym[3]);
   gtor.name = 'Rotesten 2';
-  gtor.B = { t: 'Markløft 3RM', l: ['Bygg til en tung 3RM på 15 minutter. Sammenlign med uke 4.', 'Grunnmur: bygg over 4 sett til en tung KB-markløft × 10'] };
-  gtor.C.score = 'Tid. Sammenlign med uke 4.';
+  gtor.B = { t: 'Markløft 3RM', l: ['Bygg til en tung 3RM på 15 minutter. Sammenlign med forrige testuke.', 'Grunnmur: bygg over 4 sett til en tung KB-markløft × 10'] };
+  gtor.C.score = 'Tid. Sammenlign med forrige testuke.';
 
   const gf = clone(w5.gym[4]);
   gf.name = 'Bunken 2.0 (gjentak)';
   gf.B = { t: 'Push press + DB-roing, avlast', l: ['3 supersett: 5 push press @ 60 % + 10 DB-roing per side', 'Grunnmur: DB push press 3×8 + DB-roing 3×10 per side, lett'] };
-  gf.C.fmt = 'For tid · tidsgrense 18:00 · samme nivå som uke 5';
-  gf.C.score = 'Tid. Sammenlign med uke 5.';
+  gf.C.fmt = 'For tid · tidsgrense 18:00 · samme nivå som for tre uker siden';
+  gf.C.score = 'Tid. Sammenlign med økta for tre uker siden.';
 
   const gl = clone(w4.gym[5]);
   gl.name = 'Mini-racet 2';
-  gl.C.score = 'Total tid. Sammenlign med uke 4, og noter tiden på hver løpedel.';
+  gl.C.score = 'Total tid. Sammenlign med forrige testuke, og noter tiden på hver løpedel.';
 
   const hm = clone(w4.home[0]);
   hm.name = 'FEMTEN Hjemme 2';
-  hm.C.score = 'Runder + reps. Sammenlign med uke 4.';
+  hm.C.score = 'Runder + reps. Sammenlign med forrige testuke.';
 
   const ht = clone(w5.home[1]);
   ht.name = 'Døra ut 5 (gjentak)';
   ht.B = { t: 'Test: maks push-ups', l: ['Ett sett med maks push-ups: brystet i gulvet og strake armer på toppen. Settet er over når formen brekker.', 'Grunnmur: maks push-ups mot benk', 'Hvil 3 minutter før C.'] };
-  ht.C.fmt = '3 runder · 1:30 hvile · samme nivå som uke 5';
-  ht.C.score = 'Total tid inkludert hvile. Sammenlign med uke 5.';
+  ht.C.fmt = '3 runder · 1:30 hvile · samme nivå som for tre uker siden';
+  ht.C.score = 'Total tid inkludert hvile. Sammenlign med økta for tre uker siden.';
 
   const ho = clone(w4.home[2]);
   ho.name = 'Flyt Hjemme 2';
 
   const htor = clone(w4.home[3]);
   htor.name = 'Burpeetesten 2';
-  htor.C.score = 'Antall burpees. Sammenlign med uke 4.';
+  htor.C.score = 'Antall burpees. Sammenlign med forrige testuke.';
 
   const hf = clone(w5.home[4]);
   hf.name = 'Bunken Hjemme 5 (gjentak)';
   hf.B = { t: 'Skulder, avlast', l: ['3×6 pike push-ups i rolig tempo', 'Grunnmur: 3×6 pike push-ups med hendene på stol'] };
-  hf.C.fmt = 'For tid · tidsgrense 16:00 · samme nivå som uke 5';
-  hf.C.score = 'Tid. Sammenlign med uke 5.';
+  hf.C.fmt = 'For tid · tidsgrense 16:00 · samme nivå som for tre uker siden';
+  hf.C.score = 'Tid. Sammenlign med økta for tre uker siden.';
 
   const hl = clone(w4.home[5]);
   hl.name = 'Mini-racet Hjemme 2';
-  hl.C.score = 'Total tid. Sammenlign med uke 4.';
+  hl.C.score = 'Total tid. Sammenlign med forrige testuke.';
 
   return {
     title: 'Test 2',
-    intro: 'Gjenta testene fra uke 4 og øktene fra uke 5. Noter alt og sammenlign.',
+    intro: 'Gjenta testene fra forrige testuke og øktene fra for tre uker siden. Noter alt og sammenlign.',
     gym: [gm, gt, go, gtor, gf, gl],
     home: [hm, ht, ho, htor, hf, hl],
   };

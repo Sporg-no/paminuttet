@@ -226,10 +226,10 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
           <div className="card lift rv step">
             <div className="mono" style={{ fontSize: 16, fontWeight: 800, color: 'var(--sig-text)' }}>03</div>
             <div className="cond">Test deg hver 4. uke</div>
-            <p>Uke 4 gjentar testene fra uke 1. Da ser du fremgangen svart på hvitt.</p>
+            <p>Hver fjerde uke er testuke. Samme tester, samme nivå, og du ser fremgangen svart på hvitt.</p>
             <div className="foot" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 52 }}>UKE 1</span><span style={{ height: 12, width: '80%', maxWidth: 260, background: 'var(--line2)', display: 'block' }} /></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 52 }}>UKE 4</span><span style={{ height: 12, width: '63%', maxWidth: 205, background: 'var(--sig)', display: 'block' }} /></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 58 }}>UKE 41</span><span style={{ height: 12, width: '80%', maxWidth: 260, background: 'var(--line2)', display: 'block' }} /></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><span className="mono" style={{ fontSize: 12, fontWeight: 700, width: 58 }}>UKE 44</span><span style={{ height: 12, width: '63%', maxWidth: 205, background: 'var(--sig)', display: 'block' }} /></div>
             </div>
           </div>
         </div>
@@ -264,7 +264,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
           <p style={{ margin: '24px 0 0', fontSize: 16, color: 'var(--muted2)' }}>Rekker du ikke minuttet to ganger på rad: gå ned ett nivå.</p>
         </div>
         <div className="rv dark excard">
-          <div className="eyebrow">Hjemme · mandag · uke 1</div>
+          <div className="eyebrow">Hjemme · mandag · uke 41</div>
           <div className="cond" style={{ fontSize: 'clamp(34px, 3.5vw, 50px)', marginTop: 8, lineHeight: 1 }}>Stuegulvet-minuttet</div>
           <div className="mono" style={{ fontSize: 14, color: 'var(--dim)', marginTop: 8 }}>20:00 EMOM · 5 RUNDER · {LVLS[ex].toUpperCase()}</div>
           <div style={{ marginTop: 20 }}>
