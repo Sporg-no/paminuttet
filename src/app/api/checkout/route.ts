@@ -5,6 +5,7 @@ import { supabaseAdmin } from '@/lib/supabase/admin';
 import { supabaseServer } from '@/lib/supabase/server';
 import { ACTIVE } from '@/lib/access';
 import { siteUrl } from '@/lib/env';
+import { programStart } from '@/lib/program';
 
 export const runtime = 'nodejs';
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -55,6 +56,7 @@ async function handle(req: NextRequest) {
   const now = new Date().toISOString();
   const tax = process.env.STRIPE_AUTOMATIC_TAX === 'true';
   const site = siteUrl();
+  const preLaunch = Date.now() < programStart().getTime();
   const params: Stripe.Checkout.SessionCreateParams = {
     mode: 'subscription',
     line_items: [{ price: await priceFor(plan), quantity: 1 }],
@@ -67,12 +69,18 @@ async function handle(req: NextRequest) {
     metadata: { consent: 'umiddelbar-levering-v1', consent_at: now, track, email },
     subscription_data: {
       metadata: { track, consent_at: now },
-      ...(hadSub ? {} : { trial_period_days: 7, trial_settings: { end_behavior: { missing_payment_method: 'cancel' } } }),
+      // Før programstart: prøveperioden teller fra første uke slippes, ikke fra kjøpet.
+      ...(hadSub ? {} : {
+        ...(preLaunch ? { trial_end: Math.floor((programStart().getTime() + 7 * 864e5) / 1000) } : { trial_period_days: 7 }),
+        trial_settings: { end_behavior: { missing_payment_method: 'cancel' } },
+      }),
     },
     custom_text: {
       submit: { message: hadSub
         ? 'Du får tilgang med en gang. Du har samtykket til at angreretten faller bort ved umiddelbar levering. Avslutt når du vil under Min side.'
-        : 'Du får tilgang med en gang og betaler 0 kr i dag. Kortet belastes etter 7 dager hvis du ikke avslutter før. Avslutt når du vil under Min side.' },
+        : preLaunch
+          ? 'Du betaler 0 kr i dag. Første uke slippes søndag 4. oktober kl. 20, og de 7 gratisdagene teller fra da. Avslutt når du vil under Min side.'
+          : 'Du får tilgang med en gang og betaler 0 kr i dag. Kortet belastes etter 7 dager hvis du ikke avslutter før. Avslutt når du vil under Min side.' },
     },
     success_url: `${site}/start/ferdig?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${site}/start?avbrutt=1&plan=${plan}&spor=${track}`,

@@ -24,7 +24,7 @@ const EX = [
 const FAQ = [
   { q: 'Hva trenger jeg av utstyr?', a: 'Hjemme-sporet: gulv, en stol og et solid bord. Kettlebell eller manualer er valgfritt. Gym-sporet: stang, stativ, manualer og romaskin eller sykkel.' },
   { q: 'Hvor lang tid tar en økt?', a: 'Hjemme tar 25–30 minutter og Gym 40–45 minutter. Finisheren på slutten er valgfri.' },
-  { q: 'Hvordan fungerer prøveperioden?', a: 'Du får 7 dager gratis. Du får en påminnelse på e-post på dag 5, og kortet belastes først på dag 8. Avslutter du før det, betaler du ingenting.' },
+  { q: 'Hvordan fungerer prøveperioden?', a: 'Du får 7 dager gratis. Du får en påminnelse på e-post på dag 5, og kortet belastes først på dag 8. Avslutter du før det, betaler du ingenting. Starter du før første uke er sluppet, teller de 7 dagene fra slippet.' },
   { q: 'Kan jeg avslutte når jeg vil?', a: 'Ja. Du avslutter under Min side. Tilgangen varer ut perioden du har betalt for.' },
   { q: 'Hva med angreretten?', a: 'Du får tilgang med en gang. Ved kjøp samtykker du til at leveringen starter umiddelbart, og at 14 dagers angrerett da faller bort. Prøveperioden gir deg 7 dager til å bestemme deg.' },
 ];
