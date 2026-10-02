@@ -4,7 +4,8 @@ import { stripe } from '@/lib/stripe';
 import { supabaseAdmin, ensureUser } from '@/lib/supabase/admin';
 import { saveSubscription } from '@/lib/subs';
 import { sendMail } from '@/lib/mail';
-import { env, siteUrl } from '@/lib/env';
+import { welcomeEmail, trialEndingEmail } from '@/lib/emails';
+import { env } from '@/lib/env';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -41,6 +42,9 @@ export async function POST(req: NextRequest) {
         const userId = await ensureUser(email);
         const sub = await stripe().subscriptions.retrieve(typeof s.subscription === 'string' ? s.subscription : s.subscription.id);
         await saveSubscription(userId, sub, { track: s.metadata?.track, consent_at: s.metadata?.consent_at });
+        const price = sub.items.data[0]?.price?.recurring?.interval === 'year' ? '1 990 kr' : '199 kr';
+        const w = welcomeEmail({ trialEnd: sub.trial_end ? new Date(sub.trial_end * 1000) : null, price });
+        await sendMail(email, w.subject, w.text, { html: w.html, idempotencyKey: `velkommen-${s.id}` });
         break;
       }
       case 'customer.subscription.created':
@@ -63,9 +67,8 @@ export async function POST(req: NextRequest) {
         const end = sub.trial_end ? new Date(sub.trial_end * 1000) : null;
         const dato = end ? end.toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', timeZone: 'Europe/Oslo' }) : 'snart';
         const pris = sub.items.data[0]?.price?.recurring?.interval === 'year' ? '1 990 kr' : '199 kr';
-        const site = siteUrl();
-        await sendMail(u.email, 'Prøveperioden din slutter ' + dato,
-          `Hei!\n\nPrøveperioden din hos PÅ MINUTTET slutter ${dato}. Da trekkes ${pris} fra kortet ditt, og medlemskapet fortsetter.\n\nVil du ikke fortsette, avslutter du under Min side før ${dato}: ${site}/min-side\n\nHilsen PÅ MINUTTET`);
+        const m = trialEndingEmail({ dato, price: pris });
+        await sendMail(u.email, m.subject, m.text, { html: m.html, idempotencyKey: `provetid-${sub.id}-${sub.trial_end}` });
         break;
       }
       default:

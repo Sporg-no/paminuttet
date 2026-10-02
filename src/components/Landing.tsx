@@ -351,7 +351,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
             <div className="dark" style={{ marginTop: 28, borderRadius: 20, padding: '22px 26px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, maxWidth: 640, flexWrap: 'wrap' }}>
               <div>
                 <div className="cond" style={{ fontSize: 32 }}>Den er din.</div>
-                <div style={{ fontSize: 15, color: 'var(--dim2)', marginTop: 4 }}>Vi har lagret {email}. Last ned PDF-en her.</div>
+                <div style={{ fontSize: 15, color: 'var(--dim2)', marginTop: 4 }}>Vi har sendt den til {email}. Du kan også laste den ned nå.</div>
               </div>
               <a href="/media/PA-MINUTTET-20-EMOM-er.pdf" download="PA-MINUTTET-20-EMOM-er.pdf" className="btn btn-sig">Last ned nå</a>
             </div>

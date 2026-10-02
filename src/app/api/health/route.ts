@@ -20,6 +20,9 @@ export async function GET() {
     STRIPE_PRICE_ANNUAL: has('STRIPE_PRICE_ANNUAL'),
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || null,
     PROGRAM_START: process.env.PROGRAM_START || null,
+    RESEND_API_KEY: has('RESEND_API_KEY'),
+    MAIL_FROM: process.env.MAIL_FROM || null,
+    CRON_SECRET: has('CRON_SECRET'),
   };
   const checks: Record<string, string> = {};
   try {
