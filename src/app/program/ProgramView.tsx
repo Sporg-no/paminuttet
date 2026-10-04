@@ -156,6 +156,14 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
           ))}
         </div>
         <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>Rekker du ikke minuttet to ganger på rad: gå ned ett nivå.</p>
+        {lvl === 4 && (
+          <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>
+            <b>For lett? Nivå 4+:</b>{' '}
+            {track === 'gym'
+              ? 'konkurransevekter (wallball 14/9 kg, KB 32/24 kg, DB 30/22,5 kg, stang +10 %) og vanskeligste gymnastikk: chest-to-bar i stedet for pull-ups, bar muscle-ups i stedet for C2B, HSPU i stedet for pike push-ups.'
+              : 'vektvest 10/6 kg, hoppvarianten av hver øvelse og 10 % flere reps.'}
+          </p>
+        )}
         <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>{note}</p>
       </aside>
 
