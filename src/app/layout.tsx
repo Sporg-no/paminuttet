@@ -10,6 +10,7 @@ import '@fontsource/jetbrains-mono/latin-500.css';
 import '@fontsource/jetbrains-mono/latin-700.css';
 import '@fontsource/jetbrains-mono/latin-800.css';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 const site = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
 
@@ -32,7 +33,7 @@ export const viewport: Viewport = { themeColor: '#121212', width: 'device-width'
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nb">
-      <body>{children}</body>
+      <body>{children}<Analytics /></body>
     </html>
   );
 }

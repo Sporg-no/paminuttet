@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import { track as trackEvent } from '@vercel/analytics';
 
 const MONTHS = ['jan.', 'feb.', 'mars', 'apr.', 'mai', 'juni', 'juli', 'aug.', 'sep.', 'okt.', 'nov.', 'des.'];
 const fmt = (d: Date) => `${d.getDate()}. ${MONTHS[d.getMonth()]}`;
@@ -30,7 +31,7 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
         body: JSON.stringify({ plan, track, email: email.trim().toLowerCase(), consent: true }),
       });
       const j = await r.json();
-      if (r.ok && j.url) { window.location.href = j.url; return; }
+      if (r.ok && j.url) { trackEvent('Kasse startet', { plan, spor: track }); window.location.href = j.url; return; }
       if (j.noTrial) setTrial(false);
       setErr({ msg: j.error || 'Noe gikk galt. Prøv igjen.', login: j.login });
     } catch { setErr({ msg: 'Fikk ikke kontakt med serveren. Prøv igjen.' }); }

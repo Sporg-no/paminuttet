@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Dial } from './Dial';
+import { track as trackEvent } from '@vercel/analytics';
 import { Brand } from './Brand';
 import { Footer } from './Footer';
 
@@ -98,6 +99,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
     try {
       const r = await fetch('/api/lead', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, source: 'forside-pdf' }) });
       setLead(r.ok ? 'done' : 'error');
+      if (r.ok) trackEvent('PDF-lead');
     } catch { setLead('error'); }
   }
 

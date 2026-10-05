@@ -26,6 +26,8 @@ export default function Page() {
       </ul>
       <h2>Informasjonskapsler og lagring i nettleseren</h2>
       <p>Vi bruker bare nødvendige informasjonskapsler for å holde deg innlogget. Nivåvalget ditt og lydinnstillingen i timeren lagres lokalt i nettleseren din. Vi bruker ikke sporing eller annonsekapsler.</p>
+      <h2>Besøksstatistikk</h2>
+      <p>Vi teller besøk med Vercel Web Analytics. Det bruker ingen informasjonskapsler og lagrer ikke IP-adresser eller annet som identifiserer deg. Vi ser bare samlede tall, for eksempel antall besøk per side.</p>
       <h2>Hvor lenge</h2>
       <p>Kontoen slettes når du ber om det. Regnskapsdata oppbevares i 5 år. E-post fra nyhetsbrevet slettes når du melder deg av.</p>
       <h2>Dine rettigheter</h2>
