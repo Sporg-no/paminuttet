@@ -5,6 +5,8 @@ import type { Week } from '@/lib/program';
 import { timerState, mmss, pad2 } from '@/lib/timer';
 import { Dial } from '@/components/Dial';
 import SetPassword from '@/components/SetPassword';
+import { ovelseTekst, OvelseArk } from '@/components/OvelseTekst';
+import type { Ovelse } from '@/content/ovelser';
 
 const LVLS = ['Grunnmur', 'Nivå 1', 'Nivå 2', 'Nivå 3', 'Nivå 4'];
 const HEAD = ['Bevegelse', 'Nivå 4', 'Nivå 3', 'Nivå 2', 'Nivå 1', 'Grunnmur'];
@@ -27,6 +29,8 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
   const [track, setTrack] = useState<'gym' | 'hjemme'>(initialTrack);
   const [day, setDay] = useState(0);
   const [lvl, setLvl] = useState(2);
+  const [ov, setOv] = useState<Ovelse | null>(null);
+  const T = (x: string) => ovelseTekst(x, setOv);
   const [running, setRunning] = useState(false);
   const [acc, setAcc] = useState(0);
   const [t0, setT0] = useState(0);
@@ -214,11 +218,11 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
         <div className="blocks">
           <div className="card block">
             <div className="eyebrow">A · Oppvarming</div>
-            <ul>{(d.A ?? []).map(x => <li key={x}>{x}</li>)}</ul>
+            <ul>{(d.A ?? []).map(x => <li key={x}><span>{T(x)}</span></li>)}</ul>
           </div>
           <div className="card block">
-            <div className="eyebrow">B · Styrke{d.B ? ` · ${d.B.t}` : ''}</div>
-            <ul>{(d.B ? d.B.l : ['Ingen styrke i dag. Bruk tiden på oppvarming og mobilitet.']).map(x => <li key={x}>{x}</li>)}</ul>
+            <div className="eyebrow">B · Styrke{d.B ? <> · {T(d.B.t)}</> : ''}</div>
+            <ul>{(d.B ? d.B.l : ['Ingen styrke i dag. Bruk tiden på oppvarming og mobilitet.']).map(x => <li key={x}><span>{T(x)}</span></li>)}</ul>
           </div>
         </div>
 
@@ -228,19 +232,19 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
               <span className="eyebrow">C · Kondisjon</span>
               <span className="cond" style={{ fontSize: 30 }}>{C.fmt}</span>
             </div>
-            <span className="hint" style={{ fontSize: 14, color: 'var(--muted2)' }}>Nivået ditt er uthevet. Minuttet du er på lyser når klokka går.</span>
+            <span className="hint" style={{ fontSize: 14, color: 'var(--muted2)' }}>Nivået ditt er uthevet. Trykk på en øvelse for forklaring og video.</span>
           </div>
           <div className="ctable" role="table" aria-label="Kondisjonsdel per nivå">
             <div className="tr th" role="row">{HEAD.map((h, i) => <div key={h} role="columnheader" className={i === col ? 'col' : ''}>{h}</div>)}</div>
             {rows.map((r, ri) => (
               <div key={ri} role="row" className={`tr${started && !ts.done && ri === ts.activeRow ? ' active' : ''}`}>
-                {r.map((c, ci) => <div key={ci} role="cell" className={`td${ci === 0 ? ' mv' : ''}${ci === col ? ' col' : ''}`}>{c}</div>)}
+                {r.map((c, ci) => <div key={ci} role="cell" className={`td${ci === 0 ? ' mv' : ''}${ci === col ? ' col' : ''}`}>{T(c)}</div>)}
               </div>
             ))}
           </div>
           <div className="clist">
             {rows.map((r, ri) => (
-              <div key={ri} className={`ci${started && !ts.done && ri === ts.activeRow ? ' active' : ''}`}><span>{r[0]}</span><b>{r[col]}</b></div>
+              <div key={ri} className={`ci${started && !ts.done && ri === ts.activeRow ? ' active' : ''}`}><span>{T(r[0])}</span><b>{T(r[col])}</b></div>
             ))}
           </div>
           <div style={{ marginTop: 12, display: 'flex', gap: 12, fontSize: 15, lineHeight: 1.5 }}><span className="eyebrow" style={{ paddingTop: 2 }}>Score</span><span>{C.score}</span></div>
@@ -249,10 +253,11 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
         {(d.D ?? []).length > 0 && (
           <div className="card block" style={{ display: 'flex', gap: 20, alignItems: 'baseline', flexWrap: 'wrap' }}>
             <div className="eyebrow" style={{ whiteSpace: 'nowrap' }}>D · Finisher (valgfri)</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>{(d.D ?? []).map(x => <div key={x} style={{ fontSize: 15 }}>{x}</div>)}</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>{(d.D ?? []).map(x => <div key={x} style={{ fontSize: 15 }}>{T(x)}</div>)}</div>
           </div>
         )}
       </main>
+      <OvelseArk o={ov} lukk={() => setOv(null)} />
     </div>
   );
 }
