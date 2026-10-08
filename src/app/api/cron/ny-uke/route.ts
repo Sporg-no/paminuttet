@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase/admin';
-import { ACTIVE } from '@/lib/access';
+import { ACTIVE, hasAccess } from '@/lib/access';
 import { WEEKS, schedule, calendarWeekForAbs } from '@/lib/program';
 import { sendMail } from '@/lib/mail';
 import { newWeekEmail } from '@/lib/emails';
@@ -29,14 +29,15 @@ export async function GET(req: NextRequest) {
   }
 
   const week = WEEKS[sch.weekIdx];
-  const { data: subs, error } = await admin.from('subscriptions').select('user_id, track').in('status', ACTIVE);
+  const { data: subs, error } = await admin.from('subscriptions').select('user_id, track, status, cancel_at_period_end, current_period_end').in('status', ACTIVE);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  const ids = (subs ?? []).map(s => s.user_id);
+  const live = (subs ?? []).filter(s => hasAccess(s));
+  const ids = live.map(s => s.user_id);
   const { data: profs } = ids.length ? await admin.from('profiles').select('id, email').in('id', ids) : { data: [] };
   const emailOf = new Map((profs ?? []).map(p => [p.id as string, p.email as string]));
 
   let sent = 0;
-  for (const s of subs ?? []) {
+  for (const s of live) {
     const to = emailOf.get(s.user_id);
     if (!to) continue;
     const days = (s.track === 'gym' ? week.gym : week.home).map(d => `${d.day}: ${d.name}${d.optional ? ' (valgfri)' : ''}`);
