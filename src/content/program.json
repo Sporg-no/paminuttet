@@ -793,10 +793,11 @@
       ]
      },
      "C": {
-      "fmt": "5 runder · 1:00 hvile mellom · Grunnmur gjør 4",
+      "fmt": "Hver 5:00 × 5 runder · maks på boksen resten av runden · Grunnmur gjør 4",
       "timer": {
-       "t": "up",
-       "cap": 0
+       "t": "every",
+       "each": 300,
+       "rounds": 5
       },
       "rows": [
        [
@@ -816,15 +817,15 @@
         "10 (8/6 kg)"
        ],
        [
-        "Box",
-        "10 step-overs med 2 DB (22,5/15 kg, 60/50 cm)",
-        "10 step-overs med 2 DB (15/10 kg, 60/50 cm)",
-        "10 step-overs med 2 DB (10/7,5 kg, 50/40 cm)",
-        "10 step-ups (50/40 cm)",
-        "8 step-ups (40 cm)"
+        "Box, resten av runden",
+        "Maks step-overs med 2 DB (22,5/15 kg, 60/50 cm)",
+        "Maks step-overs med 2 DB (15/10 kg, 60/50 cm)",
+        "Maks step-overs med 2 DB (10/7,5 kg, 50/40 cm)",
+        "Maks step-ups (50/40 cm)",
+        "Maks step-ups (40 cm)"
        ]
       ],
-      "score": "Total tid inkludert hvile. Hold samme løpetid alle rundene."
+      "score": "Totalt antall step-overs eller step-ups. Jevn løpetid gir like mye tid på boksen hver runde."
      },
      "D": [
       "3 supersett: 12 DB hammercurls + 12 DB skull crushers"
@@ -840,10 +841,10 @@
       "Tom stang, 5 av hver: markløft til kne, hang pull, høy pull, muscle clean, frontknebøy"
      ],
      "B": {
-      "t": "Hang power clean",
+      "t": "Hang power clean + frontknebøy",
       "l": [
-       "EMOM 10: 2 reps @ 67,5 % av power clean",
-       "Grunnmur: EMOM 10: 5 DB hang cleans, litt tyngre enn forrige uke"
+       "Hver 2:30 × 6 sett: 2 hang power clean + 2 frontknebøy. Start på ca. 50 % av power clean og bygg opp. Lett nok til at alle reps ser like ut.",
+       "Grunnmur: hver 2:30 × 6 sett: 5 DB hang cleans + 5 goblet squats"
       ]
      },
      "C": {
@@ -893,39 +894,30 @@
       ]
      },
      "C": {
-      "fmt": "5 runder · start hver 4:00",
+      "fmt": "Vekslende EMOM til du ikke rekker minuttet · maks 30:00",
       "timer": {
-       "t": "every",
-       "each": 240,
-       "rounds": 5
+       "t": "emom",
+       "m": 30
       },
       "rows": [
        [
-        "Ski",
-        "12/10 kal",
-        "10/8 kal",
+        "1: BikeErg",
+        "15/12 kal",
+        "13/10 kal",
+        "11/9 kal",
         "9/7 kal",
-        "8/6 kal",
-        "6/5 kal"
+        "7/5 kal"
        ],
        [
-        "BikeErg",
-        "12/10 kal",
-        "10/8 kal",
-        "9/7 kal",
-        "8/6 kal",
-        "6/5 kal"
-       ],
-       [
-        "Ro til 3:00",
-        "Maks kal",
-        "Maks kal",
-        "Maks kal",
-        "Maks kal",
-        "Maks kal"
+        "2: Burpees",
+        "10",
+        "10",
+        "8",
+        "8 step-back",
+        "6 step-back"
        ]
       ],
-      "score": "Totale ro-kalorier. Raske bytter mellom maskinene."
+      "score": "Fra minutt 21: legg til 1 burpee hver runde. Score: fullførte minutter + burpees i siste runde. Mål nivå 4: 30:00. Ingen BikeErg: bruk airbike eller ro."
      },
      "D": [
       "3 sett: 10 ettbeins rumensk markløft per side med KB + 12 rygghev"
@@ -1354,46 +1346,30 @@
      ],
      "B": null,
      "C": {
-      "fmt": "36:00 EMOM · 9 runder · partnervariant mulig",
+      "fmt": "Vekslende EMOM til du ikke rekker minuttet · maks 30:00",
       "timer": {
        "t": "emom",
-       "m": 36
+       "m": 30
       },
       "rows": [
        [
-        "1: Knebøyhopp",
-        "15",
-        "12",
-        "10",
-        "8",
-        "12 luftknebøy"
-       ],
-       [
-        "2: Push-ups",
-        "15",
-        "12",
-        "10",
-        "8 på knær",
-        "8 mot benk"
-       ],
-       [
-        "3: Høye kneløft, tell hvert bein",
-        "60",
+        "1: Høye kneløft, tell hvert bein",
         "50",
+        "44",
         "40",
-        "30",
+        "34",
         "30"
        ],
        [
-        "4: Hvile",
-        "Hvile",
-        "Hvile",
-        "Hvile",
-        "Hvile",
-        "Hvile"
+        "2: Push-ups",
+        "12",
+        "10",
+        "8",
+        "8 på knær",
+        "8 mot benk"
        ]
       ],
-      "score": "Fullførte arbeidsminutter (maks 27)."
+      "score": "Fra minutt 21: legg til 1 push-up hver runde. Score: fullførte minutter + push-ups i siste runde. Ta den gjerne med noen, og veksle på hvem som starter."
      },
      "D": [
       "10 minutter mobilitet: hofter, brystrygg og ankler"
