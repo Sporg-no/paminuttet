@@ -2,6 +2,11 @@ import 'server-only';
 import { supabaseServer } from '@/lib/supabase/server';
 
 export const ACTIVE = ['trialing', 'active', 'past_due'];
+
+/** Eiere har alltid full tilgang uten abonnement. Kan overstyres med OWNER_EMAILS (kommaseparert). */
+const OWNERS = (process.env.OWNER_EMAILS || 'eanamsvatn@gmail.com,eanamsvatn@hotmail.com')
+  .split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
+export const isOwner = (email?: string | null) => !!email && OWNERS.includes(email.toLowerCase());
 const GRACE_MS = 6 * 3600e3;
 
 /** Aktiv status, men ikke et abonnement som er sagt opp og har passert periodeslutt (sikring hvis en webhook uteblir). */
@@ -28,6 +33,10 @@ export async function getSession() {
   const { data } = await sb.from('subscriptions')
     .select('status, interval, trial_end, current_period_end, cancel_at_period_end, track, stripe_customer_id')
     .eq('user_id', user.id).maybeSingle();
-  const sub = (data as Sub | null) ?? null;
-  return { sb, user, sub, active: hasAccess(sub) };
+  const real = (data as Sub | null) ?? null;
+  if (isOwner(user.email)) {
+    const sub: Sub = { status: 'owner', interval: null, trial_end: null, current_period_end: null, cancel_at_period_end: false, track: real?.track ?? 'gym', stripe_customer_id: null };
+    return { sb, user, sub, active: true };
+  }
+  return { sb, user, sub: real, active: hasAccess(real) };
 }

@@ -20,7 +20,10 @@ export default async function Page() {
   let detail = 'Start et medlemskap for å få tilgang til ukens program.';
   if (sub) {
     const plan = sub.interval === 'year' ? '1 990 kr per år' : '199 kr per måned';
-    if (sub.status === 'trialing') {
+    if (sub.status === 'owner') {
+      status = 'Eier';
+      detail = 'Full tilgang til programmet uten abonnement.';
+    } else if (sub.status === 'trialing') {
       status = sub.cancel_at_period_end ? 'Prøveperiode, avsluttet' : 'Prøveperiode';
       detail = sub.cancel_at_period_end
         ? `Du har tilgang til ${dato(sub.trial_end)}. Ingenting blir trukket.`
