@@ -82,3 +82,38 @@ export function newWeekEmail(o: { weekN: number; title: string; intro: string; d
     html: layout({ eyebrow: `Uke ${o.weekN} · ${o.title}`, title: 'Ny uke er klar.', paragraphs: [o.intro], list: o.days, cta: { label: 'Se ukens program', href: `${site}/program` } }),
   };
 }
+
+/** Oppfølging av PDF-leads. Steg 1 to dager etter nedlasting, steg 2 tre dager senere. */
+export function leadNurtureEmail(step: 1 | 2, o: { unsubUrl: string; promo: string | null }) {
+  const site = siteUrl();
+  const start = `${site}/start`;
+  const unsubHtml = `Du får denne fordi du lastet ned gratis-PDF-en. <a href="${o.unsubUrl}" style="color:#6E695F">Meld deg av</a>.`;
+  const unsubText = `Du får denne fordi du lastet ned gratis-PDF-en. Meld deg av: ${o.unsubUrl}`;
+  if (step === 1) {
+    const paragraphs = [
+      'Hei! Erlend her, jeg lager PÅ MINUTTET. Du lastet ned PDF-en med 20 EMOM-er for noen dager siden.',
+      'Har du testet en av øktene? Svar gjerne på denne e-posten og si hvilken. Jeg leser alle svar selv.',
+      'Vil du slippe å velge økt selv, ligger det en ny økt klar hver dag i medlemskapet. Gym eller hjemme, fem nivåer, og en timer som teller minuttene for deg. De første 7 dagene er gratis, og du avslutter når du vil.',
+      ...(o.promo ? [o.promo] : []),
+    ];
+    return {
+      subject: 'Hvilken økt tok du?',
+      text: `${paragraphs.join('\n\n')}\n\nPrøv 7 dager gratis: ${start}\n\nHilsen Erlend, PÅ MINUTTET\n\n${unsubText}`,
+      html: layout({ eyebrow: 'Fra Erlend', title: 'Hvilken økt tok du?', paragraphs, cta: { label: 'Prøv 7 dager gratis', href: start }, after: [unsubHtml] }),
+    };
+  }
+  const list = [
+    'En ferdig økt hver dag, 25–45 minutter. Ingen planlegging.',
+    'Fem nivåer, fra Grunnmur for nybegynnere til nivå 4 for de sprekeste.',
+    'Trykk på en øvelse for forklaring og video.',
+    'Timeren ligger i økta. Du følger raden som lyser.',
+    'Hjemme-sporet trenger bare gulv, en stol og et bord.',
+  ];
+  const paragraphs = ['PDF-en har 20 økter. Medlemskapet har en ny hver dag, og et opplegg som bygger seg opp uke for uke.'];
+  return {
+    subject: 'Slik ser en uke i PÅ MINUTTET ut',
+    text: `${paragraphs[0]}\n\n${list.map(l => '- ' + l).join('\n')}\n\n${o.promo ? o.promo + '\n\n' : ''}Prøv 7 dager gratis: ${start}\n\nHilsen Erlend, PÅ MINUTTET\n\n${unsubText}`,
+    html: layout({ eyebrow: 'Slik fungerer det', title: 'Slik ser en uke ut.', paragraphs: [...paragraphs], list, cta: { label: 'Prøv 7 dager gratis', href: start },
+      after: [...(o.promo ? [esc(o.promo)] : []), unsubHtml] }),
+  };
+}

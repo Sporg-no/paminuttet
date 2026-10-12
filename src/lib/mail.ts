@@ -1,6 +1,6 @@
 import 'server-only';
 
-type Opts = { html?: string; idempotencyKey?: string };
+type Opts = { html?: string; idempotencyKey?: string; headers?: Record<string, string> };
 
 /** Sender e-post via Resend hvis RESEND_API_KEY og MAIL_FROM er satt. Returnerer false ellers. */
 export async function sendMail(to: string, subject: string, text: string, opts: Opts = {}) {
@@ -13,7 +13,7 @@ export async function sendMail(to: string, subject: string, text: string, opts: 
   const r = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers,
-    body: JSON.stringify({ from, to, subject, text, html: opts.html, reply_to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || undefined }),
+    body: JSON.stringify({ from, to, subject, text, html: opts.html, reply_to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || undefined, headers: opts.headers }),
   });
   if (!r.ok) console.error('[mail] feil', r.status, await r.text());
   return r.ok;
