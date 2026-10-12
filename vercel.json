@@ -3,6 +3,7 @@
   "regions": ["arn1"],
   "crons": [
     { "path": "/api/cron/ny-uke", "schedule": "10 18 * * *" },
-    { "path": "/api/cron/leads", "schedule": "5 7 * * *" }
+    { "path": "/api/cron/leads", "schedule": "5 7 * * *" },
+    { "path": "/api/cron/outbox", "schedule": "*/10 * * * *" }
   ]
 }

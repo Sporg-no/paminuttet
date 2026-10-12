@@ -117,3 +117,10 @@ export function leadNurtureEmail(step: 1 | 2, o: { unsubUrl: string; promo: stri
       after: [...(o.promo ? [esc(o.promo)] : []), unsubHtml] }),
   };
 }
+
+/** Personlig melding fra utboksen: ren tekst, avsnitt adskilt med tom linje. */
+export function personalEmail(body: string) {
+  const paras = body.split(/\n{2,}/).map(t => `<p style="margin:0 0 14px;font:16px/1.55 Arial,Helvetica,sans-serif;color:#121212">${esc(t).replace(/\n/g, '<br>')}</p>`).join('');
+  return `<!doctype html><html lang="nb"><body style="margin:0;background:#FFFFFF"><div style="max-width:560px;padding:20px 16px">${paras}
+<p style="margin:24px 0 0;font:12px/1.5 Arial,Helvetica,sans-serif;color:#6E695F">PÅ MINUTTET · Erlend Namsvatn ENK · Org.nr 914 829 216 · <a href="mailto:${CONTACT}" style="color:#6E695F">${CONTACT}</a></p></div></body></html>`;
+}
