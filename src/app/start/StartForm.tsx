@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { track as trackEvent } from '@vercel/analytics';
+import { emailTypo } from '@/lib/emailTypo';
 
 const MONTHS = ['jan.', 'feb.', 'mars', 'apr.', 'mai', 'juni', 'juli', 'aug.', 'sep.', 'okt.', 'nov.', 'des.'];
 const fmt = (d: Date) => `${d.getDate()}. ${MONTHS[d.getMonth()]}`;
@@ -16,6 +17,8 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<{ msg: string; login?: boolean } | null>(null);
   const [trial, setTrial] = useState(true);
+  const [typoSeen, setTypoSeen] = useState('');
+  const typo = lockedEmail ? null : emailTypo(email);
 
   const annual = plan === 'aar';
   const priceTxt = annual ? '1 990 kr' : '199 kr';
@@ -24,6 +27,8 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
   async function go(e: React.FormEvent) {
     e.preventDefault();
     if (!consent) return;
+    // Én ekstra sjekk ved vanlige skrivefeil (gamil.com o.l.), ellers kommer aldri innloggingslenken fram
+    if (typo && typoSeen !== email) { setTypoSeen(email); setErr({ msg: `Sjekk e-posten: mente du ${typo}? Trykk på knappen igjen hvis adressen er riktig.` }); return; }
     setBusy(true); setErr(null);
     try {
       const r = await fetch('/api/checkout', {
@@ -67,6 +72,7 @@ export default function StartForm({ initialPlan, initialTrack, initialEmail, loc
         <div className="field" style={{ maxWidth: 520 }}>
           <label htmlFor="ckmail" className="label">E-post · brukes til innlogging</label>
           <input id="ckmail" className="input" type="email" autoComplete="email" required placeholder="navn@epost.no" value={email} readOnly={lockedEmail} onChange={e => setEmail(e.target.value)} />
+          {typo && <button type="button" className="linkbtn" style={{ marginTop: 8, textAlign: 'left' }} onClick={() => { setEmail(typo); setErr(null); }}>Mente du <b>{typo}</b>? Trykk for å rette.</button>}
         </div>
         <div style={{ display: 'flex', gap: 10, alignItems: 'center', fontSize: 14, color: 'var(--muted2)' }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted2)" strokeWidth="2" aria-hidden><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>

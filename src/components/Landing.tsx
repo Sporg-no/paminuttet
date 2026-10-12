@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Dial } from './Dial';
 import { track as trackEvent } from '@vercel/analytics';
+import { emailTypo } from '@/lib/emailTypo';
 import { Brand } from './Brand';
 import { Footer } from './Footer';
 
@@ -345,6 +346,7 @@ export default function Landing({ loggedIn }: { loggedIn: boolean }) {
               <div className="field">
                 <label htmlFor="pdfmail" className="label">E-post</label>
                 <input id="pdfmail" className="input" type="email" required autoComplete="email" placeholder="navn@epost.no" value={email} onChange={e => setEmail(e.target.value)} />
+                {emailTypo(email) && <button type="button" className="linkbtn" style={{ marginTop: 8, textAlign: 'left' }} onClick={() => setEmail(emailTypo(email)!)}>Mente du <b>{emailTypo(email)}</b>? Trykk for å rette.</button>}
               </div>
               <button type="submit" className="btn btn-ink" style={{ height: 56 }} disabled={lead === 'sending'}>{lead === 'sending' ? 'Sender …' : 'Send meg PDF-en'}</button>
               {lead === 'error' && <div className="err" style={{ width: '100%' }}>Noe gikk galt. Prøv igjen, eller last ned direkte <a href="/media/PA-MINUTTET-20-EMOM-er.pdf" download>her</a>.</div>}
