@@ -1821,13 +1821,13 @@
      "B": {
       "t": "Push-ups med føttene på stol",
       "l": [
-       "5×6–10 med føttene på stol, 2:00 hvile. Klarer du ikke 6, tar du vanlige push-ups med pause nede.",
+       "5×6–10 med føttene på stol, 1:30 hvile. Klarer du ikke 6, tar du vanlige push-ups med pause nede.",
        "Grunnmur: push-ups på knær, 5×8",
        "Med vekt: gulvpress med manualer, 5×6 tungt"
       ]
      },
      "C": {
-      "fmt": "3 runder · 2:00 hvile mellom rundene",
+      "fmt": "3 runder · 1:00 hvile mellom rundene",
       "timer": {
        "t": "up",
        "cap": 0
@@ -1918,7 +1918,7 @@
         "24",
         "20",
         "16",
-        "16 sidesteg-utfall"
+        "16 skatersteg"
        ],
        [
         "Del 2: Push-ups",
@@ -1969,12 +1969,12 @@
         "3 step-back"
        ],
        [
-        "Knebøyhopp",
-        "10",
-        "8",
-        "8",
-        "6",
-        "8 luftknebøy"
+        "Inchworm med push-up",
+        "5",
+        "4",
+        "4",
+        "3",
+        "4 uten push-up"
        ],
        [
         "Mountain climbers",
@@ -2096,12 +2096,12 @@
         "5 step-back burpees"
        ],
        [
-        "2: Luftknebøy",
-        "25",
-        "22",
-        "18",
-        "15",
-        "12"
+        "2: Bjørnegang, 5 m fram og tilbake",
+        "6 lengder",
+        "5 lengder",
+        "4 lengder",
+        "4 lengder",
+        "3 lengder"
        ],
        [
         "3: Planke",
@@ -2117,7 +2117,7 @@
         "24",
         "20",
         "16",
-        "16 sidesteg-utfall"
+        "16 skatersteg"
        ],
        [
         "5: Hvile",
