@@ -6,6 +6,9 @@ import { MemberNav } from '@/components/MemberNav';
 import { DarkFooter } from '@/components/Footer';
 import { CONTACT } from '@/lib/env';
 import SetPassword from '@/components/SetPassword';
+import VervLenke from '@/components/VervLenke';
+import { supabaseAdmin } from '@/lib/supabase/admin';
+import { siteUrl } from '@/lib/env';
 
 export const metadata: Metadata = { title: 'Min side' };
 export const dynamic = 'force-dynamic';
@@ -15,6 +18,12 @@ const dato = (s: string | null) => s ? new Date(s).toLocaleDateString('nb-NO', {
 export default async function Page() {
   const { user, sub, active } = await getSession();
   if (!user) redirect('/logg-inn?neste=/min-side');
+
+  // «Ta med en venn»: personlig lenke og antall vervede som har blitt betalende
+  const admin = supabaseAdmin();
+  const { data: prof } = await admin.from('profiles').select('ref_code').eq('id', user.id).maybeSingle();
+  const { count: vervet } = await admin.from('subscriptions').select('user_id', { count: 'exact', head: true }).eq('referred_by', user.id).not('referral_rewarded_at', 'is', null);
+  const vervUrl = prof?.ref_code ? `${siteUrl()}/?venn=${prof.ref_code}` : null;
 
   let status = 'Ingen aktivt medlemskap';
   let detail = 'Start et medlemskap for å få tilgang til ukens program.';
@@ -73,6 +82,15 @@ export default async function Page() {
           <SetPassword label={user.user_metadata?.has_password ? 'Lagre nytt passord' : 'Lag passord'} />
           <form action="/api/logout" method="post" style={{ marginTop: 'auto' }}><button className="btn btn-line" type="submit">Logg ut</button></form>
         </div>
+        {active && vervUrl && (
+          <div className="card">
+            <div className="label">Ta med en venn</div>
+            <div className="cond" style={{ fontSize: 44, lineHeight: 1 }}>Én gratis måned per venn</div>
+            <p style={{ margin: 0, fontSize: 17, lineHeight: 1.5, color: 'var(--body)' }}>Del lenken din. Vennen får 7 dager gratis som vanlig. Blir vennen betalende medlem, får du 199 kr i kreditt på neste betaling. Det er ingen grense.</p>
+            <VervLenke url={vervUrl} />
+            {!!vervet && <p style={{ margin: 0, fontSize: 15, color: 'var(--muted2)' }}>Vervet så langt: <b>{vervet}</b> {vervet === 1 ? 'venn' : 'venner'} som har blitt medlem.</p>}
+          </div>
+        )}
       </div>
       <DarkFooter />
     </div>

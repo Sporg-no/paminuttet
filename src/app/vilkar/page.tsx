@@ -15,6 +15,7 @@ export default function Page() {
       <p>Prisen er 199 kr per måned eller 1 990 kr per år, inkludert eventuell merverdiavgift. Betaling skjer med kort via Stripe. Abonnementet fornyes automatisk ved slutten av hver periode til det avsluttes.</p>
       <h2>4. Prøveperiode</h2>
       <p>Nye medlemmer får 7 dager gratis. Du legger inn kort ved start, men ingenting trekkes i prøveperioden. Du får en påminnelse på e-post før prøveperioden slutter. Avslutter du ikke innen prøveperioden er over, går medlemskapet over til betalt, og første periode trekkes. Prøveperioden gis én gang per person.</p>
+      <p>Ta med en venn: Verver du en venn med lenken fra Min side, og vennen blir betalende medlem etter prøveperioden, får du 199 kr i kreditt som trekkes fra din neste betaling. Kreditten gis én gang per vervet venn, gjelder bare nye medlemmer og kan ikke tas ut i penger.</p>
       <h2>5. Oppsigelse</h2>
       <p>Du kan avslutte når som helst under Min side. Tilgangen varer ut perioden du har betalt for. Det gis ikke refusjon for påbegynt periode, med mindre annet følger av lov.</p>
       <h2>6. Angrerett</h2>

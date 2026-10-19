@@ -14,6 +14,15 @@ export async function middleware(req: NextRequest) {
     const url = new URL(req.nextUrl.pathname + req.nextUrl.search, `https://${CANONICAL}`);
     return NextResponse.redirect(url, 308);
   }
+  // «Ta med en venn»: husk vervekoden fra lenken til kassen
+  const venn = req.nextUrl.searchParams.get('venn');
+  if (venn && /^[a-f0-9]{8}$/.test(venn)) {
+    const url = req.nextUrl.clone();
+    url.searchParams.delete('venn');
+    const r = NextResponse.redirect(url, 307);
+    r.cookies.set('venn', venn, { maxAge: 60 * 864e2, path: '/', sameSite: 'lax', secure: true, httpOnly: true });
+    return r;
+  }
   if (!AUTH_PATHS.some(a => req.nextUrl.pathname.startsWith(a))) return NextResponse.next();
 
   let res = NextResponse.next({ request: req });

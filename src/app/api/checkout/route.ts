@@ -53,6 +53,14 @@ async function handle(req: NextRequest) {
     }
   }
 
+  // Vervet av et medlem? Koden kommer fra lenken (cookie satt i middleware). Egen kode teller ikke.
+  let referrer: string | undefined;
+  const venn = req.cookies.get('venn')?.value;
+  if (venn && /^[a-f0-9]{8}$/.test(venn) && !hadSub) {
+    const { data: r } = await admin.from('profiles').select('id, email').eq('ref_code', venn).maybeSingle();
+    if (r?.id && r.email?.toLowerCase() !== email) referrer = r.id as string;
+  }
+
   const now = new Date().toISOString();
   const tax = process.env.STRIPE_AUTOMATIC_TAX === 'true';
   const site = siteUrl();
@@ -68,7 +76,7 @@ async function handle(req: NextRequest) {
     client_reference_id: prof?.id,
     metadata: { consent: 'umiddelbar-levering-v1', consent_at: now, track, email },
     subscription_data: {
-      metadata: { track, consent_at: now },
+      metadata: { track, consent_at: now, ...(referrer ? { referrer } : {}) },
       // Før programstart: prøveperioden teller fra første uke slippes, ikke fra kjøpet.
       ...(hadSub ? {} : {
         ...(preLaunch ? { trial_end: Math.floor((programStart().getTime() + 7 * 864e5) / 1000) } : { trial_period_days: 7 }),

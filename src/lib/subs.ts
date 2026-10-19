@@ -25,6 +25,7 @@ export async function saveSubscription(userId: string, sub: Stripe.Subscription,
   const track = extra.track ?? sub.metadata?.track;
   if (track === 'gym' || track === 'hjemme') row.track = track;
   if (extra.consent_at) row.consent_at = extra.consent_at;
+  if (sub.metadata?.referrer) row.referred_by = sub.metadata.referrer;
   const { error } = await supabaseAdmin().from('subscriptions').upsert(row, { onConflict: 'user_id' });
   if (error) throw error;
 }

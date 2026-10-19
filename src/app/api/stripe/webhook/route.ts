@@ -6,6 +6,7 @@ import { saveSubscription } from '@/lib/subs';
 import { sendMail } from '@/lib/mail';
 import { welcomeEmail, trialEndingEmail } from '@/lib/emails';
 import { env } from '@/lib/env';
+import { rewardReferrer } from '@/lib/referral';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -57,6 +58,10 @@ export async function POST(req: NextRequest) {
         // Hent ferskeste versjon for å tåle hendelser i feil rekkefølge
         const fresh = await stripe().subscriptions.retrieve(sub.id);
         await saveSubscription(u.id, fresh);
+        // Vervet abonnement som nettopp ble betalende: kreditt til den som vervet
+        if (fresh.metadata?.referrer && fresh.status === 'active') {
+          await rewardReferrer(fresh).catch(e => console.error('[webhook] verving', e));
+        }
         break;
       }
       case 'customer.subscription.trial_will_end': {

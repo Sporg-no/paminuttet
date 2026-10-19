@@ -124,3 +124,14 @@ export function personalEmail(body: string) {
   return `<!doctype html><html lang="nb"><body style="margin:0;background:#FFFFFF"><div style="max-width:560px;padding:20px 16px">${paras}
 <p style="margin:24px 0 0;font:12px/1.5 Arial,Helvetica,sans-serif;color:#6E695F">PÅ MINUTTET · Erlend Namsvatn ENK · Org.nr 914 829 216 · <a href="mailto:${CONTACT}" style="color:#6E695F">${CONTACT}</a></p></div></body></html>`;
 }
+
+export function referralRewardEmail() {
+  const site = siteUrl();
+  return {
+    subject: 'Vennen din ble medlem. Neste måned er gratis.',
+    text: `Hei!\n\nEn venn du vervet har blitt betalende medlem i PÅ MINUTTET. Du har fått 199 kr i kreditt, som trekkes fra neste betaling.\n\nVerv flere fra Min side: ${site}/min-side\n\nHilsen PÅ MINUTTET`,
+    html: layout({ eyebrow: 'Ta med en venn', title: 'Neste måned er gratis.',
+      paragraphs: ['En venn du vervet har blitt betalende medlem. Du har fått 199 kr i kreditt, som trekkes fra neste betaling.', 'Det er ingen grense. Hver venn som blir medlem gir en ny gratis måned.'],
+      cta: { label: 'Finn vervelenken din', href: `${site}/min-side` } }),
+  };
+}
