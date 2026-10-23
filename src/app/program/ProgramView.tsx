@@ -22,9 +22,12 @@ function todayIdx() {
   return d === 0 ? 0 : Math.min(5, d - 1);
 }
 
-export default function ProgramView({ weeks, labels, currentIdx, note, initialTrack, welcome, needsPassword }: {
-  weeks: Week[]; labels: number[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
+type CycleWeek = { title: string; intro: string; label: number };
+
+export default function ProgramView({ weeks, labels, cycle, currentIdx, note, initialTrack, welcome, needsPassword }: {
+  weeks: Week[]; labels: number[]; cycle: CycleWeek[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
 }) {
+  const [showCycle, setShowCycle] = useState(false);
   const [wk, setWk] = useState(currentIdx);
   const [track, setTrack] = useState<'gym' | 'hjemme'>(initialTrack);
   const [day, setDay] = useState(0);
@@ -46,6 +49,7 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
     setLvl(load('pm-lvl', 2));
     setSound(load('pm-lyd', 1) === 1);
     setDay(todayIdx());
+    setShowCycle(load('pm-syklus', 0) === 1);
     if (welcome) window.history.replaceState(null, '', '/program');
   }, [welcome]);
 
@@ -189,10 +193,50 @@ export default function ProgramView({ weeks, labels, currentIdx, note, initialTr
             <div style={{ fontSize: 13, color: 'var(--muted2)' }}>Tips: legg siden til på Hjem-skjermen (Del → Legg til på Hjem-skjerm), så åpnes den som en app.</div>
           </div>
         )}
+        <section className="card cycle" aria-label="Syklusen">
+          <div className="cyc-head">
+            <span className="eyebrow">Syklusen · uke {currentIdx + 1} av {cycle.length}</span>
+            <button type="button" className="linkbtn" style={{ fontSize: 13 }} aria-expanded={showCycle} onClick={() => { const v = !showCycle; setShowCycle(v); save('pm-syklus', v ? 1 : 0); }}>{showCycle ? 'Skjul planen' : 'Vis hele planen'}</button>
+          </div>
+          <div className="cyc-bar">
+            {cycle.map((c, i) => {
+              const state = i < currentIdx ? 'done' : i === currentIdx ? 'now' : 'next';
+              const open = i < weeks.length;
+              return (
+                <button key={i} type="button" className={`cyc ${state}${i === wk ? ' sel' : ''}`} disabled={!open}
+                  onClick={() => { if (open) { setWk(i); setDay(i === currentIdx ? todayIdx() : 0); reset(); } }}
+                  aria-label={`Uke ${c.label}: ${c.title}${state === 'now' ? ', denne uka' : ''}`}>
+                  <span className="mono">UKE {c.label}</span>
+                  <span className="cond">{c.title}</span>
+                </button>
+              );
+            })}
+          </div>
+          {showCycle && (
+            <div className="cyc-list fade">
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--body)' }}>Programmet går i blokker på fire uker: grunnlag, mer volum, tyngste uke og test. I testukene tar du de samme øktene som tre uker før, så du ser fremgangen. Neste blokk starter der du endte.</p>
+              <ol>
+                {cycle.map((c, i) => (
+                  <li key={i} className={i === currentIdx ? 'now' : ''}>
+                    <span className="mono">UKE {c.label}{i === currentIdx ? ' · NÅ' : ''}</span>
+                    <b>{c.title}</b>
+                    <span>{c.intro}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </section>
+
         <div className="fade" key={`${wk}-${track}-${day}`}>
           <div className="eyebrow">{d.day} · {track === 'gym' ? 'Gym' : 'Hjemme'} · uke {weekNo}{d.optional ? ' · valgfri' : ''}{d.benchmark ? ' · test' : ''}</div>
           <h1>{d.name}</h1>
           {day === 0 && <p style={{ margin: '10px 0 0', fontSize: 16, color: 'var(--body)' }}>{week.intro}</p>}
+          {/gjentak/i.test(d.name) && wk >= 3 && (
+            <button type="button" className="linkbtn" style={{ marginTop: 10 }} onClick={() => { setWk(wk - 3); reset(); }}>
+              Gjentak av økta i uke {labels[wk - 3]}. Se den og sammenlign resultatet →
+            </button>
+          )}
         </div>
 
         <section aria-label="Timer" className="dark timer">

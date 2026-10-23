@@ -2139,7 +2139,7 @@
   {
    "n": 4,
    "title": "Test",
-   "intro": "Test og logg alt. Resultatene er startpunktet for neste syklus.",
+   "intro": "Testuke. Seks av øktene er tester eller gjentak av øktene fra for tre uker siden, så du ser fremgangen svart på hvitt. Skriv ned tid og reps, for eksempel i notater på mobilen. Resultatene er startpunktet for neste syklus.",
    "gym": [
     {
      "short": "Man",
@@ -2648,12 +2648,12 @@
       },
       "rows": [
        [
-        "1: Utfall bakover, vekslende",
-        "20",
-        "16",
-        "14",
-        "12",
-        "10"
+        "1: Inchworm med push-up",
+        "6",
+        "5",
+        "5",
+        "4",
+        "5 uten push-up"
        ],
        [
         "2: Push-ups",
@@ -2857,12 +2857,12 @@
         "400 m"
        ],
        [
-        "6: Luftknebøy",
-        "80",
-        "70",
-        "60",
+        "6: Sit-ups",
         "50",
-        "40"
+        "40",
+        "35",
+        "30",
+        "25"
        ],
        [
         "7: Løp",

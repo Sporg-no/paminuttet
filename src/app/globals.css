@@ -362,3 +362,28 @@ img, video { max-width: 100%; }
 @keyframes exfade{from{opacity:0}}
 @keyframes exup{from{transform:translateY(40px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.exsheet-bg,.exsheet{animation:none}}
+
+/* Syklusoversikt på programsiden */
+.cycle { padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; }
+.cyc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.cyc-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.cyc { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 10px 12px; border-radius: 12px; border: 1.5px solid var(--line, #D8D2C4); background: transparent; color: var(--ink); cursor: pointer; text-align: left; min-width: 0; font: inherit; }
+.cyc .mono { font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--muted2); }
+.cyc .cond { font-size: 20px; line-height: 1; text-transform: uppercase; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.cyc.done { background: var(--ink); border-color: var(--ink); color: var(--bone); }
+.cyc.done .mono { color: var(--dim); }
+.cyc.now { background: var(--sig); border-color: var(--sig); color: var(--ink); }
+.cyc.now .mono { color: var(--ink); }
+.cyc.sel { outline: 3px solid var(--ink); outline-offset: 2px; }
+.cyc.now.sel { outline-color: var(--ink); }
+.cyc:disabled { cursor: default; opacity: .55; }
+.cyc-list ol { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; }
+.cyc-list li { display: grid; grid-template-columns: 96px 110px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line, #D8D2C4); font-size: 14px; line-height: 1.45; align-items: baseline; }
+.cyc-list li .mono { font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--muted2); }
+.cyc-list li.now .mono { color: var(--sig-text); }
+@media (max-width: 640px) {
+  .cyc { padding: 8px 8px; }
+  .cyc .cond { font-size: 14px; line-height: 1.05; white-space: normal; overflow: visible; overflow-wrap: anywhere; }
+  .cyc .mono { font-size: 10px; letter-spacing: .06em; }
+  .cyc-list li { grid-template-columns: 1fr; gap: 2px; }
+}

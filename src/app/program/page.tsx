@@ -21,6 +21,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
   const weeks = WEEKS.slice(0, sch.visible); // fremtidige uker sendes aldri til nettleseren
   const firstAbs = sch.abs - sch.weekIdx; // programuke nr. for første synlige uke i denne syklusen
   const labels = weeks.map((_, i) => calendarWeekForAbs(firstAbs + i));
+  // Hele syklusen (alle uker): bare tittel og formål, aldri innholdet i uker som ikke er sluppet
+  const cycle = WEEKS.map((w, i) => ({ title: w.title, intro: w.intro, label: calendarWeekForAbs(firstAbs + i) }));
 
   let banner: { tone: 'info' | 'warn'; text: string } | null = null;
   if (sub.status === 'past_due') {
@@ -48,7 +50,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
           <a href="/min-side" style={{ fontWeight: 600, color: 'inherit' }}>Min side</a>
         </div>
       )}
-      <ProgramView weeks={weeks} labels={labels} currentIdx={sch.weekIdx} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
+      <ProgramView weeks={weeks} labels={labels} cycle={cycle} currentIdx={sch.weekIdx} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
       <DarkFooter />
     </div>
   );
