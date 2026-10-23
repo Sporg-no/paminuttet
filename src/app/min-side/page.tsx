@@ -9,6 +9,8 @@ import SetPassword from '@/components/SetPassword';
 import VervLenke from '@/components/VervLenke';
 import { supabaseAdmin } from '@/lib/supabase/admin';
 import { siteUrl } from '@/lib/env';
+import { WEEKS, calendarWeekForAbs } from '@/lib/program';
+import { LIFTS, e1rm } from '@/lib/strength';
 
 export const metadata: Metadata = { title: 'Min side' };
 export const dynamic = 'force-dynamic';
@@ -24,6 +26,15 @@ export default async function Page() {
   const { data: prof } = await admin.from('profiles').select('ref_code').eq('id', user.id).maybeSingle();
   const { count: vervet } = await admin.from('subscriptions').select('user_id', { count: 'exact', head: true }).eq('referred_by', user.id).not('referral_rewarded_at', 'is', null);
   const vervUrl = prof?.ref_code ? `${siteUrl()}/?venn=${prof.ref_code}` : null;
+
+  // Resultatlogg og maks
+  const { data: res } = await admin.from('results').select('week_abs, track, day_idx, score, note, updated_at').eq('user_id', user.id).order('week_abs', { ascending: false }).order('day_idx', { ascending: true }).limit(60);
+  const { data: maks } = await admin.from('prs').select('lift, kg, reps').eq('user_id', user.id);
+  const logg = (res ?? []).map(r => {
+    const w = WEEKS[(r.week_abs - 1) % WEEKS.length];
+    const day = (r.track === 'gym' ? w?.gym : w?.home)?.[r.day_idx];
+    return { uke: calendarWeekForAbs(r.week_abs), dag: day?.short ?? '', navn: day?.name ?? '', spor: r.track === 'gym' ? 'Gym' : 'Hjemme', score: r.score as string, note: (r.note as string | null) ?? '' };
+  });
 
   let status = 'Ingen aktivt medlemskap';
   let detail = 'Start et medlemskap for å få tilgang til ukens program.';
@@ -82,6 +93,31 @@ export default async function Page() {
           <SetPassword label={user.user_metadata?.has_password ? 'Lagre nytt passord' : 'Lag passord'} />
           <form action="/api/logout" method="post" style={{ marginTop: 'auto' }}><button className="btn btn-line" type="submit">Logg ut</button></form>
         </div>
+        {(logg.length > 0 || (maks ?? []).length > 0) && (
+          <div className="card" style={{ gridColumn: '1 / -1' }}>
+            <div className="label">Mine resultater</div>
+            {(maks ?? []).length > 0 && (
+              <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 15 }}>
+                {LIFTS.filter(l => (maks ?? []).some(m => m.lift === l.id)).map(l => {
+                  const m = (maks ?? []).find(x => x.lift === l.id)!;
+                  return <span key={l.id}><span style={{ color: 'var(--muted2)' }}>{l.label}: </span><b>{String(m.kg).replace('.', ',')} kg × {m.reps}</b> <span style={{ color: 'var(--muted2)' }}>(1RM ≈ {Math.round(e1rm(Number(m.kg), m.reps))})</span></span>;
+                })}
+              </div>
+            )}
+            {logg.length > 0 ? (
+              <div className="reslist">
+                {logg.map((r, i) => (
+                  <div key={i} className="resrow">
+                    <span className="mono">UKE {r.uke} · {r.dag.toUpperCase()}</span>
+                    <span>{r.navn} <span style={{ color: 'var(--muted2)' }}>· {r.spor}</span></span>
+                    <b>{r.score}</b>
+                    {r.note && <span className="resnote">{r.note}</span>}
+                  </div>
+                ))}
+              </div>
+            ) : <p style={{ margin: 0, fontSize: 15, color: 'var(--muted2)' }}>Ingen resultater ennå. Skriv inn resultatet under hver økt i programmet.</p>}
+          </div>
+        )}
         {active && vervUrl && (
           <div className="card">
             <div className="label">Ta med en venn</div>

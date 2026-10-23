@@ -7,6 +7,8 @@ import { Dial } from '@/components/Dial';
 import SetPassword from '@/components/SetPassword';
 import { ovelseTekst, OvelseArk } from '@/components/OvelseTekst';
 import type { Ovelse } from '@/content/ovelser';
+import { useLogg, ResultatBoks, MaksPanel, rkey } from '@/components/Logg';
+import { liftOf, withKg } from '@/lib/strength';
 
 const LVLS = ['Grunnmur', 'Nivå 1', 'Nivå 2', 'Nivå 3', 'Nivå 4'];
 const HEAD = ['Bevegelse', 'Nivå 4', 'Nivå 3', 'Nivå 2', 'Nivå 1', 'Grunnmur'];
@@ -24,10 +26,11 @@ function todayIdx() {
 
 type CycleWeek = { title: string; intro: string; label: number };
 
-export default function ProgramView({ weeks, labels, cycle, currentIdx, note, initialTrack, welcome, needsPassword }: {
-  weeks: Week[]; labels: number[]; cycle: CycleWeek[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
+export default function ProgramView({ weeks, labels, absList, cycle, currentIdx, note, initialTrack, welcome, needsPassword }: {
+  weeks: Week[]; labels: number[]; absList: number[]; cycle: CycleWeek[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
 }) {
   const [showCycle, setShowCycle] = useState(false);
+  const logg = useLogg(absList);
   const [wk, setWk] = useState(currentIdx);
   const [track, setTrack] = useState<'gym' | 'hjemme'>(initialTrack);
   const [day, setDay] = useState(0);
@@ -172,6 +175,7 @@ export default function ProgramView({ weeks, labels, cycle, currentIdx, note, in
               : 'vektvest 10/6 kg, hoppvarianten av hver øvelse og 10 % flere reps.'}
           </p>
         )}
+        {track === 'gym' && <MaksPanel prs={logg.prs} oneRm={logg.oneRm} onSave={logg.savePr} />}
         <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>{note}</p>
       </aside>
 
@@ -266,7 +270,14 @@ export default function ProgramView({ weeks, labels, cycle, currentIdx, note, in
           </div>
           <div className="card block">
             <div className="eyebrow">B · Styrke{d.B ? <> · {T(d.B.t)}</> : ''}</div>
-            <ul>{(d.B ? d.B.l : ['Ingen styrke i dag. Bruk tiden på oppvarming og mobilitet.']).map(x => <li key={x}><span>{T(x)}</span></li>)}</ul>
+            <ul>{(d.B ? d.B.l : ['Ingen styrke i dag. Bruk tiden på oppvarming og mobilitet.']).map(x => {
+              const lift = track === 'gym' && d.B ? liftOf(d.B.t, x) : null;
+              const rm = lift ? logg.oneRm[lift] : undefined;
+              return <li key={x}><span>{T(rm && /%/.test(x) ? withKg(x, rm) : x)}</span></li>;
+            })}</ul>
+            {track === 'gym' && d.B && d.B.l.some(x => /%/.test(x) && !/^grunnmur/i.test(x) && liftOf(d.B!.t, x) && !logg.oneRm[liftOf(d.B!.t, x)!]) && (
+              <p style={{ margin: 0, fontSize: 13, color: 'var(--muted2)' }}>Legg inn maks under «Dine maks», så regnes vektene ut for deg.</p>
+            )}
           </div>
         </div>
 
@@ -293,6 +304,24 @@ export default function ProgramView({ weeks, labels, cycle, currentIdx, note, in
           </div>
           <div style={{ marginTop: 12, display: 'flex', gap: 12, fontSize: 15, lineHeight: 1.5 }}><span className="eyebrow" style={{ paddingTop: 2 }}>Score</span><span>{C.score}</span></div>
         </div>
+
+        {(() => {
+          const abs = absList[wk];
+          const tr = track;
+          const di = Math.min(day, list.length - 1);
+          const prevIdx = /gjentak/i.test(d.name) && wk >= 3 ? wk - 3 : -1;
+          const ph = C.timer.t === 'emom' || C.timer.t === 'every' ? 'F.eks. 28 minutter eller 1:42' : C.timer.t === 'amrap' ? 'F.eks. 6 runder + 12 reps' : 'F.eks. 14:32';
+          return (
+            <ResultatBoks
+              key={rkey(abs, tr, di)}
+              placeholder={ph}
+              saved={logg.results[rkey(abs, tr, di)]}
+              prev={prevIdx >= 0 ? logg.results[rkey(absList[prevIdx], tr, di)] : undefined}
+              prevLabel={prevIdx >= 0 ? `Uke ${labels[prevIdx]}` : undefined}
+              onSave={(sc, no) => logg.saveResult(abs, tr, di, sc, no, lvl)}
+            />
+          );
+        })()}
 
         {(d.D ?? []).length > 0 && (
           <div className="card block" style={{ display: 'flex', gap: 20, alignItems: 'baseline', flexWrap: 'wrap' }}>

@@ -387,3 +387,23 @@ img, video { max-width: 100%; }
   .cyc .mono { font-size: 10px; letter-spacing: .06em; }
   .cyc-list li { grid-template-columns: 1fr; gap: 2px; }
 }
+
+/* Resultatlogg og maks */
+.logg { padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+.logg-row { display: flex; gap: 10px; }
+.logg-row .input { flex: 1 1 auto; min-width: 0; }
+.maks { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 6px; }
+.maks summary { cursor: pointer; list-style: none; }
+.maks summary::-webkit-details-marker { display: none; }
+.maks summary::after { content: ' +'; }
+.maks[open] summary::after { content: ' −'; }
+.maks-row { display: grid; grid-template-columns: minmax(0, 1fr) 64px 10px 44px auto; gap: 6px; align-items: center; margin-top: 6px; }
+.maks-row .input { height: 40px; padding: 0 8px; font-size: 15px; }
+.maks-navn { font-size: 14px; font-weight: 600; line-height: 1.2; }
+.maks-navn small { display: block; font-weight: 500; font-size: 12px; color: var(--muted2); }
+
+.reslist { display: flex; flex-direction: column; }
+.resrow { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 4px 14px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; align-items: baseline; }
+.resrow .mono { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--muted2); }
+.resnote { grid-column: 2 / -1; font-size: 13px; color: var(--muted2); }
+@media (max-width: 640px) { .resrow { grid-template-columns: minmax(0, 1fr) auto; } .resrow .mono { grid-column: 1 / -1; } .resnote { grid-column: 1 / -1; } }

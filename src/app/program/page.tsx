@@ -50,7 +50,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
           <a href="/min-side" style={{ fontWeight: 600, color: 'inherit' }}>Min side</a>
         </div>
       )}
-      <ProgramView weeks={weeks} labels={labels} cycle={cycle} currentIdx={sch.weekIdx} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
+      <ProgramView weeks={weeks} labels={labels} absList={weeks.map((_, i) => firstAbs + i)} cycle={cycle} currentIdx={sch.weekIdx} note={note} initialTrack={sub.track} welcome={sp.velkommen === '1'} needsPassword={!user.user_metadata?.has_password && !(user.app_metadata?.providers ?? []).includes('google')} />
       <DarkFooter />
     </div>
   );
