@@ -407,3 +407,5 @@ img, video { max-width: 100%; }
 .resrow .mono { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--muted2); }
 .resnote { grid-column: 2 / -1; font-size: 13px; color: var(--muted2); }
 @media (max-width: 640px) { .resrow { grid-template-columns: minmax(0, 1fr) auto; } .resrow .mono { grid-column: 1 / -1; } .resnote { grid-column: 1 / -1; } }
+
+.demo-cta { padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }

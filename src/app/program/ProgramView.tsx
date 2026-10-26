@@ -26,8 +26,8 @@ function todayIdx() {
 
 type CycleWeek = { title: string; intro: string; label: number };
 
-export default function ProgramView({ weeks, labels, absList, cycle, currentIdx, note, initialTrack, welcome, needsPassword }: {
-  weeks: Week[]; labels: number[]; absList: number[]; cycle: CycleWeek[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
+export default function ProgramView({ demo = false, weeks, labels, absList, cycle, currentIdx, note, initialTrack, welcome, needsPassword }: {
+  demo?: boolean; weeks: Week[]; labels: number[]; absList: number[]; cycle: CycleWeek[]; currentIdx: number; note: string; initialTrack: 'gym' | 'hjemme'; welcome: boolean; needsPassword: boolean;
 }) {
   const [showCycle, setShowCycle] = useState(false);
   const logg = useLogg(absList);
@@ -175,7 +175,7 @@ export default function ProgramView({ weeks, labels, absList, cycle, currentIdx,
               : 'vektvest 10/6 kg, hoppvarianten av hver øvelse og 10 % flere reps.'}
           </p>
         )}
-        {track === 'gym' && <MaksPanel prs={logg.prs} oneRm={logg.oneRm} onSave={logg.savePr} />}
+        {!demo && track === 'gym' && <MaksPanel prs={logg.prs} oneRm={logg.oneRm} onSave={logg.savePr} />}
         <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>{note}</p>
       </aside>
 
@@ -197,6 +197,14 @@ export default function ProgramView({ weeks, labels, absList, cycle, currentIdx,
             <div style={{ fontSize: 13, color: 'var(--muted2)' }}>Tips: legg siden til på Hjem-skjermen (Del → Legg til på Hjem-skjerm), så åpnes den som en app.</div>
           </div>
         )}
+        {demo && (
+          <div className="card demo-cta">
+            <div className="eyebrow">Gratis prøveøkt · i dag</div>
+            <div style={{ fontSize: 16, lineHeight: 1.5 }}>Dette er dagens økt fra ukens program, med samme timer og fem nivåer som medlemmene bruker. Velg Gym eller Hjemme og nivået ditt, og trykk Start klokka.</div>
+            <a href="/start" className="btn btn-sig" style={{ alignSelf: 'flex-start' }}>Få en ny økt hver dag · 7 dager gratis</a>
+          </div>
+        )}
+        {!demo && (
         <section className="card cycle" aria-label="Syklusen">
           <div className="cyc-head">
             <span className="eyebrow">Syklusen · uke {currentIdx + 1} av {cycle.length}</span>
@@ -231,6 +239,7 @@ export default function ProgramView({ weeks, labels, absList, cycle, currentIdx,
             </div>
           )}
         </section>
+        )}
 
         <div className="fade" key={`${wk}-${track}-${day}`}>
           <div className="eyebrow">{d.day} · {track === 'gym' ? 'Gym' : 'Hjemme'} · uke {weekNo}{d.optional ? ' · valgfri' : ''}{d.benchmark ? ' · test' : ''}</div>
@@ -305,7 +314,14 @@ export default function ProgramView({ weeks, labels, absList, cycle, currentIdx,
           <div style={{ marginTop: 12, display: 'flex', gap: 12, fontSize: 15, lineHeight: 1.5 }}><span className="eyebrow" style={{ paddingTop: 2 }}>Score</span><span>{C.score}</span></div>
         </div>
 
-        {(() => {
+        {demo ? (
+          <div className="card demo-cta">
+            <div className="eyebrow">Likte du økta?</div>
+            <div className="cond" style={{ fontSize: 40, lineHeight: .95 }}>Ny økt hver dag. Ferdig planlagt.</div>
+            <div style={{ fontSize: 16, lineHeight: 1.5 }}>Medlemmer får seks økter i uka i blokker på fire uker, med testuker som viser fremgangen, resultatlogg og utregnede vekter. 199 kr i måneden, og de første 7 dagene er gratis.</div>
+            <a href="/start" className="btn btn-sig" style={{ alignSelf: 'flex-start' }}>Start 7 dager gratis</a>
+          </div>
+        ) : (() => {
           const abs = absList[wk];
           const tr = track;
           const di = Math.min(day, list.length - 1);

@@ -94,6 +94,7 @@ export function leadNurtureEmail(step: 1 | 2, o: { unsubUrl: string; promo: stri
       'Hei! Erlend her, jeg lager PÅ MINUTTET. Du lastet ned PDF-en med 20 EMOM-er for noen dager siden.',
       'Har du testet en av øktene? Svar gjerne på denne e-posten og si hvilken. Jeg leser alle svar selv.',
       'Vil du slippe å velge økt selv, ligger det en ny økt klar hver dag i medlemskapet. Gym eller hjemme, fem nivåer, og en timer som teller minuttene for deg. De første 7 dagene er gratis, og du avslutter når du vil.',
+      `Vil du kjenne på det først? Dagens økt fra programmet, med timer, ligger åpent her: ${site}/dagens-okt`,
       ...(o.promo ? [o.promo] : []),
     ];
     return {
@@ -109,10 +110,10 @@ export function leadNurtureEmail(step: 1 | 2, o: { unsubUrl: string; promo: stri
     'Timeren ligger i økta. Du følger raden som lyser.',
     'Hjemme-sporet trenger bare gulv, en stol og et bord.',
   ];
-  const paragraphs = ['PDF-en har 20 økter. Medlemskapet har en ny hver dag, og et opplegg som bygger seg opp uke for uke.'];
+  const paragraphs = ['PDF-en har 20 økter. Medlemskapet har en ny hver dag, og et opplegg som bygger seg opp uke for uke.', `Prøv dagens økt med timer, uten innlogging: ${site}/dagens-okt`];
   return {
     subject: 'Slik ser en uke i PÅ MINUTTET ut',
-    text: `${paragraphs[0]}\n\n${list.map(l => '- ' + l).join('\n')}\n\n${o.promo ? o.promo + '\n\n' : ''}Prøv 7 dager gratis: ${start}\n\nHilsen Erlend, PÅ MINUTTET\n\n${unsubText}`,
+    text: `${paragraphs.join('\n\n')}\n\n${list.map(l => '- ' + l).join('\n')}\n\n${o.promo ? o.promo + '\n\n' : ''}Prøv 7 dager gratis: ${start}\n\nHilsen Erlend, PÅ MINUTTET\n\n${unsubText}`,
     html: layout({ eyebrow: 'Slik fungerer det', title: 'Slik ser en uke ut.', paragraphs: [...paragraphs], list, cta: { label: 'Prøv 7 dager gratis', href: start },
       after: [...(o.promo ? [esc(o.promo)] : []), unsubHtml] }),
   };
