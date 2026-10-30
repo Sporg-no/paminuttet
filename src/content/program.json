@@ -2892,7 +2892,7 @@
   {
    "n": 5,
    "title": "Grunnlag 2",
-   "intro": "Ny syklus. Nye øvelser, samme format. Start på nivået du endte på i forrige testuke.",
+   "intro": "Ny syklus: Grunnlag 2, Bygg 2, Topp 2 og Test 2. Start på nivået du endte på i testuka. Tirsdag og fredag gjentas i testuka om tre uker, så noter tidene.",
    "gym": [
     {
      "short": "Man",
@@ -3390,38 +3390,46 @@
       ]
      },
      "C": {
-      "fmt": "AMRAP 14",
+      "fmt": "For tid · tidsgrense 14:00 · 10-9-8-7-6-5-4-3-2-1",
       "timer": {
-       "t": "amrap",
-       "m": 14
+       "t": "up",
+       "cap": 14
       },
       "rows": [
        [
-        "Mountain climbers, tell hvert bein",
-        "30",
-        "24",
-        "20",
-        "16",
-        "12"
+        "Repskjema",
+        "10 → 1",
+        "10 → 1",
+        "8 → 1",
+        "8 → 1",
+        "6 → 1"
        ],
        [
-        "Utfall",
-        "16 utfallshopp",
-        "12 utfallshopp",
-        "10 utfallshopp",
-        "10 utfall bakover",
-        "8 utfall bakover"
+        "Utfall, tell hvert bein",
+        "Utfallshopp",
+        "Utfallshopp",
+        "Utfall bakover",
+        "Utfall bakover",
+        "Utfall bakover med støtte"
        ],
        [
         "Mage",
-        "12 V-ups",
-        "10 V-ups",
-        "12 tuck-ups",
-        "10 tuck-ups",
-        "12 liggende knehev"
+        "V-ups",
+        "V-ups",
+        "Tuck-ups",
+        "Tuck-ups",
+        "Liggende knehev"
+       ],
+       [
+        "Mountain climbers etter hver runde, tell hvert bein",
+        "20",
+        "20",
+        "16",
+        "12",
+        "10"
        ]
       ],
-      "score": "Runder + reps."
+      "score": "Tid."
      },
      "D": [
       "3 sett: 15 seteløft + 30 s planke"
@@ -3434,18 +3442,18 @@
      "dur": "25–30 min",
      "A": [
       "Standard oppvarming, 4 minutter",
-      "2×5 rolige burpees"
+      "Fyll en sekk med bøker eller vannflasker. 2×8 rolige sekk-knebøy"
      ],
      "B": {
       "t": "Rumensk markløft på ett bein",
       "l": [
        "4×10 per side med 3 s ned, 45 s hvile",
        "Grunnmur: samme med én hånd på veggen",
-       "Med vekt: kettlebell eller manual i motsatt hånd"
+       "Med vekt: sekken, en kettlebell eller en manual i motsatt hånd"
       ]
      },
      "C": {
-      "fmt": "4 runder · start hver 4:00",
+      "fmt": "4 runder · start hver 4:00 · én sekk med vekt",
       "timer": {
        "t": "every",
        "each": 240,
@@ -3453,28 +3461,36 @@
       },
       "rows": [
        [
+        "Sekk-knebøy",
+        "20 med 10 kg",
+        "18 med 8 kg",
+        "15 med 5 kg",
+        "15 uten sekk",
+        "12 ned til stol"
+       ],
+       [
         "Inchworm med push-up",
+        "8",
+        "7",
+        "6",
+        "5 med push-up på knær",
+        "4 uten push-up"
+       ],
+       [
+        "Sekk-roing, foroverbøyd",
+        "15 med 10 kg",
+        "15 med 8 kg",
+        "12 med 5 kg",
+        "12 bordroing",
+        "10 bordroing med bøyde knær"
+       ],
+       [
+        "Burpees",
         "10",
         "8",
         "7",
-        "6 med push-up på knær",
-        "5 uten push-up"
-       ],
-       [
-        "Knebøyhopp",
-        "20",
-        "18",
-        "15",
-        "12",
-        "15 luftknebøy"
-       ],
-       [
-        "Jumping jacks",
-        "Til 3:00",
-        "Til 3:00",
-        "Til 3:00",
-        "Til 3:00",
-        "Til 3:00"
+        "6",
+        "5 step-back"
        ],
        [
         "Resten av runden",
@@ -3485,7 +3501,7 @@
         "Hvile"
        ]
       ],
-      "score": "Antall jumping jacks per runde. Hold antallet likt i alle fire."
+      "score": "Tid på runde 1. Hold de tre neste innenfor 15 sekunder av den."
      },
      "D": [
       "10 minutter rolig gåtur eller tøying"
