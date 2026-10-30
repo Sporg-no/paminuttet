@@ -9,6 +9,8 @@ import { ovelseTekst, OvelseArk } from '@/components/OvelseTekst';
 import type { Ovelse } from '@/content/ovelser';
 import { useLogg, ResultatBoks, MaksPanel, rkey } from '@/components/Logg';
 import { liftOf, withKg } from '@/lib/strength';
+import DemoLead from '@/components/DemoLead';
+import { track as trackEvent } from '@vercel/analytics';
 
 const LVLS = ['Grunnmur', 'Nivå 1', 'Nivå 2', 'Nivå 3', 'Nivå 4'];
 const HEAD = ['Bevegelse', 'Nivå 4', 'Nivå 3', 'Nivå 2', 'Nivå 1', 'Grunnmur'];
@@ -116,7 +118,7 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
     const n = Date.now();
     if (running) { setRunning(false); setAcc(a => a + (n - t0)); setNow(n); }
     else if (ts.done) { lastE.current = -1; setAcc(0); setT0(n); setNow(n); setRunning(true); }
-    else { setT0(n); setNow(n); setRunning(true); }
+    else { setT0(n); setNow(n); setRunning(true); if (demo && eRaw === 0) trackEvent('Dagens økt startet', { spor: track }); }
   }
   function pickTrack(t: 'gym' | 'hjemme') {
     setTrack(t); reset();
@@ -320,6 +322,7 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
             <div className="cond" style={{ fontSize: 40, lineHeight: .95 }}>Ny økt hver dag. Ferdig planlagt.</div>
             <div style={{ fontSize: 16, lineHeight: 1.5 }}>Medlemmer får seks økter i uka i blokker på fire uker, med testuker som viser fremgangen, resultatlogg og utregnede vekter. 199 kr i måneden, og de første 7 dagene er gratis.</div>
             <a href="/start" className="btn btn-sig" style={{ alignSelf: 'flex-start' }}>Start 7 dager gratis</a>
+            <DemoLead />
           </div>
         ) : (() => {
           const abs = absList[wk];
