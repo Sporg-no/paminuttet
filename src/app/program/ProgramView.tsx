@@ -150,7 +150,7 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
           <button type="button" aria-pressed={track === 'gym'} onClick={() => pickTrack('gym')}>Gym</button>
           <button type="button" aria-pressed={track === 'hjemme'} onClick={() => pickTrack('hjemme')}>Hjemme</button>
         </div>
-        <div className="label" style={{ marginTop: 12 }}>Dag</div>
+        {!demo && <><div className="label" style={{ marginTop: 12 }}>Dag</div>
         <div className="days">
           {list.map((x, i) => (
             <button key={x.day} type="button" className="pill on-card" aria-pressed={i === day} onClick={() => { setDay(i); reset(); }}>
@@ -158,7 +158,7 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
               <span className="cond">{x.name}</span>
             </button>
           ))}
-        </div>
+        </div></>}
         <div className="label" style={{ marginTop: 12 }}>Nivå</div>
         <div className="lvls">
           {LVLS.map((l, i) => (
@@ -178,7 +178,7 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
           </p>
         )}
         {!demo && track === 'gym' && <MaksPanel prs={logg.prs} oneRm={logg.oneRm} onSave={logg.savePr} />}
-        <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>{note}</p>
+        {!demo && <p className="hint" style={{ margin: '4px 0 0', fontSize: 13, lineHeight: 1.5, color: 'var(--muted2)' }}>{note}</p>}
       </aside>
 
       <main>
@@ -201,9 +201,8 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
         )}
         {demo && (
           <div className="card demo-cta">
-            <div className="eyebrow">Gratis prøveøkt · i dag</div>
-            <div style={{ fontSize: 16, lineHeight: 1.5 }}>Dette er dagens økt fra ukens program, med samme timer og fem nivåer som medlemmene bruker. Velg Gym eller Hjemme og nivået ditt, og trykk Start klokka.</div>
-            <a href="/start" className="btn btn-sig" style={{ alignSelf: 'flex-start' }}>Få en ny økt hver dag · 7 dager gratis</a>
+            <div className="eyebrow">Gratis · uten innlogging</div>
+            <div style={{ fontSize: 16, lineHeight: 1.5 }}>Dagens økt fra programmet. Velg nivå, trykk <b>Start klokka</b> og følg raden som lyser.</div>
           </div>
         )}
         {!demo && (
@@ -246,7 +245,7 @@ export default function ProgramView({ demo = false, weeks, labels, absList, cycl
         <div className="fade" key={`${wk}-${track}-${day}`}>
           <div className="eyebrow">{d.day} · {track === 'gym' ? 'Gym' : 'Hjemme'} · uke {weekNo}{d.optional ? ' · valgfri' : ''}{d.benchmark ? ' · test' : ''}</div>
           <h1>{d.name}</h1>
-          {day === 0 && <p style={{ margin: '10px 0 0', fontSize: 16, color: 'var(--body)' }}>{week.intro}</p>}
+          {day === 0 && !demo && <p style={{ margin: '10px 0 0', fontSize: 16, color: 'var(--body)' }}>{week.intro}</p>}
           {/gjentak/i.test(d.name) && wk >= 3 && (
             <button type="button" className="linkbtn" style={{ marginTop: 10 }} onClick={() => { setWk(wk - 3); reset(); }}>
               Gjentak av økta i uke {labels[wk - 3]}. Se den og sammenlign resultatet →
