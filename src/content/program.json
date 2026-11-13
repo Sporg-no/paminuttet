@@ -4351,7 +4351,7 @@
   {
    "n": 7,
    "title": "Topp 2",
-   "intro": "Tyngste uka i syklusen. Prioriter søvn og mat.",
+   "intro": "Tyngste uka i syklusen. Prioriter søvn og mat. Neste uke er testuke: tirsdag og fredag fra uke 45 gjentas, så du ser fremgangen.",
    "gym": [
     {
      "short": "Man",
@@ -4420,12 +4420,12 @@
      "B": {
       "t": "Benkpress + pendlay-roing",
       "l": [
-       "5 supersett, 2:00 hvile: 4 benkpress @ 77,5 % + 6 tunge pendlay-roing",
-       "Grunnmur: DB-benkpress 5×6 + DB-roing 5×8 per side, tungt"
+       "4 supersett, 90 s hvile: 4 benkpress @ 77,5 % + 6 tunge pendlay-roing",
+       "Grunnmur: DB-benkpress 4×6 + DB-roing 4×8 per side, tungt"
       ]
      },
      "C": {
-      "fmt": "3 runder · 2:00 hvile mellom rundene",
+      "fmt": "3 runder · 1:30 hvile mellom rundene",
       "timer": {
        "t": "up",
        "cap": 0
@@ -4433,11 +4433,11 @@
       "rows": [
        [
         "Løp",
-        "800 m",
-        "800 m",
+        "600 m",
         "600 m",
         "500 m",
-        "400 m"
+        "400 m",
+        "300 m"
        ],
        [
         "Gående utfall",
@@ -4549,11 +4549,11 @@
       ]
      },
      "C": {
-      "fmt": "6 runder · 3:00 arbeid, 1:00 hvile",
+      "fmt": "5 runder · 3:00 arbeid, 1:00 hvile",
       "timer": {
        "t": "every",
        "each": 240,
-       "rounds": 6
+       "rounds": 5
       },
       "rows": [
        [
@@ -4565,7 +4565,7 @@
         "Maks kal på 3:00"
        ],
        [
-        "Ro, runde 2, 4 og 6",
+        "Ro, runde 2 og 4",
         "Maks kal på 3:00",
         "Maks kal på 3:00",
         "Maks kal på 3:00",
@@ -4573,7 +4573,7 @@
         "Maks kal på 3:00"
        ]
       ],
-      "score": "Kalorier totalt. Hold samme fart i alle seks rundene."
+      "score": "Kalorier totalt. Hold samme fart i alle fem rundene."
      },
      "D": [
       "10 minutter rolig sykkel + tøying av hofter"
@@ -4591,8 +4591,8 @@
      "B": {
       "t": "Push press + DB-roing",
       "l": [
-       "5 supersett, 2:00 hvile: 4 push press @ 77,5 % + 8 tunge DB-roing per side",
-       "Grunnmur: DB push press 5×6 + DB-roing 5×8 per side, tungt"
+       "4 supersett, 90 s hvile: 4 push press @ 77,5 % + 8 tunge DB-roing per side",
+       "Grunnmur: DB push press 4×6 + DB-roing 4×8 per side, tungt"
       ]
      },
      "C": {
@@ -4735,8 +4735,8 @@
      "B": {
       "t": "Bulgarsk utfall med pause",
       "l": [
-       "5×10 per side med 2 s pause nede, 75 s hvile",
-       "Grunnmur: utfall bakover med hånd på stol, 5×8 per side"
+       "4×10 per side med 2 s pause nede, 75 s hvile",
+       "Grunnmur: utfall bakover med hånd på stol, 4×8 per side"
       ]
      },
      "C": {
@@ -4782,13 +4782,13 @@
      "B": {
       "t": "Push-ups med føttene på stol",
       "l": [
-       "5×8–12 med føttene på stol, 2:00 hvile",
+       "4×8–12 med føttene på stol, 90 s hvile",
        "Klarer du ikke 8: vanlige push-ups med 2 s pause nede",
-       "Grunnmur: push-ups mot benk med pause, 5×8"
+       "Grunnmur: push-ups mot benk med pause, 4×8"
       ]
      },
      "C": {
-      "fmt": "3 runder · 2:00 hvile mellom rundene",
+      "fmt": "3 runder · 1:30 hvile mellom rundene",
       "timer": {
        "t": "up",
        "cap": 0
@@ -4796,19 +4796,19 @@
       "rows": [
        [
         "Løp",
-        "800 m",
-        "800 m",
+        "600 m",
         "600 m",
         "500 m",
-        "400 m"
+        "400 m",
+        "300 m"
        ],
        [
         "Utfall bakover, vekslende",
-        "30",
         "24",
         "20",
         "16",
-        "14"
+        "14",
+        "12"
        ],
        [
         "Push-ups",
@@ -4908,8 +4908,8 @@
      "B": {
       "t": "Seteløft på ett bein",
       "l": [
-       "5×15 per side, 45 s hvile",
-       "Grunnmur: seteløft på to bein, 5×15"
+       "4×15 per side, 45 s hvile",
+       "Grunnmur: seteløft på to bein, 4×15"
       ]
      },
      "C": {
@@ -4948,7 +4948,7 @@
       "score": "Runder per periode. Laveste periode teller."
      },
      "D": [
-      "10 minutter rolig gåtur eller tøying"
+      "5 minutter rolig gåtur eller tøying"
      ]
     },
     {
